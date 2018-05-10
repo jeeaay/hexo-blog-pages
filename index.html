@@ -1,0 +1,643 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Jeay&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jeay">
+    
+
+    
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Jeay&#39;s blog">
+<meta property="og:url" content="http://blog.jeay.net/index.html">
+<meta property="og:site_name" content="Jeay&#39;s blog">
+<meta property="og:locale" content="zh-cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jeay&#39;s blog">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/app.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Jeay&#39;s blog">Jeay&#39;s blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives/">Archives</a></li>
+					
+						<li><a href="/categories/tools/">Tools</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.jeay.net">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/143.html" title="143" itemprop="url">
+  
+    <h1 itemprop="name">143</h1>
+    
+     
+           <p itemprop="description" >其实安装phpMyAdmin和上线一个网站差不多，下面详细介绍一下操作步骤
+1. 创建目录先开空间，为了方便管理 我在/home/下创建一个专门的phpMyAdmin目录（可自行选择目录）：
+1mkdir /home/phpmyadmin/
+2. 绑定域名/端口修改apache配</p>
+        
+    
+    <time datetime="2018-05-10T09:09:10.000Z" itemprop="datePublished">2018-05-10</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/90.html" title="Linux Apache 服务显示中文GBK/GB2312乱码" itemprop="url">
+  
+    <h1 itemprop="name">Linux Apache 服务显示中文GBK/GB2312乱码</h1>
+    
+     
+           <p itemprop="description" >一个GB2312编码的网站，设置正确，上线后发现中文都乱码了，原来是APACHE服务器设置有点问题：
+修改下APACHE配置即可解决：
+1vim /etc/httpd/conf/httpd.conf
+加上一句话：
+1AddDefaultCharset GB2312
+保存并重启服务</p>
+        
+    
+    <time datetime="2018-05-10T08:51:14.000Z" itemprop="datePublished">2018-05-10</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/PHP_disable_eval.html" title="PHP5 &amp; PHP7 禁用 eval" itemprop="url">
+  
+    <h1 itemprop="name">PHP5 &amp; PHP7 禁用 eval</h1>
+    
+     
+      <p itemprop="description" >PHP5 & PHP7中如何禁止eval，PHP木马防范，eval是一个语言构造器而不是一个函数，不能被disable_functions禁止,本文使用了PHP_diseval_extension扩展，可以禁止PHP5 & PHP7的eval，本文参考自https://github.com/mk-j/PHP_diseval_extension</p>
+      
+    
+    <time datetime="2018-03-06T02:21:59.000Z" itemprop="datePublished">2018-03-06</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/38.html" title="CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压" itemprop="url">
+  
+    <h1 itemprop="name">CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压</h1>
+    
+     
+           <p itemprop="description" >##添加网站
+新建网站目录
+使用mkdir 目录名创建目录，例如
+1mkdir /data/wwwroot/abc/aaa.com
+修改权限
+1chmod -R 777 /data/wwwroot/abc/aaa.com
+绑定域名
+1vim /etc/httpd/conf/htt</p>
+        
+    
+    <time datetime="2018-01-29T08:36:23.000Z" itemprop="datePublished">2018-01-29</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/tools/git入门.html" title="git入门" itemprop="url">
+  
+    <h1 itemprop="name">git入门</h1>
+    
+     
+           <p itemprop="description" >安装现在很多系统都已经自带git客户端了，可以在你的终端输入git试试  
+Debian/Ubuntu 安装git
+sudo apt install git
+Redhat/Centos 安装git
+yum install git
+windows下推荐使用Cmder，下载完整版（D</p>
+        
+    
+    <time datetime="2017-11-07T06:03:49.000Z" itemprop="datePublished">2017-11-07</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/front/markdown基本语法.html" title="markdown基本语法" itemprop="url">
+  
+    <h1 itemprop="name">markdown基本语法</h1>
+    
+     
+           <p itemprop="description" >换行两个空格+回车，表示换行（一个标签）
+斜体和粗体使用 * 和 ** 表示斜体和粗体。
+示例：
+1这是 *斜体*，这是 **粗体**。
+分级标题你在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。
+示例：
+1234# </p>
+        
+    
+    <time datetime="2017-10-16T03:07:34.000Z" itemprop="datePublished">2017-10-16</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/212.html" title="在Linux服务器上搭建基于nodejs的shadowsocks服务端" itemprop="url">
+  
+    <h1 itemprop="name">在Linux服务器上搭建基于nodejs的shadowsocks服务端</h1>
+    
+     
+           <p itemprop="description" >shadowsocks客户端可以简单的运行在linux、windows、mac、ios、Android系统中，免root、免越狱，一次配置好以后一键穿墙，相当的实用，这里介绍下在Linux上搭建服务端。
+安装nodejs这一步方法很多，可以自行参考搜索引擎，已经安装过nodejs</p>
+        
+    
+    <time datetime="2017-10-11T03:38:28.000Z" itemprop="datePublished">2017-10-11</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/tools/hexo-blog.html" title="使用hexo在github上搭建免费博客" itemprop="url">
+  
+    <h1 itemprop="name">使用hexo在github上搭建免费博客</h1>
+    
+     
+           <p itemprop="description" >命令速记12345678# 写博客hexo n# 生成静态页面hexo g# 部署hexo d# 本地测试hexo s
+前置技能必备技能：
+git和github使用（Level 1）
+markdown（Level 2）
+
+进阶技能：
+nodejs
+npm
+ejs
+sass
+yml</p>
+        
+    
+    <time datetime="2017-09-26T06:13:17.000Z" itemprop="datePublished">2017-09-26</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/js/install-nodejs.html" title="Windows/Linux下安装nodejs" itemprop="url">
+  
+    <h1 itemprop="name">Windows/Linux下安装nodejs</h1>
+    
+     
+           <p itemprop="description" >下载NodeJs最近的版本已经开始支持ES6（ES2015），强烈建议使用8.x版本  
+下载地址：Node.js  
+Windows安装Windows一直下一步就可以了 默认选择添加到PATH，需要管理员权限，不然就得自己手动添加了  
+安装完毕后在终端输入node -v显示当</p>
+        
+    
+    <time datetime="2017-09-26T05:15:11.000Z" itemprop="datePublished">2017-09-26</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/front/sass语法入门.html" title="sass语法入门" itemprop="url">
+  
+    <h1 itemprop="name">sass语法入门</h1>
+    
+     
+           <p itemprop="description" >sass 念： [sæs]  
+相关准备工作，参考在vscode上使用SASS  
+1. 文件
+sass有两种后缀名文件：
+
+
+一种后缀名为sass，不使用大括号和分号；
+
+
+另一种和我们平时写的css文件格式差不多，使用大括号和分号。
+
+两种文件除了大括号和分号以外没什么区别，</p>
+        
+    
+    <time datetime="2017-09-18T06:08:28.000Z" itemprop="datePublished">2017-09-18</time>
+  </a>
+</section>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix unexpand">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Linux-CentOS上phpMyAdmin怎么安装/" title="Linux CentOS上phpMyAdmin怎么安装">Linux CentOS上phpMyAdmin怎么安装<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/javascript/" title="javascript">javascript<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/server/" title="server">server<sup>16</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/wordpress/" title="wordpress">wordpress<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/centos/" title="centos">centos<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/运维/" title="运维">运维<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/apache/" title="apache">apache<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php/" title="php">php<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php7/" title="php7">php7<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nginx/" title="nginx">nginx<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bash/" title="bash">bash<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+</div>
+
+
+  <div class="steam-card">
+    <p class="asidetitle">
+        Steam
+    </p>
+    <a href="http://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+</div>
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.jeay.net" target="_blank" title="Jeay&#39;s Blog">Jeay&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Talents come from diligence, <br/>
+			and knowledge is gained by accumulation.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2470076427" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/jeeaay" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Jeay">Jeay</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261897922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1261897922' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+ </html>

@@ -1,0 +1,601 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>markdown基本语法 | Jeay&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jeay">
+    
+
+    
+    <meta name="description" content="换行两个空格+回车，表示换行（一个标签） 斜体和粗体使用 * 和 ** 表示斜体和粗体。 示例： 1这是 *斜体*，这是 **粗体**。 分级标题你在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。 示例： 1234# H1## H2### H3#### H4 外链接使用 [描述](链接地址) 为文字增加外链接。 示例： 1这是去往 [本">
+<meta name="keywords" content="markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown基本语法">
+<meta property="og:url" content="http://blog.jeay.net/front/markdown基本语法.html">
+<meta property="og:site_name" content="Jeay&#39;s blog">
+<meta property="og:description" content="换行两个空格+回车，表示换行（一个标签） 斜体和粗体使用 * 和 ** 表示斜体和粗体。 示例： 1这是 *斜体*，这是 **粗体**。 分级标题你在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。 示例： 1234# H1## H2### H3#### H4 外链接使用 [描述](链接地址) 为文字增加外链接。 示例： 1这是去往 [本">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-05-10T07:23:10.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="markdown基本语法">
+<meta name="twitter:description" content="换行两个空格+回车，表示换行（一个标签） 斜体和粗体使用 * 和 ** 表示斜体和粗体。 示例： 1这是 *斜体*，这是 **粗体**。 分级标题你在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。 示例： 1234# H1## H2### H3#### H4 外链接使用 [描述](链接地址) 为文字增加外链接。 示例： 1这是去往 [本">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/app.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Jeay&#39;s blog">Jeay&#39;s blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives/">Archives</a></li>
+					
+						<li><a href="/categories/tools/">Tools</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.jeay.net">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/front/markdown基本语法.html" title="markdown基本语法" itemprop="url">markdown基本语法</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jeay" target="_blank" itemprop="author">Jeay</a>
+		
+  <p class="article-time">
+    <time datetime="2017-10-16T03:07:34.000Z" itemprop="datePublished"> Published 2017-10-16</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#换行"><span class="toc-number">1.</span> <span class="toc-text">换行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#斜体和粗体"><span class="toc-number">2.</span> <span class="toc-text">斜体和粗体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分级标题"><span class="toc-number">3.</span> <span class="toc-text">分级标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外链接"><span class="toc-number">4.</span> <span class="toc-text">外链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无序列表"><span class="toc-number">5.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序列表"><span class="toc-number">6.</span> <span class="toc-text">有序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字引用"><span class="toc-number">7.</span> <span class="toc-text">文字引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行内代码块"><span class="toc-number">8.</span> <span class="toc-text">行内代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码块"><span class="toc-number">9.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入图像"><span class="toc-number">10.</span> <span class="toc-text">插入图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格"><span class="toc-number">11.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内容目录"><span class="toc-number">12.</span> <span class="toc-text">内容目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除线"><span class="toc-number">13.</span> <span class="toc-text">删除线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分割线"><span class="toc-number">14.</span> <span class="toc-text">分割线</span></a></li></ol>
+		
+		</div>
+		
+		<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>两个空格+回车，表示换行（一个</p><p>标签）</p>
+<h3 id="斜体和粗体"><a href="#斜体和粗体" class="headerlink" title="斜体和粗体"></a>斜体和粗体</h3><p>使用 * 和 ** 表示斜体和粗体。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是 <span class="emphasis">*斜体*</span>，这是 <span class="strong">**粗体**</span>。</span><br></pre></td></tr></table></figure>
+<h3 id="分级标题"><a href="#分级标题" class="headerlink" title="分级标题"></a>分级标题</h3><p>你在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># H1</span></span><br><span class="line"><span class="section">## H2</span></span><br><span class="line"><span class="section">### H3</span></span><br><span class="line"><span class="section">#### H4</span></span><br></pre></td></tr></table></figure>
+<h3 id="外链接"><a href="#外链接" class="headerlink" title="外链接"></a>外链接</h3><p>使用 [描述](链接地址) 为文字增加外链接。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是去往 [<span class="string">本人博客</span>](<span class="link">http://ghosertblog.github.com</span>) 的链接。</span><br></pre></td></tr></table></figure>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>使用 *，+，- 表示无序列表。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>无序列表项 一</span><br><span class="line"><span class="bullet">- </span>无序列表项 二</span><br><span class="line"><span class="bullet">- </span>无序列表项 三</span><br></pre></td></tr></table></figure>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>使用数字和点表示有序列表。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>有序列表项 一</span><br><span class="line"><span class="bullet">2. </span>有序列表项 二</span><br><span class="line"><span class="bullet">3. </span>有序列表项 三</span><br></pre></td></tr></table></figure>
+<h3 id="文字引用"><a href="#文字引用" class="headerlink" title="文字引用"></a>文字引用</h3><p>使用 &gt; 表示文字引用。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 野火烧不尽，春风吹又生。</span></span><br></pre></td></tr></table></figure>
+<h3 id="行内代码块"><a href="#行内代码块" class="headerlink" title="行内代码块"></a>行内代码块</h3><p>使用 `代码` 表示行内代码块。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">让我们聊聊 <span class="code">`html`</span>。</span><br></pre></td></tr></table></figure>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>使用 四个缩进空格 表示代码块。</p>
+<p>示例：</p>
+<p>markdow:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个代码块，此行左侧有四个不可见的空格。</span><br></pre></td></tr></table></figure>
+<p>显示效果：</p>
+<pre><code>这是一个代码块，此行左侧有四个不可见的空格。
+</code></pre><p>使用三个<code></code> <code>包裹表示加强的代码块，可以声明代码语言，</code>CmdMarkdown`支持四十一种编程语言的语法高亮的显示，行号显示</p>
+<p>示例：</p>
+<p>markdown: </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```javascript</span></span><br><span class="line"><span class="code">    for ( let i in arr)&#123;</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">结尾三个`（这里显示不出来）</span></span><br></pre></td></tr></table></figure>
+<p>语法高亮的显示结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="keyword">let</span> i <span class="keyword">in</span> arr)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插入图像"><a href="#插入图像" class="headerlink" title="插入图像"></a>插入图像</h3><p>使用 ![描述](图片链接地址) 插入图像。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">我的头像</span>](<span class="link">https://www.zybuluo.com/static/img/my_head.jpg</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">| 标题 | 标题 | 标题 |</span><br><span class="line">| :--- | ---: | :---: |</span><br><span class="line">|  内容  |  内容  | 内容  |</span><br></pre></td></tr></table></figure>
+<p>注意第二行的特殊格式，:在哪边哪边对齐，两边都有居中对齐 默认（不写:）左对齐</p>
+<h3 id="内容目录"><a href="#内容目录" class="headerlink" title="内容目录"></a>内容目录</h3><p>在段落中填写 <code>[TOC]</code> 以显示全文内容的目录结构。</p>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>使用 ~~ 表示删除线。</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~这是一段错误的文本。~~</span><br></pre></td></tr></table></figure>
+<p><del>这是一段错误的文本。</del></p>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p><code>---</code>或<code>***</code>表示分割线</p>
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="emphasis">***</span></span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<blockquote>
+<p>本文修改自<a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="noopener">CmdMarkdown的语法说明</a>  </p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.zybuluo.com/cmd/" target="_blank" rel="noopener">Cmd Markdown</a> 是一个跨平台的Markdown编辑器，界面友好，有在线云储存功能，推荐使用</p>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/tools/">tools</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/markdown/">markdown</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	<div class="share-jiathis">
+	  
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_googleplus"></a>
+  <a class="jiathis_button_twitter"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+     ralateuid:{"tsina":"2470076427"},hideMore:false}
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+2143304" charset="utf-8"></script>      
+
+	 </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/tools/git入门.html" title="git入门">
+  <strong>上一篇：</strong><br/>
+  <span>
+  git入门</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/server/212.html"  title="在Linux服务器上搭建基于nodejs的shadowsocks服务端">
+ <strong>下一篇：</strong><br/> 
+ <span>在Linux服务器上搭建基于nodejs的shadowsocks服务端
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+<section id="comments" class="comment">
+
+<div id="SOHUCS" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt0mqnuK'; 
+var conf = 'prod_acb6164281284c13bf0f34dbe1d96c85'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#换行"><span class="toc-number">1.</span> <span class="toc-text">换行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#斜体和粗体"><span class="toc-number">2.</span> <span class="toc-text">斜体和粗体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分级标题"><span class="toc-number">3.</span> <span class="toc-text">分级标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外链接"><span class="toc-number">4.</span> <span class="toc-text">外链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无序列表"><span class="toc-number">5.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序列表"><span class="toc-number">6.</span> <span class="toc-text">有序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字引用"><span class="toc-number">7.</span> <span class="toc-text">文字引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行内代码块"><span class="toc-number">8.</span> <span class="toc-text">行内代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码块"><span class="toc-number">9.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入图像"><span class="toc-number">10.</span> <span class="toc-text">插入图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格"><span class="toc-number">11.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内容目录"><span class="toc-number">12.</span> <span class="toc-text">内容目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除线"><span class="toc-number">13.</span> <span class="toc-text">删除线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分割线"><span class="toc-number">14.</span> <span class="toc-text">分割线</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Linux-CentOS上phpMyAdmin怎么安装/" title="Linux CentOS上phpMyAdmin怎么安装">Linux CentOS上phpMyAdmin怎么安装<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/javascript/" title="javascript">javascript<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/server/" title="server">server<sup>16</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/wordpress/" title="wordpress">wordpress<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/centos/" title="centos">centos<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/运维/" title="运维">运维<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/apache/" title="apache">apache<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php/" title="php">php<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php7/" title="php7">php7<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nginx/" title="nginx">nginx<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bash/" title="bash">bash<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+</div>
+
+
+  <div class="steam-card">
+    <p class="asidetitle">
+        Steam
+    </p>
+    <a href="http://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+</div>
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.jeay.net" target="_blank" title="Jeay&#39;s Blog">Jeay&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Talents come from diligence, <br/>
+			and knowledge is gained by accumulation.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2470076427" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/jeeaay" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Jeay">Jeay</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261897922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1261897922' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
