@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
     <title>Jeay&#39;s blog</title>
@@ -13,7 +13,7 @@
     
     <meta property="og:type" content="website">
 <meta property="og:title" content="Jeay&#39;s blog">
-<meta property="og:url" content="http://blog.jeay.net/page/3/index.html">
+<meta property="og:url" content="https://www.jeay.net/page/3/index.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
 <meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
@@ -29,7 +29,7 @@
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
   <body>
     <header>
       
@@ -56,7 +56,7 @@
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:blog.jeay.net">
+						<input type="hidden" name="q" value="site:www.jeay.net">
 					</form>
 					
 					</li>
@@ -70,7 +70,196 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/76.html" title="Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录" itemprop="url">
+    <a href="/server/239.html" title="CentOS shadowsocks如何设置开机自启" itemprop="url">
+  
+    <h1 itemprop="name">CentOS shadowsocks如何设置开机自启</h1>
+    
+     
+           <p itemprop="description" >添加应用到service创建/etc/init.d/shadowsocks
+1vim /etc/init.d/shadowsocks
+编辑下面内容：注意先修改ssserver和config.json为你的绝对路径，我的路径是这样的：
+12/opt/node-v6.9.5/lib/</p>
+        
+    
+    <time datetime="2017-02-22T09:27:16.000Z" itemprop="datePublished">2017-02-22</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/237.html" title="Linux 怎么实现免输入密码,使用密钥登录" itemprop="url">
+  
+    <h1 itemprop="name">Linux 怎么实现免输入密码,使用密钥登录</h1>
+    
+     
+           <p itemprop="description" >生成rsa密钥如果你已经有密钥了（比如在用github时生成过），这步可以跳过，在~/.ssh/里找到自己的公钥即可
+如果你已经有密钥了，请不要重复生成，会覆盖之前的密钥对
+1ssh-keygen -t rsa
+也可以用别的非对称加密算法，这里不赘述了
+会问你几个问题，直接一路回</p>
+        
+    
+    <time datetime="2017-02-21T09:17:19.000Z" itemprop="datePublished">2017-02-21</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/143.html" title="Linux CentOS上phpMyAdmin怎么安装" itemprop="url">
+  
+    <h1 itemprop="name">Linux CentOS上phpMyAdmin怎么安装</h1>
+    
+     
+           <p itemprop="description" >其实安装phpMyAdmin和上线一个网站差不多，下面详细介绍一下操作步骤
+创建目录先开空间，为了方便管理 我在/home/下创建一个专门的phpMyAdmin目录（可自行选择目录）：
+1mkdir /home/phpmyadmin/
+绑定域名/端口修改apache配置文件：
+1</p>
+        
+    
+    <time datetime="2015-12-03T09:09:10.000Z" itemprop="datePublished">2015-12-03</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/113.html" title="Linux Centos 使用bash shell 自动检测运行情况 重启apache、mysql服务器" itemprop="url">
+  
+    <h1 itemprop="name">Linux Centos 使用bash shell 自动检测运行情况 重启apache、mysql服务器</h1>
+    
+     
+           <p itemprop="description" >服务器上的网站比较多，mysql、apache经常不堪重负罢工
+所以就抽了一上午学习了一些bash的语法，参考了一些类似问题解决的博客，做了一个小程序，遇到负载过高、mysql &amp;amp; apache关停的时候会自动重新启动mysql &amp;amp; apache
+12345678</p>
+        
+    
+    <time datetime="2015-10-09T09:02:00.000Z" itemprop="datePublished">2015-10-09</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/103.html" title="LINUX服务器安全设置：禁止php的eval函数" itemprop="url">
+  
+    <h1 itemprop="name">LINUX服务器安全设置：禁止php的eval函数</h1>
+    
+     
+           <p itemprop="description" >本方法使用了suhosin，不适用于PHP7，可以参考PHP5 &amp;amp; PHP7 禁用 eval
+安装suhosin下载suhosin
+可以参考官网地址：http://suhosin.org/stories/download.html
+suhosin
+
+注意：PHP5.4以下</p>
+        
+    
+    <time datetime="2015-09-02T08:53:35.000Z" itemprop="datePublished">2015-09-02</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/php/100.html" title="Centos yum 安装php5.5" itemprop="url">
+  
+    <h1 itemprop="name">Centos yum 安装php5.5</h1>
+    
+     
+           <p itemprop="description" >首先卸载旧版本
+1yum remove php  php-*
+这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看）
+1rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
+安</p>
+        
+    
+    <time datetime="2015-07-13T07:24:53.000Z" itemprop="datePublished">2015-07-13</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/90.html" title="Linux Apache 服务显示中文GBK/GB2312乱码" itemprop="url">
+  
+    <h1 itemprop="name">Linux Apache 服务显示中文GBK/GB2312乱码</h1>
+    
+     
+           <p itemprop="description" >一个GB2312编码的网站，设置正确，上线后发现中文都乱码了，原来是APACHE服务器设置有点问题：
+修改下APACHE配置即可解决：
+1vim /etc/httpd/conf/httpd.conf
+加上一句话：
+1AddDefaultCharset GB2312
+保存并重启服务</p>
+        
+    
+    <time datetime="2015-03-18T08:51:14.000Z" itemprop="datePublished">2015-03-18</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/84.html" title="网站访问时出现同服务器的另一个网站？" itemprop="url">
+  
+    <h1 itemprop="name">网站访问时出现同服务器的另一个网站？</h1>
+    
+     
+           <p itemprop="description" >其实这个是由于没有绑定的域名解析到服务器后，服务器找不到对应域名的主机头，直接返回了该端口下的第一个网站内容。
+由于我们网站比较多，有时候管理员难免会忙不过来出现这种情况，我做了一个专门的错误页面，用于提醒管理员错误原因。
+这个错误页面利用了刚刚提到的“直接返回了该端口下的第一个</p>
+        
+    
+    <time datetime="2015-03-16T08:44:48.000Z" itemprop="datePublished">2015-03-16</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/76.html" title="Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录" itemprop="url">
   
     <h1 itemprop="name">Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录</h1>
     
@@ -91,13 +280,15 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/php/58.html" title="PHP生成随机字符串" itemprop="url">
+    <a href="/php/58.html" title="PHP JS生成随机字符串" itemprop="url">
   
-    <h1 itemprop="name">PHP生成随机字符串</h1>
+    <h1 itemprop="name">PHP JS生成随机字符串</h1>
     
      
-           <p itemprop="description" >源码如下：
-12345678910111213&amp;lt;?php function generate_password( $length = 16 ) &amp;#123;    $chars = &#39;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi</p>
+           <p itemprop="description" >示例
+
+
+JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#39;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy</p>
         
     
     <time datetime="2015-01-30T04:20:50.000Z" itemprop="datePublished">2015-01-30</time>
@@ -109,156 +300,9 @@
 
 
 
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/34.html" title="CentOS修改mysql数据存储位置" itemprop="url">
-  
-    <h1 itemprop="name">CentOS修改mysql数据存储位置</h1>
-    
-     
-           <p itemprop="description" >腾讯云VPS买的数据盘挂载在/data下面，yum安装的mysql默认数据存储在系统盘上，所以需要搬家了。
-首先 关闭mysqld
-1service mysql stop
-编辑mysql配置文件
-1vim /usr/my.cnf
-找到如下行
-1datadir=
-修改成新的mysq</p>
-        
-    
-    <time datetime="2015-01-29T08:34:09.000Z" itemprop="datePublished">2015-01-29</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/32.html" title="32" itemprop="url">
-  
-    <h1 itemprop="name">32</h1>
-    
-     
-           <p itemprop="description" >安装首先yum安装
-1yum -y install vsftpd
-启动vsftp
-1service vsftpd start
-设置开机自启
-1chkconfig vsftpd on
-配置1vim /etc/vsftpd/vsftpd.conf
-禁止匿名访问：改成NO
-1anony</p>
-        
-    
-    <time datetime="2015-01-29T08:30:32.000Z" itemprop="datePublished">2015-01-29</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/server/24.html" title="用163源替换CentOS默认源" itemprop="url">
-  
-    <h1 itemprop="name">用163源替换CentOS默认源</h1>
-    
-     
-           <p itemprop="description" >下载163的repo文件
-12cd /etc/yum.repos.d/wget http://mirrors.163.com/.help/CentOS6-Base-163.repo
-备份CentOS自带的源，用mv修改一下文件名就行，我没备份直接删了…
-1mv CentOS-Ba</p>
-        
-    
-    <time datetime="2015-01-29T08:27:23.000Z" itemprop="datePublished">2015-01-29</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/server/21.html" title="CentOS服务器快速安装配置LAMP(Linux+Apache+Mysql+PHP)环境" itemprop="url">
-  
-    <h1 itemprop="name">CentOS服务器快速安装配置LAMP(Linux+Apache+Mysql+PHP)环境</h1>
-    
-     
-           <p itemprop="description" >卸载自带httpd和mysql（可能会有，也可能没用，不过以防万一还是要运行一下）
-12yum erase httpdyum remove mysql*
-更新yum 源
-123yum clean allyum makecacheyum update
-安装需要的环境
-12yum i</p>
-        
-    
-    <time datetime="2015-01-28T07:42:28.000Z" itemprop="datePublished">2015-01-28</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/wordpress/15.html" title="简单解决WordPress谷歌字体与Gravatar头像速度慢的问题" itemprop="url">
-  
-    <h1 itemprop="name">简单解决WordPress谷歌字体与Gravatar头像速度慢的问题</h1>
-    
-     
-           <p itemprop="description" >就一个插件 直接在后台搜索： 谷歌字体与Gravatar头像加速
-
-安装并启用 头像又出来了！</p>
-        
-    
-    <time datetime="2015-01-13T07:37:57.000Z" itemprop="datePublished">2015-01-13</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/wordpress/19.html" title="在linux下的WordPress每次安装主题或插件都需要FTP用户名密码怎么办？" itemprop="url">
-  
-    <h1 itemprop="name">在linux下的WordPress每次安装主题或插件都需要FTP用户名密码怎么办？</h1>
-    
-     
-           <p itemprop="description" >用FTP工具打开网站根目录，找到wp-config.php
-末尾加一段话:
-1234if(is_admin()) &amp;#123;    add_filter(‘filesystem_method’, create_function(‘$a’,’return “direct”;’ )</p>
-        
-    
-    <time datetime="2015-01-13T07:34:07.000Z" itemprop="datePublished">2015-01-13</time>
-  </a>
-</section>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix unexpand">
-    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
   </nav>
 
 </div>
@@ -274,7 +318,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/javascript/" title="javascript">javascript<sup>1</sup></a></li>
+			<li><a href="/categories/front/" title="front">front<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>2</sup></a></li>
 		  
 		
 		  
@@ -282,11 +330,11 @@
 		  
 		
 		  
-			<li><a href="/categories/server/" title="server">server<sup>17</sup></a></li>
+			<li><a href="/categories/server/" title="server">server<sup>19</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/tools/" title="tools">tools<sup>5</sup></a></li>
+			<li><a href="/categories/tools/" title="tools">tools<sup>7</sup></a></li>
 		  
 		
 		  
@@ -311,7 +359,7 @@
 			
 		
 			
-				<li><a href="/tags/运维/" title="运维">运维<sup>7</sup></a></li>
+				<li><a href="/tags/运维/" title="运维">运维<sup>8</sup></a></li>
 			
 		
 			
@@ -323,23 +371,31 @@
 			
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>3</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/mysql/" title="mysql">mysql<sup>3</sup></a></li>
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
 			
 		
 			
@@ -351,15 +407,11 @@
 			
 		
 			
-				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>2</sup></a></li>
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
+				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
 			
 		
 			
@@ -367,23 +419,19 @@
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
+				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/eval/" title="eval">eval<sup>1</sup></a></li>
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -392,7 +440,7 @@
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
 </div>
 
 
@@ -400,7 +448,7 @@
     <p class="asidetitle">
         Steam
     </p>
-    <a href="http://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -409,7 +457,43 @@
         
           <li>
             
-            	<a href="http://www.jeay.net" target="_blank" title="Jeay&#39;s Blog">Jeay&#39;s Blog</a>
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/2018/cerbot.html" target="_blank" title="Cerbot">Cerbot</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.londy.cc/" target="_blank" title="Londy">Londy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/" target="_blank" title="技术团队Blog">技术团队Blog</a>
             
           </li>
         
@@ -452,7 +536,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

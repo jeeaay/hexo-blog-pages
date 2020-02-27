@@ -1,0 +1,130 @@
+
+  
+    <!DOCTYPE html>
+<html lang="en">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product</title>
+    <style>
+        img {
+            box-sizing: border-box;
+            max-width: 100%;
+            padding: 5px;
+        }
+
+        @media (min-width:420px) {
+            img {
+                width: 50%;
+            }
+        }
+
+        @media (min-width:750px) {
+            img {
+                width: 33.3333333%;
+            }
+        }
+
+        @media (min-width:920px) {
+            img {
+                width: 25%;
+            }
+        }
+
+        @media (min-width:1050px) {
+            img {
+                width: 20%;
+            }
+        }
+
+        @media (min-width:1250px) {
+            img {
+                width: 16.6666666%;
+            }
+        }
+
+        @media (min-width:1440px) {
+            img {
+                width: 14.285714%;
+            }
+        }
+
+        @media (min-width:1800px) {
+            img {
+                width: 12.5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <img src="https://www.break-day.com/uploads/product/c6x_jaw.jpg">
+        <img src="https://www.break-day.com/uploads/product/european-jaw-crusher-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/jaw-crusher-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/hydraulic-cone-crusher-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/hst-cone-crusher-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/cs-cone-crusher-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/ci5x_s.jpg">
+        <img src="https://www.break-day.com/uploads/product/european-impact-crusher-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/impact-crusher-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/hj-jaw-crusher-small.jpg">
+
+        <img src="https://www.break-day.com/uploads/product/mtwz-s.jpg">
+        <img src="https://www.break-day.com/uploads/product/mb5x_s.jpg">
+        <img src="https://www.break-day.com/uploads/product/mtw-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/lm-vertical-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/tgm-pressure-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/raymond-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/hgm-micro-powder-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/ygm-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/lum-superfine-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/lum-superfine-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/t130x-mill-small.jpg">
+
+        <img src="https://www.break-day.com/uploads/product/vsi6x_small.jpg">
+        <img src="https://www.break-day.com/uploads/product/vsi5x-sand-making-machine-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/vsi-sand-making-machine-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/pcl-sand-making-machine-small.jpg">
+
+        <img src="https://www.break-day.com/uploads/product/ball-mill-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/magnetic-separator-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/flotation-separator-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/spiral-classifier-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/cyclone-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/ceramic-filter-small.jpg">
+
+        <img src="https://www.break-day.com/uploads/product/f5x_s.jpg">
+        <img src="https://www.break-day.com/uploads/product/gf-s.jpg">
+        <img src="https://www.break-day.com/uploads/product/tsw_small.jpg">
+        <img src="https://www.break-day.com/uploads/product/vibrating-feeder-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/s5x-s.jpg">
+        <img src="https://www.break-day.com/uploads/product/yk3x-s.jpg">
+        <img src="https://www.break-day.com/uploads/product/ykn_s.jpg">
+        <img src="https://www.break-day.com/uploads/product/vibrating-screen-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/sand-washing-machine-small.jpg">
+        <img src="https://www.break-day.com/uploads/product/belt-conveyer-small.jpg">
+
+        <img src="https://www.break-day.com/uploads/product/k.jpg">
+        <img src="https://www.break-day.com/uploads/product/crawler-mobile-crushing-plant-small.jpg">
+    </article>
+
+    <script src="https://www.lmlq.com/js/jquery.js"></script>
+    <script>
+        $(() => {
+            $("article").html($("article img").sort(randomsort))
+            $('img').click(function(){
+                alert( $(this).attr('src').match(/.*\/(.*)\.jpg/)[1] )
+            })
+        })
+
+        function randomsort(a, b) {
+            return Math.random() > .5 ? -1 : 1;
+        }
+    </script>
+</body>
+
+</html>
+  

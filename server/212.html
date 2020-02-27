@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
     <title>在Linux服务器上搭建基于nodejs的shadowsocks服务端 | Jeay&#39;s blog</title>
@@ -12,19 +12,19 @@
 
     
     <meta name="description" content="shadowsocks客户端可以简单的运行在linux、windows、mac、ios、Android系统中，免root、免越狱，一次配置好以后一键穿墙，相当的实用，这里介绍下在Linux上搭建服务端。 安装nodejs这一步方法很多，可以自行参考搜索引擎，已经安装过nodejs的话可以直接跳到第二步  参考文章：《Windows/Linux下安装nodejs》  安装、配置shadowsocks">
-<meta name="keywords" content="科学上网,shadowsocks,nodejs">
+<meta name="keywords" content="nodejs,科学上网,shadowsocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Linux服务器上搭建基于nodejs的shadowsocks服务端">
-<meta property="og:url" content="http://blog.jeay.net/server/212.html">
+<meta property="og:url" content="https://www.jeay.net/server/212.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
 <meta property="og:description" content="shadowsocks客户端可以简单的运行在linux、windows、mac、ios、Android系统中，免root、免越狱，一次配置好以后一键穿墙，相当的实用，这里介绍下在Linux上搭建服务端。 安装nodejs这一步方法很多，可以自行参考搜索引擎，已经安装过nodejs的话可以直接跳到第二步  参考文章：《Windows/Linux下安装nodejs》  安装、配置shadowsocks">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://www.jeay.net/wp-content/uploads/2017/02/ishadowsocks.jpg">
-<meta property="og:updated_time" content="2018-05-10T09:28:49.412Z">
+<meta property="og:image" content="https://www.jeay.net/img/ishadowsocks.jpg">
+<meta property="og:updated_time" content="2020-02-27T06:15:56.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Linux服务器上搭建基于nodejs的shadowsocks服务端">
 <meta name="twitter:description" content="shadowsocks客户端可以简单的运行在linux、windows、mac、ios、Android系统中，免root、免越狱，一次配置好以后一键穿墙，相当的实用，这里介绍下在Linux上搭建服务端。 安装nodejs这一步方法很多，可以自行参考搜索引擎，已经安装过nodejs的话可以直接跳到第二步  参考文章：《Windows/Linux下安装nodejs》  安装、配置shadowsocks">
-<meta name="twitter:image" content="http://www.jeay.net/wp-content/uploads/2017/02/ishadowsocks.jpg">
+<meta name="twitter:image" content="https://www.jeay.net/img/ishadowsocks.jpg">
 
     
     
@@ -36,7 +36,7 @@
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
   <body>
     <header>
       
@@ -63,7 +63,7 @@
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:blog.jeay.net">
+						<input type="hidden" name="q" value="site:www.jeay.net">
 					</form>
 					
 					</li>
@@ -94,45 +94,52 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">1.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装、配置shadowsocks服务端"><span class="toc-number">2.</span> <span class="toc-text">安装、配置shadowsocks服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行ssserver服务"><span class="toc-number">3.</span> <span class="toc-text">运行ssserver服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu开机自启"><span class="toc-number">4.</span> <span class="toc-text">Ubuntu开机自启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS开机自启"><span class="toc-number">5.</span> <span class="toc-text">CentOS开机自启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端设置"><span class="toc-number">6.</span> <span class="toc-text">客户端设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个配置"><span class="toc-number">6.1.</span> <span class="toc-text">新建一个配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#填写信息"><span class="toc-number">6.2.</span> <span class="toc-text">填写信息</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">1.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装、配置shadowsocks服务端"><span class="toc-number">2.</span> <span class="toc-text">安装、配置shadowsocks服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装pm2"><span class="toc-number">3.</span> <span class="toc-text">安装pm2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssserver服务的pm2配置"><span class="toc-number">4.</span> <span class="toc-text">ssserver服务的pm2配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行"><span class="toc-number">5.</span> <span class="toc-text">运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端设置"><span class="toc-number">6.</span> <span class="toc-text">客户端设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个配置"><span class="toc-number">6.1.</span> <span class="toc-text">新建一个配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#填写信息"><span class="toc-number">6.2.</span> <span class="toc-text">填写信息</span></a></li></ol></li></ol>
 		
 		</div>
 		
 		<p>shadowsocks客户端可以简单的运行在linux、windows、mac、ios、Android系统中，免root、免越狱，一次配置好以后一键穿墙，相当的实用，这里介绍下在Linux上搭建服务端。</p>
 <h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><p>这一步方法很多，可以自行参考搜索引擎，<span style="color: #ff0000;">已经安装过nodejs的话可以直接跳到第二步</span></p>
 <blockquote>
-<p>参考文章：<br>《<a href="/2017/install-nodejs.html">Windows/Linux下安装nodejs</a>》</p>
+<p>参考文章：<br>《<a href="/js/install-nodejs.html">Windows/Linux下安装nodejs</a>》</p>
 </blockquote>
 <h2 id="安装、配置shadowsocks服务端"><a href="#安装、配置shadowsocks服务端" class="headerlink" title="安装、配置shadowsocks服务端"></a>安装、配置shadowsocks服务端</h2><p>直接使用npm安装到全局<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g shadowsocks</span><br></pre></td></tr></table></figure></p>
 <p>如果服务器在国内的话可能会比较慢，可以使用<code>cnpm</code></p>
 <p>开始配置，注意路径在node安装目录下的<code>/lib/node_modules/shadowsocks/</code></p>
 <blockquote>
-<p>如果按照我的博客的方法，复制nodejs到了/opt里，shadowsocks会下载到/opt/node/lib里</p>
+<p>例如nodejs安装到了/opt里，shadowsocks会下载到/opt/node/lib里</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意/opt/node路径可能和这里的不一样</span></span><br><span class="line">vim /opt/node/lib/node_modules/shadowsocks/config.json</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果使用nvm安装，安装路径在<code>~/.nvm/versions/node/版本/</code>下的<code>lib</code>里</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.nvm/versions/node/v11.15.0/lib/node_modules/shadowsocks/config.json</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果找不到安装到哪了，可以用<code>which ssserver</code>查看，配置文件在找到路径的上级的<code>lib</code>里</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> ssserver</span><br><span class="line"><span class="comment"># /root/.nvm/versions/node/v11.15.0/bin/ssserver</span></span><br><span class="line">vim /root/.nvm/versions/node/v11.15.0/lib/node_modules/shadowsocks/config.json</span><br></pre></td></tr></table></figure>
 <p>主要内容如下：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"server"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line"><span class="attr">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line"><span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line"><span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line"><span class="attr">"password"</span>:<span class="string">"xxxxx"</span>,</span><br><span class="line"><span class="attr">"timeout"</span>:<span class="number">600</span>,</span><br><span class="line"><span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>主要是修改其中的两处，其他的有需要的话自行修改</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server: 0.0.0.0</span><br><span class="line">password: <span class="comment"># 设置好密码。</span></span><br></pre></td></tr></table></figure>
 <p>编辑好之后，<code>:wq</code>保存并退出。</p>
-<h2 id="运行ssserver服务"><a href="#运行ssserver服务" class="headerlink" title="运行ssserver服务"></a>运行ssserver服务</h2><p>后台运行ssserver</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver &gt;/dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="安装pm2"><a href="#安装pm2" class="headerlink" title="安装pm2"></a>安装pm2</h2><p>这里推荐使用pm2托管，用于后台运行服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g pm2</span><br></pre></td></tr></table></figure>
+<p>配置开机自启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 startup</span><br></pre></td></tr></table></figure>
+<h2 id="ssserver服务的pm2配置"><a href="#ssserver服务的pm2配置" class="headerlink" title="ssserver服务的pm2配置"></a>ssserver服务的pm2配置</h2><p>先找个目录 创建配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/ss</span><br><span class="line">vim ~/ss/pm2.json</span><br></pre></td></tr></table></figure>
+<p>配置如下：<strong>注意路径</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"apps"</span>:</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"ssserver"</span>,</span><br><span class="line">      <span class="attr">"cwd"</span>: <span class="string">"/root/.nvm/versions/node/版本/lib/node_modules/shadowsocks/bin"</span>,</span><br><span class="line">      <span class="attr">"script"</span>: <span class="string">"./ssserver"</span>,</span><br><span class="line">      <span class="attr">"exec_interpreter"</span>: <span class="string">"bash"</span>,</span><br><span class="line">      <span class="attr">"exec_mode"</span> : <span class="string">"cluster_mode"</span>,</span><br><span class="line">      <span class="attr">"autorestart"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>命令以&amp;表示后台运行，否则会在终端关闭后停止运行  </p>
+<p>如果找不到路径的话 可以用<code>which ssserver</code>查看，<code>&quot;cwd&quot;</code>的路径即找到的路径的上级下的<code>lib/node_modules/shadowsocks/bin</code></p>
 </blockquote>
-<p>查看后台运行的程序</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">jobs</span></span><br></pre></td></tr></table></figure>
-<p>使用-l可以看到PID</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">jobs</span> -l</span><br></pre></td></tr></table></figure>
-<p>关闭ssserver</p>
-<pre>kill <span style="color: #ff0000;">[pid]</span></pre>
-
-<blockquote>
-<p>[pid]是指上一步<code>jobs -l</code>查到的pid</p>
-</blockquote>
-<p>服务端搭建完成</p>
-<h2 id="Ubuntu开机自启"><a href="#Ubuntu开机自启" class="headerlink" title="Ubuntu开机自启"></a>Ubuntu开机自启</h2><p>更新中</p>
-<h2 id="CentOS开机自启"><a href="#CentOS开机自启" class="headerlink" title="CentOS开机自启"></a>CentOS开机自启</h2><p>想了解CentOS如何设置开机自启请查看另一篇博文<br>《 <a href="/server/239.html">shadowsocks如何设置开机自启</a> 》</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> ssserver</span><br><span class="line"><span class="comment"># 返回结果如 /root/.nvm/versions/node/v11.15.0/bin/ssserver</span></span><br><span class="line"><span class="comment"># 那么需要填写的目录即为 /root/.nvm/versions/node/v11.15.0/lib/node_modules/shadowsocks/bin</span></span><br></pre></td></tr></table></figure>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>运行pm2 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start ~/ss/pm2.json</span><br></pre></td></tr></table></figure>
+<p>查看状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 monit</span><br><span class="line"><span class="comment"># ctrl + c 关闭</span></span><br></pre></td></tr></table></figure>
+<p>重载(修改配置后需要重载)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 reload ssserver</span><br></pre></td></tr></table></figure></p>
 <h2 id="客户端设置"><a href="#客户端设置" class="headerlink" title="客户端设置"></a>客户端设置</h2><p>在App Stroe / Google Play Store 可以下载到客户端，  </p>
 <p>github下载地址：  </p>
 <p><a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="noopener">shadowsocks android</a>  </p>
@@ -154,8 +161,10 @@
 <blockquote>
 <p>默认会自动绕过大陆网站，只代理需要代理的网站，该配置文件也可以自定义</p>
 </blockquote>
-<p><img src="http://www.jeay.net/wp-content/uploads/2017/02/ishadowsocks.jpg" alt="科学上网"></p>
-  
+<p><img src="/img/ishadowsocks.jpg" alt="科学上网"></p>
+<hr>
+<p><strong>下面的方法不再推荐使用</strong></p>
+<div style="color: #f0f0f0;"><br>## 运行ssserver服务<br><br><del>后台运行ssserver</del><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver &gt;/dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure><br><br><del>查看后台运行的程序</del><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">jobs</span></span><br></pre></td></tr></table></figure><br><br>使用-l可以看到PID<br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">jobs</span> -l</span><br></pre></td></tr></table></figure><br><br>关闭ssserver<br><br><pre>kill <span style="color: #ff0000;">[pid]</span></pre><br><br>&gt;[pid]是指上一步<code>jobs -l</code>查到的pid<br><br>服务端搭建完成<br><br>## Ubuntu开机自启<br><br>更新中<br><br>## CentOS开机自启<br>想了解CentOS如何设置开机自启请查看另一篇博文<br>《 <a href="/server/239.html">shadowsocks如何设置开机自启</a> 》<br></div>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -168,7 +177,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/科学上网/">科学上网</a><a href="/tags/shadowsocks/">shadowsocks</a><a href="/tags/nodejs/">nodejs</a>
+  <span></span> <a href="/tags/nodejs/">nodejs</a><a href="/tags/科学上网/">科学上网</a><a href="/tags/shadowsocks/">shadowsocks</a>
   </div>
 
 </div>
@@ -255,7 +264,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">1.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装、配置shadowsocks服务端"><span class="toc-number">2.</span> <span class="toc-text">安装、配置shadowsocks服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行ssserver服务"><span class="toc-number">3.</span> <span class="toc-text">运行ssserver服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu开机自启"><span class="toc-number">4.</span> <span class="toc-text">Ubuntu开机自启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS开机自启"><span class="toc-number">5.</span> <span class="toc-text">CentOS开机自启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端设置"><span class="toc-number">6.</span> <span class="toc-text">客户端设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个配置"><span class="toc-number">6.1.</span> <span class="toc-text">新建一个配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#填写信息"><span class="toc-number">6.2.</span> <span class="toc-text">填写信息</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">1.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装、配置shadowsocks服务端"><span class="toc-number">2.</span> <span class="toc-text">安装、配置shadowsocks服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装pm2"><span class="toc-number">3.</span> <span class="toc-text">安装pm2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssserver服务的pm2配置"><span class="toc-number">4.</span> <span class="toc-text">ssserver服务的pm2配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行"><span class="toc-number">5.</span> <span class="toc-text">运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端设置"><span class="toc-number">6.</span> <span class="toc-text">客户端设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个配置"><span class="toc-number">6.1.</span> <span class="toc-text">新建一个配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#填写信息"><span class="toc-number">6.2.</span> <span class="toc-text">填写信息</span></a></li></ol></li></ol>
  
   </div>
 
@@ -269,7 +278,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		<ul>
 		
 		  
-			<li><a href="/categories/javascript/" title="javascript">javascript<sup>1</sup></a></li>
+			<li><a href="/categories/front/" title="front">front<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>2</sup></a></li>
 		  
 		
 		  
@@ -277,11 +290,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/server/" title="server">server<sup>17</sup></a></li>
+			<li><a href="/categories/server/" title="server">server<sup>19</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/tools/" title="tools">tools<sup>5</sup></a></li>
+			<li><a href="/categories/tools/" title="tools">tools<sup>7</sup></a></li>
 		  
 		
 		  
@@ -306,7 +319,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/运维/" title="运维">运维<sup>7</sup></a></li>
+				<li><a href="/tags/运维/" title="运维">运维<sup>8</sup></a></li>
 			
 		
 			
@@ -318,23 +331,31 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>3</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/mysql/" title="mysql">mysql<sup>3</sup></a></li>
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
 			
 		
 			
@@ -346,15 +367,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>2</sup></a></li>
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
+				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
 			
 		
 			
@@ -362,23 +379,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
+				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/eval/" title="eval">eval<sup>1</sup></a></li>
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -387,7 +400,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
 </div>
 
 
@@ -395,7 +408,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="http://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -404,7 +417,43 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
         
           <li>
             
-            	<a href="http://www.jeay.net" target="_blank" title="Jeay&#39;s Blog">Jeay&#39;s Blog</a>
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/2018/cerbot.html" target="_blank" title="Cerbot">Cerbot</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.londy.cc/" target="_blank" title="Londy">Londy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/" target="_blank" title="技术团队Blog">技术团队Blog</a>
             
           </li>
         
@@ -447,7 +496,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

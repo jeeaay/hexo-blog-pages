@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
     <title>Jeay&#39;s blog</title>
@@ -13,7 +13,7 @@
     
     <meta property="og:type" content="website">
 <meta property="og:title" content="Jeay&#39;s blog">
-<meta property="og:url" content="http://blog.jeay.net/index.html">
+<meta property="og:url" content="https://www.jeay.net/index.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
 <meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
@@ -29,7 +29,7 @@
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
   <body>
     <header>
       
@@ -56,7 +56,7 @@
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:blog.jeay.net">
+						<input type="hidden" name="q" value="site:www.jeay.net">
 					</form>
 					
 					</li>
@@ -70,20 +70,15 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/90.html" title="Linux Apache 服务显示中文GBK/GB2312乱码" itemprop="url">
+    <a href="/server/mongodump.html" title="Mongodb 备份和恢复" itemprop="url">
   
-    <h1 itemprop="name">Linux Apache 服务显示中文GBK/GB2312乱码</h1>
+    <h1 itemprop="name">Mongodb 备份和恢复</h1>
     
      
-           <p itemprop="description" >一个GB2312编码的网站，设置正确，上线后发现中文都乱码了，原来是APACHE服务器设置有点问题：
-修改下APACHE配置即可解决：
-1vim /etc/httpd/conf/httpd.conf
-加上一句话：
-1AddDefaultCharset GB2312
-保存并重启服务</p>
-        
+      <p itemprop="description" >使用备份(mongodump)与恢复(mongorestore)，导出MogoDB数据内容，用于数据迁移、备份</p>
+      
     
-    <time datetime="2018-05-10T08:51:14.000Z" itemprop="datePublished">2018-05-10</time>
+    <time datetime="2019-10-17T01:51:40.000Z" itemprop="datePublished">2019-10-17</time>
   </a>
 </section>
 
@@ -95,7 +90,178 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/PHP_disable_eval.html" title="PHP5 &amp; PHP7 禁用 eval" itemprop="url">
+    <a href="/tools/zsh.html" title="安装zsh和oh-my-zsh zsh常用插件介绍" itemprop="url">
+  
+    <h1 itemprop="name">安装zsh和oh-my-zsh zsh常用插件介绍</h1>
+    
+     
+           <p itemprop="description" >安装zsh123456# 安装zshapt install -y zsh# 切换默认SHELLchsh -s /bin/zsh# 使用zshzsh
+如果没有git，需要安装1apt install -y git
+安装oh-my-zsh1wget https://github.co</p>
+        
+    
+    <time datetime="2019-09-02T02:25:00.000Z" itemprop="datePublished">2019-09-02</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/front/prop-checked.html" title="jQuery操作如何checked？解决attr/removeAttr无法修改单选的问题" itemprop="url">
+  
+    <h1 itemprop="name">jQuery操作如何checked？解决attr/removeAttr无法修改单选的问题</h1>
+    
+     
+      <p itemprop="description" >jquery中使用prop操作属性来 解决attr/removeAttr无法修改单选的问题，简介prop和removeProp方法</p>
+      
+    
+    <time datetime="2019-08-27T02:55:43.000Z" itemprop="datePublished">2019-08-27</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/front/integrity.html" title="在HTML上添加integrity，验证js和css的hash，防止篡改" itemprop="url">
+  
+    <h1 itemprop="name">在HTML上添加integrity，验证js和css的hash，防止篡改</h1>
+    
+     
+           <p itemprop="description" >近期遇到了一些运营商劫持、木马入侵等情况，会篡改页面中引入的js文件，跳转到涉赌网站，或者领取支付宝红包、打开淘宝京东推广页面等等情况。并且具有很强的隐蔽性，非搜索引擎进入的流量不会跳转，PC客户端不会跳转。
+使用integrity可以有效避免篡改，主要是能及时帮助我们发现被篡改</p>
+        
+    
+    <time datetime="2019-08-15T08:57:23.000Z" itemprop="datePublished">2019-08-15</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/tinyproxy.html" title="使用tinyproxy搭建http代理" itemprop="url">
+  
+    <h1 itemprop="name">使用tinyproxy搭建http代理</h1>
+    
+     
+           <p itemprop="description" >安装Ubuntu/Debian
+1apt install -y tinyproxy
+CentOS
+1yum install -y tinyproxy
+如果CentOS提示找不到
+1No package tinyproxy available
+先查看下系统版本
+1cat /etc/</p>
+        
+    
+    <time datetime="2019-08-14T08:53:20.000Z" itemprop="datePublished">2019-08-14</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/mysql-export-import.html" title="MySQL导入和导出SQL文件" itemprop="url">
+  
+    <h1 itemprop="name">MySQL导入和导出SQL文件</h1>
+    
+     
+      <p itemprop="description" >使用mysqldump导出sql文件，用来备份数据库， 使用mysql的source执行sql文件，导入备份的数据</p>
+      
+    
+    <time datetime="2018-12-20T05:50:21.000Z" itemprop="datePublished">2018-12-20</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/js/js-reg-all-src.html" title="使用js正则匹配所有的图片路径" itemprop="url">
+  
+    <h1 itemprop="name">使用js正则匹配所有的图片路径</h1>
+    
+     
+      <p itemprop="description" >如何使用js找出段字符串中所有的图片路径</p>
+      
+    
+    <time datetime="2018-12-08T03:36:11.000Z" itemprop="datePublished">2018-12-08</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/tools/qiniu-custom-domain.html" title="七牛云自定义域名配置" itemprop="url">
+  
+    <h1 itemprop="name">七牛云自定义域名配置</h1>
+    
+     
+           <p itemprop="description" >我的博客一直使用的是七牛云对象存储作为图床，免费版可以使用每月10G流量，对于一个小的博客站来说足够了。近期发现七牛云的政策调整（测试域名使用规范），免费测试域名不再长期使用，而是只有一个月有效期。邮件内容：
+为了不用每个月都更新下博客里的链接，我添加了自定义域名(我使用的是二级</p>
+        
+    
+    <time datetime="2018-10-25T14:17:14.000Z" itemprop="datePublished">2018-10-25</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/cerbot-for-lets-encrypt.html" title="简单申请ssl证书部署https" itemprop="url">
+  
+    <h1 itemprop="name">简单申请ssl证书部署https</h1>
+    
+     
+      <p itemprop="description" >快速让你的网站https化。使用简单的几步，自动化部署https 以及续期。基于Cerbot工具，操作极其简单，主要介绍ubuntu + Nginx的步骤，其他系统也有类似方式。</p>
+      
+    
+    <time datetime="2018-03-22T11:42:47.000Z" itemprop="datePublished">2018-03-22</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/PHP_disable_eval.html" title="PHP5 &amp; PHP7 禁用 eval" itemprop="url">
   
     <h1 itemprop="name">PHP5 &amp; PHP7 禁用 eval</h1>
     
@@ -112,217 +278,9 @@
 
 
 
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/38.html" title="CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压" itemprop="url">
-  
-    <h1 itemprop="name">CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压</h1>
-    
-     
-           <p itemprop="description" >##添加网站
-新建网站目录
-使用mkdir 目录名创建目录，例如
-1mkdir /data/wwwroot/abc/aaa.com
-修改权限
-1chmod -R 777 /data/wwwroot/abc/aaa.com
-绑定域名
-1vim /etc/httpd/conf/htt</p>
-        
-    
-    <time datetime="2018-01-29T08:36:23.000Z" itemprop="datePublished">2018-01-29</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/tools/git入门.html" title="git入门" itemprop="url">
-  
-    <h1 itemprop="name">git入门</h1>
-    
-     
-           <p itemprop="description" >安装现在很多系统都已经自带git客户端了，可以在你的终端输入git试试  
-Debian/Ubuntu 安装git
-sudo apt install git
-Redhat/Centos 安装git
-yum install git
-windows下推荐使用Cmder，下载完整版（D</p>
-        
-    
-    <time datetime="2017-11-07T06:03:49.000Z" itemprop="datePublished">2017-11-07</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/front/markdown基本语法.html" title="markdown基本语法" itemprop="url">
-  
-    <h1 itemprop="name">markdown基本语法</h1>
-    
-     
-           <p itemprop="description" >换行两个空格+回车，表示换行（一个标签）
-斜体和粗体使用 * 和 ** 表示斜体和粗体。
-示例：
-1这是 *斜体*，这是 **粗体**。
-分级标题你在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。
-示例：
-1234# </p>
-        
-    
-    <time datetime="2017-10-16T03:07:34.000Z" itemprop="datePublished">2017-10-16</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/server/212.html" title="在Linux服务器上搭建基于nodejs的shadowsocks服务端" itemprop="url">
-  
-    <h1 itemprop="name">在Linux服务器上搭建基于nodejs的shadowsocks服务端</h1>
-    
-     
-           <p itemprop="description" >shadowsocks客户端可以简单的运行在linux、windows、mac、ios、Android系统中，免root、免越狱，一次配置好以后一键穿墙，相当的实用，这里介绍下在Linux上搭建服务端。
-安装nodejs这一步方法很多，可以自行参考搜索引擎，已经安装过nodejs</p>
-        
-    
-    <time datetime="2017-10-11T03:38:28.000Z" itemprop="datePublished">2017-10-11</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/tools/hexo-blog.html" title="使用hexo在github上搭建免费博客" itemprop="url">
-  
-    <h1 itemprop="name">使用hexo在github上搭建免费博客</h1>
-    
-     
-           <p itemprop="description" >命令速记12345678# 写博客hexo n# 生成静态页面hexo g# 部署hexo d# 本地测试hexo s
-前置技能必备技能：
-git和github使用（Level 1）
-markdown（Level 2）
-
-进阶技能：
-nodejs
-npm
-ejs
-sass
-yml</p>
-        
-    
-    <time datetime="2017-09-26T06:13:17.000Z" itemprop="datePublished">2017-09-26</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/js/install-nodejs.html" title="Windows/Linux下安装nodejs" itemprop="url">
-  
-    <h1 itemprop="name">Windows/Linux下安装nodejs</h1>
-    
-     
-           <p itemprop="description" >下载NodeJs最近的版本已经开始支持ES6（ES2015），强烈建议使用8.x版本  
-下载地址：Node.js  
-Windows安装Windows一直下一步就可以了 默认选择添加到PATH，需要管理员权限，不然就得自己手动添加了  
-安装完毕后在终端输入node -v显示当</p>
-        
-    
-    <time datetime="2017-09-26T05:15:11.000Z" itemprop="datePublished">2017-09-26</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/front/sass语法入门.html" title="sass语法入门" itemprop="url">
-  
-    <h1 itemprop="name">sass语法入门</h1>
-    
-     
-           <p itemprop="description" >sass 念： [sæs]  
-相关准备工作，参考在vscode上使用SASS  
-1. 文件
-sass有两种后缀名文件：
-
-
-一种后缀名为sass，不使用大括号和分号；
-
-
-另一种和我们平时写的css文件格式差不多，使用大括号和分号。
-
-两种文件除了大括号和分号以外没什么区别，</p>
-        
-    
-    <time datetime="2017-09-18T06:08:28.000Z" itemprop="datePublished">2017-09-18</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/front/在vscode上使用SASS.html" title="在vscode上使用SASS" itemprop="url">
-  
-    <h1 itemprop="name">在vscode上使用SASS</h1>
-    
-     
-           <p itemprop="description" >不需要rubby 不需要node-sass，使用VSCode超简单的开发SASS
-让你的VSCode支持SASS，需要两个插件：
-1. Sass简介让VSCode支持SASS自动补全和代码片段（snippets）
-使用方法自动补全类似css
-常用代码片段： 
-var mixin </p>
-        
-    
-    <time datetime="2017-09-15T09:29:32.000Z" itemprop="datePublished">2017-09-15</time>
-  </a>
-</section>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix unexpand">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
@@ -338,7 +296,11 @@ var mixin </p>
 		<ul>
 		
 		  
-			<li><a href="/categories/javascript/" title="javascript">javascript<sup>1</sup></a></li>
+			<li><a href="/categories/front/" title="front">front<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>2</sup></a></li>
 		  
 		
 		  
@@ -346,11 +308,11 @@ var mixin </p>
 		  
 		
 		  
-			<li><a href="/categories/server/" title="server">server<sup>17</sup></a></li>
+			<li><a href="/categories/server/" title="server">server<sup>19</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/tools/" title="tools">tools<sup>5</sup></a></li>
+			<li><a href="/categories/tools/" title="tools">tools<sup>7</sup></a></li>
 		  
 		
 		  
@@ -375,7 +337,7 @@ var mixin </p>
 			
 		
 			
-				<li><a href="/tags/运维/" title="运维">运维<sup>7</sup></a></li>
+				<li><a href="/tags/运维/" title="运维">运维<sup>8</sup></a></li>
 			
 		
 			
@@ -387,23 +349,31 @@ var mixin </p>
 			
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>3</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/mysql/" title="mysql">mysql<sup>3</sup></a></li>
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
 			
 		
 			
@@ -415,15 +385,11 @@ var mixin </p>
 			
 		
 			
-				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>2</sup></a></li>
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
+				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
 			
 		
 			
@@ -431,23 +397,19 @@ var mixin </p>
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
+				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/eval/" title="eval">eval<sup>1</sup></a></li>
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -456,7 +418,7 @@ var mixin </p>
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
 </div>
 
 
@@ -464,7 +426,7 @@ var mixin </p>
     <p class="asidetitle">
         Steam
     </p>
-    <a href="http://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -473,7 +435,43 @@ var mixin </p>
         
           <li>
             
-            	<a href="http://www.jeay.net" target="_blank" title="Jeay&#39;s Blog">Jeay&#39;s Blog</a>
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/2018/cerbot.html" target="_blank" title="Cerbot">Cerbot</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.londy.cc/" target="_blank" title="Londy">Londy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/" target="_blank" title="技术团队Blog">技术团队Blog</a>
             
           </li>
         
@@ -516,7 +514,7 @@ var mixin </p>
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

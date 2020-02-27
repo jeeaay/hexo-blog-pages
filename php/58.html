@@ -1,28 +1,28 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>PHP生成随机字符串 | Jeay&#39;s blog</title>
+    <title>PHP JS生成随机字符串 | Jeay&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jeay">
     
 
     
-    <meta name="description" content="源码如下： 12345678910111213&amp;lt;?php function generate_password( $length = 16 ) &amp;#123;    $chars = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&apos;;    $password = &apos;&apos;;    for ( $i = 0; $i &amp;">
-<meta name="keywords" content="php">
+    <meta name="description" content="示例   JS123456789function generate_password(length = 16) &amp;#123;    let chars = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&apos;    let password = &apos;&apos;    for (let i = 0; i &amp;lt; length; i+">
+<meta name="keywords" content="php,js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP生成随机字符串">
-<meta property="og:url" content="http://blog.jeay.net/php/58.html">
+<meta property="og:title" content="PHP JS生成随机字符串">
+<meta property="og:url" content="https://www.jeay.net/php/58.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:description" content="源码如下： 12345678910111213&amp;lt;?php function generate_password( $length = 16 ) &amp;#123;    $chars = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&apos;;    $password = &apos;&apos;;    for ( $i = 0; $i &amp;">
+<meta property="og:description" content="示例   JS123456789function generate_password(length = 16) &amp;#123;    let chars = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&apos;    let password = &apos;&apos;    for (let i = 0; i &amp;lt; length; i+">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-05-10T07:33:37.330Z">
+<meta property="og:updated_time" content="2018-05-24T02:29:00.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP生成随机字符串">
-<meta name="twitter:description" content="源码如下： 12345678910111213&amp;lt;?php function generate_password( $length = 16 ) &amp;#123;    $chars = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&apos;;    $password = &apos;&apos;;    for ( $i = 0; $i &amp;">
+<meta name="twitter:title" content="PHP JS生成随机字符串">
+<meta name="twitter:description" content="示例   JS123456789function generate_password(length = 16) &amp;#123;    let chars = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&apos;    let password = &apos;&apos;    for (let i = 0; i &amp;lt; length; i+">
 
     
     
@@ -34,7 +34,7 @@
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
   <body>
     <header>
       
@@ -61,7 +61,7 @@
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:blog.jeay.net">
+						<input type="hidden" name="q" value="site:www.jeay.net">
 					</form>
 					
 					</li>
@@ -76,7 +76,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/php/58.html" title="PHP生成随机字符串" itemprop="url">PHP生成随机字符串</a>
+      <a href="/php/58.html" title="PHP JS生成随机字符串" itemprop="url">PHP JS生成随机字符串</a>
   </h1>
   <p class="article-author">By
        
@@ -89,15 +89,11 @@
 </header>
 	<div class="article-content">
 		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		
-			
-		
-		</div>
-		
-		<p>源码如下：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generate_password</span><span class="params">( $length = <span class="number">16</span> )</span> </span>&#123;</span><br><span class="line">    $chars = <span class="string">'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'</span>;</span><br><span class="line">    $password = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span> ( $i = <span class="number">0</span>; $i &lt; $length; $i++ ) </span><br><span class="line">    &#123;</span><br><span class="line">        $password .= $chars[ mt_rand(<span class="number">0</span>, strlen($chars) - <span class="number">1</span>) ];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $password;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">echo</span> generate_password(<span class="number">16</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+		<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><div id="psw" onclick="onGenerate()" style="cursor: pointer;background-color:#eee;padding:8px 20px;"></div></p>
+<script src="/download/58-generate_password.js"></script>
+
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generate_password</span>(<span class="params">length = <span class="number">16</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> chars = <span class="string">'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'</span></span><br><span class="line">    <span class="keyword">let</span> password = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        password += chars[ <span class="built_in">Number</span>.parseInt(chars.length * <span class="built_in">Math</span>.random()) ]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> password</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(generate_password(<span class="number">16</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generate_password</span><span class="params">( $length = <span class="number">16</span> )</span> </span>&#123;</span><br><span class="line">    $chars = <span class="string">'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'</span>;</span><br><span class="line">    $password = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span> ( $i = <span class="number">0</span>; $i &lt; $length; $i++ ) </span><br><span class="line">    &#123;</span><br><span class="line">        $password .= $chars[ mt_rand(<span class="number">0</span>, strlen($chars) - <span class="number">1</span>) ];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $password;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">echo</span> generate_password(<span class="number">16</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -111,7 +107,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/php/">php</a>
+  <span></span> <a href="/tags/php/">php</a><a href="/tags/js/">js</a>
   </div>
 
 </div>
@@ -157,7 +153,7 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/76.html" title="Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录">
+ <a href="/server/76.html" title="Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录">
   <strong>上一篇：</strong><br/>
   <span>
   Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录</span>
@@ -166,9 +162,9 @@
 
 
 <div class="next">
-<a href="/34.html"  title="CentOS修改mysql数据存储位置">
+<a href="/server/38.html"  title="CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压">
  <strong>下一篇：</strong><br/> 
- <span>CentOS修改mysql数据存储位置
+ <span>CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压
 </span>
 </a>
 </div>
@@ -195,13 +191,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
- 
- 
- 
-  </div>
-
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
@@ -212,7 +201,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		<ul>
 		
 		  
-			<li><a href="/categories/javascript/" title="javascript">javascript<sup>1</sup></a></li>
+			<li><a href="/categories/front/" title="front">front<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>2</sup></a></li>
 		  
 		
 		  
@@ -220,11 +213,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/server/" title="server">server<sup>17</sup></a></li>
+			<li><a href="/categories/server/" title="server">server<sup>19</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/tools/" title="tools">tools<sup>5</sup></a></li>
+			<li><a href="/categories/tools/" title="tools">tools<sup>7</sup></a></li>
 		  
 		
 		  
@@ -249,7 +242,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/运维/" title="运维">运维<sup>7</sup></a></li>
+				<li><a href="/tags/运维/" title="运维">运维<sup>8</sup></a></li>
 			
 		
 			
@@ -261,23 +254,31 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>3</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/mysql/" title="mysql">mysql<sup>3</sup></a></li>
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
 			
 		
 			
@@ -289,15 +290,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>2</sup></a></li>
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
+				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
 			
 		
 			
@@ -305,23 +302,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
+				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/eval/" title="eval">eval<sup>1</sup></a></li>
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -330,7 +323,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
 </div>
 
 
@@ -338,7 +331,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="http://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -347,7 +340,43 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
         
           <li>
             
-            	<a href="http://www.jeay.net" target="_blank" title="Jeay&#39;s Blog">Jeay&#39;s Blog</a>
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/2018/cerbot.html" target="_blank" title="Cerbot">Cerbot</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.londy.cc/" target="_blank" title="Londy">Londy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/" target="_blank" title="技术团队Blog">技术团队Blog</a>
             
           </li>
         
@@ -390,7 +419,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		
@@ -442,8 +471,6 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
