@@ -4,7 +4,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>使用acme申请aliyun平台的AccessKey，申请免费泛域名证书 | Jeay&#39;s blog</title>
+    <title>使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书 | Jeay&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jeay">
@@ -14,7 +14,7 @@
     <meta name="description" content="申请阿里云的AccessKey登陆，进入AccessKey管理登陆阿里云账户，进入控制台 鼠标移动到 右上角，你的头像上，出现的下拉菜单里找到 AccessKey管理  找不到的也可以 点击这里直达 安全提示如果你是第一次使用 AccessKey管理 ， 会有安全提示  如果使用主账户创建AccessKey，将拥有该账户的全部权限 所以安全起见，推荐创建一个子账户进行后续操作 如果选 开始使用子账">
 <meta name="keywords" content="运维,nginx,ssl,免费证书,阿里云">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用acme申请aliyun平台的AccessKey，申请免费泛域名证书">
+<meta property="og:title" content="使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书">
 <meta property="og:url" content="https://www.jeay.net/server/acme-aliyun-cer.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
 <meta property="og:description" content="申请阿里云的AccessKey登陆，进入AccessKey管理登陆阿里云账户，进入控制台 鼠标移动到 右上角，你的头像上，出现的下拉菜单里找到 AccessKey管理  找不到的也可以 点击这里直达 安全提示如果你是第一次使用 AccessKey管理 ， 会有安全提示  如果使用主账户创建AccessKey，将拥有该账户的全部权限 所以安全起见，推荐创建一个子账户进行后续操作 如果选 开始使用子账">
@@ -29,9 +29,9 @@
 <meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/8.jpg">
 <meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/9.jpg">
 <meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/10.jpg">
-<meta property="og:updated_time" content="2020-04-29T03:02:34.815Z">
+<meta property="og:updated_time" content="2020-04-29T03:12:18.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用acme申请aliyun平台的AccessKey，申请免费泛域名证书">
+<meta name="twitter:title" content="使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书">
 <meta name="twitter:description" content="申请阿里云的AccessKey登陆，进入AccessKey管理登陆阿里云账户，进入控制台 鼠标移动到 右上角，你的头像上，出现的下拉菜单里找到 AccessKey管理  找不到的也可以 点击这里直达 安全提示如果你是第一次使用 AccessKey管理 ， 会有安全提示  如果使用主账户创建AccessKey，将拥有该账户的全部权限 所以安全起见，推荐创建一个子账户进行后续操作 如果选 开始使用子账">
 <meta name="twitter:image" content="http://cdn.jeay.net/2020/acme_aliyun/1.jpg">
 
@@ -87,7 +87,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/server/acme-aliyun-cer.html" title="使用acme申请aliyun平台的AccessKey，申请免费泛域名证书" itemprop="url">使用acme申请aliyun平台的AccessKey，申请免费泛域名证书</a>
+      <a href="/server/acme-aliyun-cer.html" title="使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书" itemprop="url">使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书</a>
   </h1>
   <p class="article-author">By
        
@@ -103,7 +103,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请阿里云的AccessKey"><span class="toc-number">1.</span> <span class="toc-text">申请阿里云的AccessKey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登陆，进入AccessKey管理"><span class="toc-number">1.1.</span> <span class="toc-text">登陆，进入AccessKey管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全提示"><span class="toc-number">1.2.</span> <span class="toc-text">安全提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子账户创建"><span class="toc-number">1.3.</span> <span class="toc-text">子账户创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主账户创建AccessKey"><span class="toc-number">1.4.</span> <span class="toc-text">主账户创建AccessKey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装acme"><span class="toc-number">2.</span> <span class="toc-text">安装acme</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置AccessKey-ID和AccessKey-Secret"><span class="toc-number">3.</span> <span class="toc-text">配置AccessKey ID和AccessKey Secret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用acme申请证书"><span class="toc-number">4.</span> <span class="toc-text">使用acme申请证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx配置证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx配置证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动续期"><span class="toc-number">6.</span> <span class="toc-text">自动续期</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请阿里云的AccessKey"><span class="toc-number">1.</span> <span class="toc-text">申请阿里云的AccessKey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登陆，进入AccessKey管理"><span class="toc-number">1.1.</span> <span class="toc-text">登陆，进入AccessKey管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全提示"><span class="toc-number">1.2.</span> <span class="toc-text">安全提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子账户创建"><span class="toc-number">1.3.</span> <span class="toc-text">子账户创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主账户创建AccessKey"><span class="toc-number">1.4.</span> <span class="toc-text">主账户创建AccessKey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装acme-sh"><span class="toc-number">2.</span> <span class="toc-text">安装acme.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置AccessKey-ID和AccessKey-Secret"><span class="toc-number">3.</span> <span class="toc-text">配置AccessKey ID和AccessKey Secret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用acme申请证书"><span class="toc-number">4.</span> <span class="toc-text">使用acme申请证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx配置证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx配置证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动续期"><span class="toc-number">6.</span> <span class="toc-text">自动续期</span></a></li></ol>
 		
 		</div>
 		
@@ -141,8 +141,8 @@
 <p>创建AccessKey</p>
 <p><img src="http://cdn.jeay.net/2020/acme_aliyun/10.jpg" alt="显示AccessKey"></p>
 <p>点击可以看见<code>AccessKey ID</code>和<code>AccessKey Secret</code>，也可以点<strong>保存AK信息</strong>下载下来，注意：只会显示一次，如果没保存，可以删除后重新创建</p>
-<h2 id="安装acme"><a href="#安装acme" class="headerlink" title="安装acme"></a>安装acme</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt install  -y curl cron socat</span><br><span class="line">curl https://get.acme.sh | sh</span><br></pre></td></tr></table></figure>
-<p>将会安装到用户目录下的<code>.acme</code></p>
+<h2 id="安装acme-sh"><a href="#安装acme-sh" class="headerlink" title="安装acme.sh"></a>安装acme.sh</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt install  -y curl cron socat</span><br><span class="line">curl https://get.acme.sh | sh</span><br></pre></td></tr></table></figure>
+<p>将会安装到用户目录下的<code>.acme.sh</code></p>
 <h2 id="配置AccessKey-ID和AccessKey-Secret"><a href="#配置AccessKey-ID和AccessKey-Secret" class="headerlink" title="配置AccessKey ID和AccessKey Secret"></a>配置AccessKey ID和AccessKey Secret</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export Ali_Key=&quot;刚刚的AccessKey ID&quot;</span><br><span class="line">export Ali_Secret=&quot;刚刚的AccessKey Secret&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="使用acme申请证书"><a href="#使用acme申请证书" class="headerlink" title="使用acme申请证书"></a>使用acme申请证书</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --issue --dns dns_ali -d lmzg.com -d *.lmzg.com</span><br></pre></td></tr></table></figure>
 <p><code>--dns dns_ali</code>是指使用阿里云的dns验证</p>
@@ -151,11 +151,9 @@
 <h2 id="Nginx配置证书"><a href="#Nginx配置证书" class="headerlink" title="Nginx配置证书"></a>Nginx配置证书</h2><blockquote>
 <p>这里以刚刚申请的lmzg.com的证书为例，请注意实际路径</p>
 </blockquote>
-<p>server {<br>    listen              443 ssl;<br>    server_name         <a href="http://www.lmzg.com" target="_blank" rel="noopener">www.lmzg.com</a> lmzg.com;<br>    root                /wwwroot/lmzg/wwwlmzgcom;<br>    ssl                 on;<br>    ssl_certificate     /root/.acme.sh/lmzg.com/fullchain.cer;<br>    ssl_certificate_key /root/.acme.sh/lmzg.com/lmzg.com.key;</p>
-<pre><code># 省略了其他配置
-</code></pre><p>}</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>              <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span>         www.lmzg.com lmzg.com;</span><br><span class="line">    <span class="attribute">root</span>                /wwwroot/lmzg/wwwlmzgcom;</span><br><span class="line">    <span class="attribute">ssl</span>                 <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">ssl_certificate</span>     /root/.acme.sh/lmzg.com/fullchain.cer;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /root/.acme.sh/lmzg.com/lmzg.com.key;</span><br><span class="line">    <span class="comment"># 省略了其他配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>需要注意，<code>ssl_certificate</code>需要指定为<code>fullchain.cer</code>而不是<code>lmzg.com.cer</code></p>
-<h2 id="自动续期"><a href="#自动续期" class="headerlink" title="自动续期"></a>自动续期</h2><p>在前面的安装<code>.acme</code>步骤中，已经设置了定时续期，使用<code>crontab -l</code> 查看</p>
+<h2 id="自动续期"><a href="#自动续期" class="headerlink" title="自动续期"></a>自动续期</h2><p>在前面的安装<code>acme.sh</code>步骤中，已经设置了定时续期，使用<code>crontab -l</code> 查看</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">11   0    *    *    * &quot;/root/.acme.sh&quot;/acme.sh --cron --home &quot;/root/.acme.sh&quot; &gt; /dev/null</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 7) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12)</span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
 <p>为了配合证书生效，需要重载Nginx才行，所以添加一个定时重载Nginx</p>
 <p>进行<code>crontab</code>编辑 <code>crontab -e</code></p>
@@ -163,7 +161,7 @@
 <p>意思是每月<code>20</code>日<code>15</code>时<code>4</code>分，将会重载一次Nginx，因为证书申请在19号，每月20日下午重载一次刚刚好，如果你懒得想那么多，每天执行一次就好了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">36 3 * * * /usr/sbin/service nginx reload  &gt; /dev/null</span><br></pre></td></tr></table></figure>
 <p>每天凌晨<code>3</code>时<code>36</code>分重载一次</p>
-<p>关于阿里云的acme泛域名申请到此结束</p>
+<p>关于阿里云的acme.sh泛域名申请到此结束</p>
 <blockquote>
 <p>tips: 如果有CDN，还需要将证书推送到CDN服务器上，这个也可以用阿里云的接口实现自动化</p>
 </blockquote>
@@ -259,7 +257,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请阿里云的AccessKey"><span class="toc-number">1.</span> <span class="toc-text">申请阿里云的AccessKey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登陆，进入AccessKey管理"><span class="toc-number">1.1.</span> <span class="toc-text">登陆，进入AccessKey管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全提示"><span class="toc-number">1.2.</span> <span class="toc-text">安全提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子账户创建"><span class="toc-number">1.3.</span> <span class="toc-text">子账户创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主账户创建AccessKey"><span class="toc-number">1.4.</span> <span class="toc-text">主账户创建AccessKey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装acme"><span class="toc-number">2.</span> <span class="toc-text">安装acme</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置AccessKey-ID和AccessKey-Secret"><span class="toc-number">3.</span> <span class="toc-text">配置AccessKey ID和AccessKey Secret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用acme申请证书"><span class="toc-number">4.</span> <span class="toc-text">使用acme申请证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx配置证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx配置证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动续期"><span class="toc-number">6.</span> <span class="toc-text">自动续期</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请阿里云的AccessKey"><span class="toc-number">1.</span> <span class="toc-text">申请阿里云的AccessKey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登陆，进入AccessKey管理"><span class="toc-number">1.1.</span> <span class="toc-text">登陆，进入AccessKey管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全提示"><span class="toc-number">1.2.</span> <span class="toc-text">安全提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子账户创建"><span class="toc-number">1.3.</span> <span class="toc-text">子账户创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主账户创建AccessKey"><span class="toc-number">1.4.</span> <span class="toc-text">主账户创建AccessKey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装acme-sh"><span class="toc-number">2.</span> <span class="toc-text">安装acme.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置AccessKey-ID和AccessKey-Secret"><span class="toc-number">3.</span> <span class="toc-text">配置AccessKey ID和AccessKey Secret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用acme申请证书"><span class="toc-number">4.</span> <span class="toc-text">使用acme申请证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx配置证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx配置证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动续期"><span class="toc-number">6.</span> <span class="toc-text">自动续期</span></a></li></ol>
  
   </div>
 
@@ -354,11 +352,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -382,11 +380,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
+				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
+				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
 			
 		
 		</ul>
