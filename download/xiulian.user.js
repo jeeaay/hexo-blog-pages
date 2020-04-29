@@ -10,6 +10,7 @@
 
 (function() {
     'use strict';
+    // 自动点击
     $('.fly-nav-user').append('<li class="layui-nav-item" id="auto_xiuliam" style="margin-left:10px"><button class="btn btn-default">开始自动修炼</button></li>')
     $('#auto_xiuliam').click(function() {
         if ($(this).find('button').html() == '开始自动修炼') {
@@ -24,7 +25,16 @@
             $(this).find('button').html('开始自动修炼')
         }
     })
-
+    // 自动升级
+    // setInterval(function(){
+    //     if($("button:contains(升级):first").prop('disabled') === false){
+    //         $("button:contains(升级):first").click()
+    //     }
+    // },5e3)
+    // 表格宽度
+    $('#info td:contains(名称)').width(100)
+    $('#info td:contains(能力)').width(330)
+    $('#info td:contains(升级需求)').width(240)
     // 单位显示
     // @param   String    num_str
     function fomatNum(num_str) {
@@ -85,11 +95,11 @@
     }
     $('.col-md-4.text-right').append('<p id="realinc">实际增量<span style="color:#9f43cf;"> 计算中... </span>每秒</p>')
     window.realinc_rec = Number.parseInt($('h1 span').html().replace(/,/g, ''))
-    console.log(realinc_rec)
+    // console.log(realinc_rec)
     setInterval(function(){
         // 记录值
         const now_rec = Number.parseInt($('h1 span').html().replace(/,/g, ''))
-        const inc = (now_rec - realinc_rec) / 5
+        const inc =  Number.parseInt((now_rec - realinc_rec) / 5)
         const inc_str = String(inc)
         $('#realinc span').html(inc_str)
         realinc_rec = now_rec
@@ -97,7 +107,7 @@
     $('#info span').each(function(){
         const h = $(this).html()
         if (/[\u4e00-\u9fa5]{4}(\d[\d,]+).*/.test(h)) {
-            console.log(h)
+            // console.log(h)
             const re_res = h.match(/([\u4e00-\u9fa5]+)(\d[\d,]+)(.+)/)
             if (re_res) {
                 const res = re_res[1] + '<span>' + re_res[2] + '</span>' + re_res[3]
