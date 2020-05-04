@@ -20,7 +20,7 @@
 <meta property="og:description" content="shadowsocks客户端可以简单的运行在linux、windows、mac、ios、Android系统中，免root、免越狱，一次配置好以后一键穿墙，相当的实用，这里介绍下在Linux上搭建服务端。 安装nodejs这一步方法很多，可以自行参考搜索引擎，已经安装过nodejs的话可以直接跳到第二步  参考文章：《Windows/Linux下安装nodejs》  安装、配置shadowsocks">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://www.jeay.net/img/ishadowsocks.jpg">
-<meta property="og:updated_time" content="2020-02-27T06:15:56.884Z">
+<meta property="og:updated_time" content="2020-05-04T01:40:53.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Linux服务器上搭建基于nodejs的shadowsocks服务端">
 <meta name="twitter:description" content="shadowsocks客户端可以简单的运行在linux、windows、mac、ios、Android系统中，免root、免越狱，一次配置好以后一键穿墙，相当的实用，这里介绍下在Linux上搭建服务端。 安装nodejs这一步方法很多，可以自行参考搜索引擎，已经安装过nodejs的话可以直接跳到第二步  参考文章：《Windows/Linux下安装nodejs》  安装、配置shadowsocks">
@@ -135,8 +135,10 @@
 <p>如果找不到路径的话 可以用<code>which ssserver</code>查看，<code>&quot;cwd&quot;</code>的路径即找到的路径的上级下的<code>lib/node_modules/shadowsocks/bin</code></p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> ssserver</span><br><span class="line"><span class="comment"># 返回结果如 /root/.nvm/versions/node/v11.15.0/bin/ssserver</span></span><br><span class="line"><span class="comment"># 那么需要填写的目录即为 /root/.nvm/versions/node/v11.15.0/lib/node_modules/shadowsocks/bin</span></span><br></pre></td></tr></table></figure>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>运行pm2 </p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>运行pm2</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start ~/ss/pm2.json</span><br></pre></td></tr></table></figure>
+<p>保存当前应用列表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
 <p>查看状态</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 monit</span><br><span class="line"><span class="comment"># ctrl + c 关闭</span></span><br></pre></td></tr></table></figure>
 <p>重载(修改配置后需要重载)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 reload ssserver</span><br></pre></td></tr></table></figure></p>
@@ -339,11 +341,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/前端/" title="前端">前端<sup>3</sup></a></li>
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>3</sup></a></li>
 			
 		
 			
@@ -387,11 +389,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
+				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
+				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
 			
 		
 		</ul>
