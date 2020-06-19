@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [Proxy]请求转发，服务器的请求转发到本地浏览器处理
 // @namespace       https://jeay.net
-// @version         1.0
+// @version         1.2
 // @description     该插件会将服务器的请求转发到本地浏览器执行，并返回数据给相关接口，需要配合相关服务器接口使用，不能单独运行，在不同的请求域名出现时会有安全提醒，请仔细其确认时本人的操作后再点击允许
 // @author          Jeay
 // @match           http://192.168.7.196:8000/*
@@ -23,7 +23,7 @@
                 // 开始创建查询，监控sessionStorage中是否有新任务
                 window.t = setInterval(function(){
                     console.log('没有收到任务，继续等待3秒')
-                    // tmk_proxy_quests需要前端事先存入好任务内容，数组结构，内容格式示例: [{id:1,url:'https://.....'},{...},.....]
+                    // tmk_proxy_quests需要前端事先存入好任务内容，数组结构，内容格式示例: [{id:1,url:'https://.....',msg:'想要给后台带去的消息'},{...},.....]
                     let quests = sessionStorage.getItem('tmk_proxy_quests')
                     if (quests && quests.length > 0) {
                         // 停止查询
@@ -37,12 +37,18 @@
         })
     })
     async function handleQuest(quests){
+        try {
+            quests = JSON.parse(quests)
+        } catch (error) {
+            alert('任务格式不正确')
+            return false
+        }
         for (const quest of quests) {
             console.log(quest)
             const res = await get_data(quest.url)
             if (res && res.length > 50) {
                 // 获取的数据发送到后端
-                send_data(quest.id, res)
+                send_data(quest.id, {response: res, msg: quest.msg})
             }
         }
     }
