@@ -70,6 +70,112 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
+    <a href="/front/sass语法入门.html" title="sass语法入门" itemprop="url">
+  
+    <h1 itemprop="name">sass语法入门</h1>
+    
+     
+           <p itemprop="description" >sass 念： [sæs]  
+相关准备工作，参考在vscode上使用SASS  
+1. 文件
+sass有两种后缀名文件：
+
+
+一种后缀名为sass，不使用大括号和分号；
+
+
+另一种和我们平时写的css文件格式差不多，使用大括号和分号。
+
+两种文件除了大括号和分号以外没什么区别，</p>
+        
+    
+    <time datetime="2017-09-18T06:08:28.000Z" itemprop="datePublished">2017-09-18</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/front/在vscode上使用SASS.html" title="在vscode上使用SASS" itemprop="url">
+  
+    <h1 itemprop="name">在vscode上使用SASS</h1>
+    
+     
+           <p itemprop="description" >不需要rubby 不需要node-sass，使用VSCode超简单的开发SASS
+让你的VSCode支持SASS，需要两个插件：
+1. Sass简介让VSCode支持SASS自动补全和代码片段（snippets）
+使用方法自动补全类似css
+常用代码片段： 
+var mixin </p>
+        
+    
+    <time datetime="2017-09-15T09:29:32.000Z" itemprop="datePublished">2017-09-15</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/tools/vscode常用插件.html" title="vscode常用插件" itemprop="url">
+  
+    <h1 itemprop="name">vscode常用插件</h1>
+    
+     
+           <p itemprop="description" >beautify简介：javascript, JSON, CSS, Sass, 和 HTML 格式化，使你的代码更容易阅读
+使用方法：Alt+Shift+F
+HTML Snippets简介：HTML5自动补全，添加了一些VSCode没有带的标签
+使用方法：直接安装即可
+演示：
+A</p>
+        
+    
+    <time datetime="2017-09-14T08:13:00.000Z" itemprop="datePublished">2017-09-14</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/272.html" title="解决Linux下中文文件乱码，无法下载" itemprop="url">
+  
+    <h1 itemprop="name">解决Linux下中文文件乱码，无法下载</h1>
+    
+     
+           <p itemprop="description" >安装convmvRedhat/CentOS
+1yum -y install convmv
+Debian/ubuntu
+1sudo apt install convmv
+转换文件名编码进入需要转码的文件目录下
+1convmv -f gbk -t utf-8 --notest *.d</p>
+        
+    
+    <time datetime="2017-05-04T09:54:13.000Z" itemprop="datePublished">2017-05-04</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
     <a href="/server/269.html" title="Ubuntu / Debian 安装 配置 LNMP环境 Nginx PHP7 MySQL MongoDB" itemprop="url">
   
     <h1 itemprop="name">Ubuntu / Debian 安装 配置 LNMP环境 Nginx PHP7 MySQL MongoDB</h1>
@@ -209,101 +315,9 @@ suhosin
 
 
 
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/php/100.html" title="Centos yum 安装php5.5" itemprop="url">
-  
-    <h1 itemprop="name">Centos yum 安装php5.5</h1>
-    
-     
-           <p itemprop="description" >首先卸载旧版本
-1yum remove php  php-*
-这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看）
-1rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
-安</p>
-        
-    
-    <time datetime="2015-07-13T07:24:53.000Z" itemprop="datePublished">2015-07-13</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/server/90.html" title="Linux Apache 服务显示中文GBK/GB2312乱码" itemprop="url">
-  
-    <h1 itemprop="name">Linux Apache 服务显示中文GBK/GB2312乱码</h1>
-    
-     
-           <p itemprop="description" >一个GB2312编码的网站，设置正确，上线后发现中文都乱码了，原来是APACHE服务器设置有点问题：
-修改下APACHE配置即可解决：
-1vim /etc/httpd/conf/httpd.conf
-加上一句话：
-1AddDefaultCharset GB2312
-保存并重启服务</p>
-        
-    
-    <time datetime="2015-03-18T08:51:14.000Z" itemprop="datePublished">2015-03-18</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/server/84.html" title="网站访问时出现同服务器的另一个网站？" itemprop="url">
-  
-    <h1 itemprop="name">网站访问时出现同服务器的另一个网站？</h1>
-    
-     
-           <p itemprop="description" >其实这个是由于没有绑定的域名解析到服务器后，服务器找不到对应域名的主机头，直接返回了该端口下的第一个网站内容。
-由于我们网站比较多，有时候管理员难免会忙不过来出现这种情况，我做了一个专门的错误页面，用于提醒管理员错误原因。
-这个错误页面利用了刚刚提到的“直接返回了该端口下的第一个</p>
-        
-    
-    <time datetime="2015-03-16T08:44:48.000Z" itemprop="datePublished">2015-03-16</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/server/76.html" title="Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录" itemprop="url">
-  
-    <h1 itemprop="name">Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录</h1>
-    
-     
-           <p itemprop="description" >最近我们使用的一台Linode云服务器被先被举报发送垃圾邮件，后来被服务商直接关机了，这里记录一下处理和恢复的过程，也算是难得的一次经验吧。
-前兆：几周前该服务器上有域名突然被停止解析，查询whois显示域名状态为Client Hold，查询域名注册后台（在时代互联注册的），有收</p>
-        
-    
-    <time datetime="2015-02-01T08:41:08.000Z" itemprop="datePublished">2015-02-01</time>
-  </a>
-</section>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix unexpand">
-    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
   </nav>
 
 </div>
@@ -323,19 +337,19 @@ suhosin
 		  
 		
 		  
-			<li><a href="/categories/js/" title="js">js<sup>2</sup></a></li>
+			<li><a href="/categories/js/" title="js">js<sup>3</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/php/" title="php">php<sup>1</sup></a></li>
+			<li><a href="/categories/php/" title="php">php<sup>2</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/server/" title="server">server<sup>20</sup></a></li>
+			<li><a href="/categories/server/" title="server">server<sup>21</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/tools/" title="tools">tools<sup>7</sup></a></li>
+			<li><a href="/categories/tools/" title="tools">tools<sup>8</sup></a></li>
 		  
 		
 		  
@@ -356,11 +370,15 @@ suhosin
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/centos/" title="centos">centos<sup>9</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/运维/" title="运维">运维<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/centos/" title="centos">centos<sup>8</sup></a></li>
+				<li><a href="/tags/php/" title="php">php<sup>6</sup></a></li>
 			
 		
 			
@@ -368,7 +386,11 @@ suhosin
 			
 		
 			
-				<li><a href="/tags/php/" title="php">php<sup>5</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/包管理/" title="包管理">包管理<sup>4</sup></a></li>
 			
 		
 			
@@ -377,10 +399,6 @@ suhosin
 		
 			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/前端/" title="前端">前端<sup>3</sup></a></li>
 			
 		
 			
@@ -396,7 +414,15 @@ suhosin
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>3</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -404,7 +430,7 @@ suhosin
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+				<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>2</sup></a></li>
 			
 		
 			
@@ -416,23 +442,11 @@ suhosin
 			
 		
 			
-				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/php7/" title="php7">php7<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/nginx/" title="nginx">nginx<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/vsftp/" title="vsftp">vsftp<sup>2</sup></a></li>
 			
 		
 		</ul>
