@@ -12,14 +12,14 @@
 
     
     <meta name="description" content="php的包管理工具Composer的安装方法，国内镜像源切换，常用操作">
-<meta name="keywords" content="php,包管理,composer">
+<meta name="keywords" content="包管理,php,composer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php的包管理工具Composer的安装与使用">
 <meta property="og:url" content="https://www.jeay.net/php/php的包管理工具Composer的安装与使用.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
 <meta property="og:description" content="php的包管理工具Composer的安装方法，国内镜像源切换，常用操作">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-07-22T09:04:09.890Z">
+<meta property="og:updated_time" content="2020-07-23T00:42:00.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php的包管理工具Composer的安装与使用">
 <meta name="twitter:description" content="php的包管理工具Composer的安装方法，国内镜像源切换，常用操作">
@@ -110,9 +110,9 @@
 <p>Linux 、 Mac</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv composer.phar /usr/<span class="built_in">local</span>/bin/composer</span><br></pre></td></tr></table></figure>
 <h2 id="切换源为阿里云"><a href="#切换源为阿里云" class="headerlink" title="切换源为阿里云"></a>切换源为阿里云</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/</span><br></pre></td></tr></table></figure>
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><p>类似<code>npm</code>会在项目根目录下建立<code>composer.json</code>，保存有项目信息、作者信息、依赖关系等</p>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><p>类似<code>npm</code>会在项目根目录下建立<code>composer.json</code>，保存有项目信息、作者信息、依赖关系等。依赖包会安装到当前项目下的<code>vendor</code>目录中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化项目，在当前项目下创建composer.json</span></span><br><span class="line">composer init</span><br><span class="line"><span class="comment"># 根据当前项目下的composer.json安装依赖</span></span><br><span class="line">composer install</span><br><span class="line"><span class="comment"># 安装指定应用</span></span><br><span class="line">composer require firebase/php-jwt</span><br></pre></td></tr></table></figure>
-<h2 id="如何引入composer安装的依赖"><a href="#如何引入composer安装的依赖" class="headerlink" title="如何引入composer安装的依赖"></a>如何引入composer安装的依赖</h2><p><code>composer</code>使用<code>PSR-40</code>和<code>PSR-4</code>规范</p>
+<h2 id="如何引入composer安装的依赖"><a href="#如何引入composer安装的依赖" class="headerlink" title="如何引入composer安装的依赖"></a>如何引入composer安装的依赖</h2><p><code>composer</code>使用<code>PSR-40</code>和<code>PSR-4</code>规范，在<a href="https://packagist.org/" target="_blank" rel="noopener">packagist</a>官网一般会有使用方法介绍</p>
 <p>例如刚刚安装的<code>firebase/php-jwt</code></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="keyword">__DIR__</span>.<span class="string">'/vendor/autoload.php'</span>;</span><br><span class="line"><span class="keyword">use</span> \<span class="title">Firebase</span>\<span class="title">JWT</span>\<span class="title">JWT</span>;</span><br><span class="line">var_dump(JWT::encode([<span class="string">'uid'</span>=&gt;<span class="number">1</span>], <span class="string">'abc1234'</span>, <span class="string">'HS256'</span>));</span><br></pre></td></tr></table></figure>
 <p><a href="https://docs.phpcomposer.com/" target="_blank" rel="noopener">Composer中文文档</a></p>
@@ -129,7 +129,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/php/">php</a><a href="/tags/包管理/">包管理</a><a href="/tags/composer/">composer</a>
+  <span></span> <a href="/tags/包管理/">包管理</a><a href="/tags/php/">php</a><a href="/tags/composer/">composer</a>
   </div>
 
 </div>
@@ -174,6 +174,14 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/php/用php-cli做一个爬虫吧.html" title="用php-cli做一个爬虫吧">
+  <strong>上一篇：</strong><br/>
+  <span>
+  用php-cli做一个爬虫吧</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/js/Nodejs的包管理工具npm的使用方法.html"  title="Nodejs的包管理工具npm的使用方法">
@@ -230,7 +238,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/php/" title="php">php<sup>2</sup></a></li>
+			<li><a href="/categories/php/" title="php">php<sup>3</sup></a></li>
 		  
 		
 		  
@@ -267,7 +275,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/php/" title="php">php<sup>6</sup></a></li>
+				<li><a href="/tags/php/" title="php">php<sup>7</sup></a></li>
 			
 		
 			
@@ -311,15 +319,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
 			
 		
 			
@@ -331,11 +343,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/php7/" title="php7">php7<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/nginx/" title="nginx">nginx<sup>2</sup></a></li>
+				<li><a href="/tags/编码/" title="编码">编码<sup>2</sup></a></li>
 			
 		
 		</ul>
