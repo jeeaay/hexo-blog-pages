@@ -1,0 +1,672 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  
+    <title>Jeay&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jeay">
+    
+
+    
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Jeay&#39;s blog">
+<meta property="og:url" content="https://www.jeay.net/page/4/index.html">
+<meta property="og:site_name" content="Jeay&#39;s blog">
+<meta property="og:locale" content="zh-cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jeay&#39;s blog">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/app.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Jeay&#39;s blog">Jeay&#39;s blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives/">Archives</a></li>
+					
+						<li><a href="/categories/tools/">Tools</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:www.jeay.net">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/103.html" title="LINUX服务器安全设置：禁止php的eval函数" itemprop="url">
+  
+    <h1 itemprop="name">LINUX服务器安全设置：禁止php的eval函数</h1>
+    
+     
+           <p itemprop="description" >本方法使用了suhosin，不适用于PHP7，可以参考PHP5 &amp;amp; PHP7 禁用 eval
+安装suhosin下载suhosin
+可以参考官网地址：http://suhosin.org/stories/download.html
+suhosin
+
+注意：PHP5.4以下</p>
+        
+    
+    <time datetime="2015-09-02T08:53:35.000Z" itemprop="datePublished">2015-09-02</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/php/100.html" title="Centos yum 安装php5.5" itemprop="url">
+  
+    <h1 itemprop="name">Centos yum 安装php5.5</h1>
+    
+     
+           <p itemprop="description" >首先卸载旧版本
+1yum remove php  php-*
+这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看）
+1rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
+安</p>
+        
+    
+    <time datetime="2015-07-13T07:24:53.000Z" itemprop="datePublished">2015-07-13</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/90.html" title="Linux Apache 服务显示中文GBK/GB2312乱码" itemprop="url">
+  
+    <h1 itemprop="name">Linux Apache 服务显示中文GBK/GB2312乱码</h1>
+    
+     
+           <p itemprop="description" >一个GB2312编码的网站，设置正确，上线后发现中文都乱码了，原来是APACHE服务器设置有点问题：
+修改下APACHE配置即可解决：
+1vim /etc/httpd/conf/httpd.conf
+加上一句话：
+1AddDefaultCharset GB2312
+保存并重启服务</p>
+        
+    
+    <time datetime="2015-03-18T08:51:14.000Z" itemprop="datePublished">2015-03-18</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/84.html" title="网站访问时出现同服务器的另一个网站？" itemprop="url">
+  
+    <h1 itemprop="name">网站访问时出现同服务器的另一个网站？</h1>
+    
+     
+           <p itemprop="description" >其实这个是由于没有绑定的域名解析到服务器后，服务器找不到对应域名的主机头，直接返回了该端口下的第一个网站内容。
+由于我们网站比较多，有时候管理员难免会忙不过来出现这种情况，我做了一个专门的错误页面，用于提醒管理员错误原因。
+这个错误页面利用了刚刚提到的“直接返回了该端口下的第一个</p>
+        
+    
+    <time datetime="2015-03-16T08:44:48.000Z" itemprop="datePublished">2015-03-16</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/76.html" title="Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录" itemprop="url">
+  
+    <h1 itemprop="name">Linode VPS收到举报发送垃圾邮件（ spam originating）,沟通与恢复记录</h1>
+    
+     
+           <p itemprop="description" >最近我们使用的一台Linode云服务器被先被举报发送垃圾邮件，后来被服务商直接关机了，这里记录一下处理和恢复的过程，也算是难得的一次经验吧。
+前兆：几周前该服务器上有域名突然被停止解析，查询whois显示域名状态为Client Hold，查询域名注册后台（在时代互联注册的），有收</p>
+        
+    
+    <time datetime="2015-02-01T08:41:08.000Z" itemprop="datePublished">2015-02-01</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/php/58.html" title="PHP JS生成随机字符串" itemprop="url">
+  
+    <h1 itemprop="name">PHP JS生成随机字符串</h1>
+    
+     
+           <p itemprop="description" >示例
+
+
+JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#39;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy</p>
+        
+    
+    <time datetime="2015-01-30T04:20:50.000Z" itemprop="datePublished">2015-01-30</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/38.html" title="CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压" itemprop="url">
+  
+    <h1 itemprop="name">CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压</h1>
+    
+     
+           <p itemprop="description" >添加网站新建网站目录
+使用mkdir 目录名创建目录，例如
+1mkdir /data/wwwroot/abc/aaa.com
+修改权限
+1chmod -R 777 /data/wwwroot/abc/aaa.com
+绑定域名
+1vim /etc/httpd/conf/httpd.</p>
+        
+    
+    <time datetime="2015-01-29T08:36:23.000Z" itemprop="datePublished">2015-01-29</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/34.html" title="CentOS修改mysql数据存储位置" itemprop="url">
+  
+    <h1 itemprop="name">CentOS修改mysql数据存储位置</h1>
+    
+     
+           <p itemprop="description" >腾讯云VPS买的数据盘挂载在/data下面，yum安装的mysql默认数据存储在系统盘上，所以需要搬家了。
+首先 关闭mysqld
+1service mysql stop
+编辑mysql配置文件
+1vim /usr/my.cnf
+找到如下行
+1datadir=
+修改成新的mysq</p>
+        
+    
+    <time datetime="2015-01-29T08:34:09.000Z" itemprop="datePublished">2015-01-29</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/32.html" title="CentOS安装配置VSFTP" itemprop="url">
+  
+    <h1 itemprop="name">CentOS安装配置VSFTP</h1>
+    
+     
+           <p itemprop="description" >安装首先yum安装
+1yum -y install vsftpd
+启动vsftp
+1service vsftpd start
+设置开机自启
+1chkconfig vsftpd on
+配置1vim /etc/vsftpd/vsftpd.conf
+禁止匿名访问：改成NO
+1anony</p>
+        
+    
+    <time datetime="2015-01-29T08:30:32.000Z" itemprop="datePublished">2015-01-29</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/server/24.html" title="用163源替换CentOS默认源" itemprop="url">
+  
+    <h1 itemprop="name">用163源替换CentOS默认源</h1>
+    
+     
+           <p itemprop="description" >下载163的repo文件
+12cd /etc/yum.repos.d/wget http://mirrors.163.com/.help/CentOS6-Base-163.repo
+备份CentOS自带的源，用mv修改一下文件名就行，我没备份直接删了…
+1mv CentOS-Ba</p>
+        
+    
+    <time datetime="2015-01-29T08:27:23.000Z" itemprop="datePublished">2015-01-29</time>
+  </a>
+</section>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix unexpand">
+    <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/front/" title="front">front<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/server/" title="server">server<sup>21</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/wordpress/" title="wordpress">wordpress<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/运维/" title="运维">运维<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/centos/" title="centos">centos<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php/" title="php">php<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/apache/" title="apache">apache<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/包管理/" title="包管理">包管理<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php7/" title="php7">php7<sup>2</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+</div>
+
+
+  <div class="steam-card">
+    <p class="asidetitle">
+        Steam
+    </p>
+    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+</div>
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/2018/cerbot.html" target="_blank" title="Cerbot">Cerbot</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.londy.cc/" target="_blank" title="Londy">Londy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/" target="_blank" title="技术团队Blog">技术团队Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Talents come from diligence, <br/>
+			and knowledge is gained by accumulation.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2470076427" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/jeeaay" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		
+		<a href="/about" target="_blank" title="Jeay">Jeay</a>
+		
+		备案号：<a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">豫ICP备16039722号</a>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261897922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1261897922' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+ </html>

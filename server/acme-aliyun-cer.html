@@ -1,0 +1,655 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  
+    <title>使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书 | Jeay&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jeay">
+    
+
+    
+    <meta name="description" content="申请阿里云的AccessKey登陆，进入AccessKey管理登陆阿里云账户，进入控制台 鼠标移动到 右上角，你的头像上，出现的下拉菜单里找到 AccessKey管理  找不到的也可以 点击这里直达 安全提示如果你是第一次使用 AccessKey管理 ， 会有安全提示  如果使用主账户创建AccessKey，将拥有该账户的全部权限 所以安全起见，推荐创建一个子账户进行后续操作 如果选 开始使用子账">
+<meta name="keywords" content="运维,nginx,ssl,免费证书,阿里云">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书">
+<meta property="og:url" content="https://www.jeay.net/server/acme-aliyun-cer.html">
+<meta property="og:site_name" content="Jeay&#39;s blog">
+<meta property="og:description" content="申请阿里云的AccessKey登陆，进入AccessKey管理登陆阿里云账户，进入控制台 鼠标移动到 右上角，你的头像上，出现的下拉菜单里找到 AccessKey管理  找不到的也可以 点击这里直达 安全提示如果你是第一次使用 AccessKey管理 ， 会有安全提示  如果使用主账户创建AccessKey，将拥有该账户的全部权限 所以安全起见，推荐创建一个子账户进行后续操作 如果选 开始使用子账">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/1.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/2.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/3.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/4.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/5.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/6.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/7.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/8.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/9.jpg">
+<meta property="og:image" content="http://cdn.jeay.net/2020/acme_aliyun/10.jpg">
+<meta property="og:updated_time" content="2020-06-16T03:59:16.306Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书">
+<meta name="twitter:description" content="申请阿里云的AccessKey登陆，进入AccessKey管理登陆阿里云账户，进入控制台 鼠标移动到 右上角，你的头像上，出现的下拉菜单里找到 AccessKey管理  找不到的也可以 点击这里直达 安全提示如果你是第一次使用 AccessKey管理 ， 会有安全提示  如果使用主账户创建AccessKey，将拥有该账户的全部权限 所以安全起见，推荐创建一个子账户进行后续操作 如果选 开始使用子账">
+<meta name="twitter:image" content="http://cdn.jeay.net/2020/acme_aliyun/1.jpg">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/app.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Jeay&#39;s blog">Jeay&#39;s blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives/">Archives</a></li>
+					
+						<li><a href="/categories/tools/">Tools</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:www.jeay.net">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/server/acme-aliyun-cer.html" title="使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书" itemprop="url">使用acme.sh申请aliyun平台的AccessKey，申请免费泛域名证书</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jeay" target="_blank" itemprop="author">Jeay</a>
+		
+  <p class="article-time">
+    <time datetime="2020-04-29T01:57:27.000Z" itemprop="datePublished"> Published 2020-04-29</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请阿里云的AccessKey"><span class="toc-number">1.</span> <span class="toc-text">申请阿里云的AccessKey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登陆，进入AccessKey管理"><span class="toc-number">1.1.</span> <span class="toc-text">登陆，进入AccessKey管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全提示"><span class="toc-number">1.2.</span> <span class="toc-text">安全提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子账户创建"><span class="toc-number">1.3.</span> <span class="toc-text">子账户创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主账户创建AccessKey"><span class="toc-number">1.4.</span> <span class="toc-text">主账户创建AccessKey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装acme-sh"><span class="toc-number">2.</span> <span class="toc-text">安装acme.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置AccessKey-ID和AccessKey-Secret"><span class="toc-number">3.</span> <span class="toc-text">配置AccessKey ID和AccessKey Secret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用acme申请证书"><span class="toc-number">4.</span> <span class="toc-text">使用acme申请证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx配置证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx配置证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动续期"><span class="toc-number">6.</span> <span class="toc-text">自动续期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新acme-sh"><span class="toc-number">7.</span> <span class="toc-text">更新acme.sh</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="申请阿里云的AccessKey"><a href="#申请阿里云的AccessKey" class="headerlink" title="申请阿里云的AccessKey"></a>申请阿里云的AccessKey</h2><h3 id="登陆，进入AccessKey管理"><a href="#登陆，进入AccessKey管理" class="headerlink" title="登陆，进入AccessKey管理"></a>登陆，进入AccessKey管理</h3><p>登陆阿里云账户，进入控制台</p>
+<p>鼠标移动到 右上角，你的头像上，出现的下拉菜单里找到 <strong>AccessKey管理</strong></p>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/1.jpg" alt="找到AccessKey管理"></p>
+<p>找不到的也可以 <a href="https://usercenter.console.aliyun.com/" target="_blank" rel="noopener">点击这里直达</a></p>
+<h3 id="安全提示"><a href="#安全提示" class="headerlink" title="安全提示"></a>安全提示</h3><p>如果你是第一次使用 <strong>AccessKey管理</strong> ， 会有安全提示</p>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/2.jpg" alt="安全提示"></p>
+<p><strong>如果使用主账户创建AccessKey，将拥有该账户的全部权限</strong></p>
+<p>所以安全起见，推荐创建一个子账户进行后续操作</p>
+<p>如果选 开始使用子账户AccessKey，进入 子账户创建 步骤</p>
+<h3 id="子账户创建"><a href="#子账户创建" class="headerlink" title="子账户创建"></a>子账户创建</h3><blockquote>
+<p>如果刚刚选了继续使用AccessKey，可以跳过次步</p>
+</blockquote>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/3.jpg" alt="体验新版"></p>
+<p>选 <strong>确定</strong></p>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/4.jpg" alt="找到快速入口"></p>
+<p>选 <strong>创建用户</strong></p>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/5.jpg" alt="创建用户"></p>
+<p>如果，填写登录名、显示名称、勾选编程访问，点击确定，（可能需要短信验证，这里就不截图了）</p>
+<p>创建子账户完成，会显示<code>AccessKey ID</code>和<code>AccessKey Secret</code>，注意：只会显示一次，如果没保存，可以在用户管理里删除并重新<code>创建AccessKey</code></p>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/6.jpg" alt="找到授权"></p>
+<p>点击<strong>授权</strong></p>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/7.jpg" alt="找到新增授权"></p>
+<p>点击<strong>新增授权</strong></p>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/8.jpg" alt="新增授权"></p>
+<p>被授权主题里搜索刚刚添加的用户名（cer）找到后点击</p>
+<p>系统策略里搜索’dns’，下面出现多个相关结果后，点击<code>AliyunDNSFullAccess</code>，确定</p>
+<p>子账户授权完成</p>
+<h3 id="主账户创建AccessKey"><a href="#主账户创建AccessKey" class="headerlink" title="主账户创建AccessKey"></a>主账户创建AccessKey</h3><blockquote>
+<p>如果使用了子账户的方式，请跳过本步</p>
+</blockquote>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/9.jpg" alt="点击创建AccessKey"></p>
+<p>创建AccessKey</p>
+<p><img src="http://cdn.jeay.net/2020/acme_aliyun/10.jpg" alt="显示AccessKey"></p>
+<p>点击可以看见<code>AccessKey ID</code>和<code>AccessKey Secret</code>，也可以点<strong>保存AK信息</strong>下载下来，注意：只会显示一次，如果没保存，可以删除后重新创建</p>
+<h2 id="安装acme-sh"><a href="#安装acme-sh" class="headerlink" title="安装acme.sh"></a>安装acme.sh</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt install  -y curl cron socat</span><br><span class="line">curl https://get.acme.sh | sh</span><br></pre></td></tr></table></figure>
+<p>将会安装到用户目录下的<code>.acme.sh</code></p>
+<h2 id="配置AccessKey-ID和AccessKey-Secret"><a href="#配置AccessKey-ID和AccessKey-Secret" class="headerlink" title="配置AccessKey ID和AccessKey Secret"></a>配置AccessKey ID和AccessKey Secret</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export Ali_Key=&quot;刚刚的AccessKey ID&quot;</span><br><span class="line">export Ali_Secret=&quot;刚刚的AccessKey Secret&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="使用acme申请证书"><a href="#使用acme申请证书" class="headerlink" title="使用acme申请证书"></a>使用acme申请证书</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --issue --dns dns_ali -d lmzg.com -d *.lmzg.com</span><br></pre></td></tr></table></figure>
+<p><code>--dns dns_ali</code>是指使用阿里云的dns验证</p>
+<p><code>-d lmzg.com</code>是需要申请证书的域名，可以有多个<code>-d</code>，可以使用泛域名</p>
+<p>大约需要2分钟</p>
+<h2 id="Nginx配置证书"><a href="#Nginx配置证书" class="headerlink" title="Nginx配置证书"></a>Nginx配置证书</h2><blockquote>
+<p>这里以刚刚申请的lmzg.com的证书为例，请注意实际路径</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>              <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span>         www.lmzg.com lmzg.com;</span><br><span class="line">    <span class="attribute">root</span>                /wwwroot/lmzg/wwwlmzgcom;</span><br><span class="line">    <span class="attribute">ssl</span>                 <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">ssl_certificate</span>     /root/.acme.sh/lmzg.com/fullchain.cer;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /root/.acme.sh/lmzg.com/lmzg.com.key;</span><br><span class="line">    <span class="comment"># 省略了其他配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意，<code>ssl_certificate</code>需要指定为<code>fullchain.cer</code>而不是<code>lmzg.com.cer</code></p>
+<h2 id="自动续期"><a href="#自动续期" class="headerlink" title="自动续期"></a>自动续期</h2><p>在前面的安装<code>acme.sh</code>步骤中，已经设置了定时续期，使用<code>crontab -l</code> 查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">11   0    *    *    * &quot;/root/.acme.sh&quot;/acme.sh --cron --home &quot;/root/.acme.sh&quot; &gt; /dev/null</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 7) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12)</span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
+<p>为了配合证书生效，需要重载Nginx才行，所以添加一个定时重载Nginx</p>
+<p>进行<code>crontab</code>编辑 <code>crontab -e</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 15 20 * * /usr/sbin/service nginx reload  &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<p>意思是每月<code>20</code>日<code>15</code>时<code>4</code>分，将会重载一次Nginx，因为证书申请在19号，每月20日下午重载一次刚刚好，如果你懒得想那么多，每天执行一次就好了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">36 3 * * * /usr/sbin/service nginx reload  &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<p>每天凌晨<code>3</code>时<code>36</code>分重载一次</p>
+<p>关于阿里云的acme.sh泛域名申请到此结束</p>
+<blockquote>
+<p>tips: 如果有CDN，还需要将证书推送到CDN服务器上，这个也可以用阿里云的接口实现自动化</p>
+</blockquote>
+<h2 id="更新acme-sh"><a href="#更新acme-sh" class="headerlink" title="更新acme.sh"></a>更新acme.sh</h2><p>有<code>acme.sh</code>时候突然不能用了，可以考虑先更新一下</p>
+<blockquote>
+<p>错误提示如：<br>It seems the CA server is busy now, let’s wait and retry….</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --upgrade</span><br></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/server/">server</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/运维/">运维</a><a href="/tags/nginx/">nginx</a><a href="/tags/ssl/">ssl</a><a href="/tags/免费证书/">免费证书</a><a href="/tags/阿里云/">阿里云</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	<div class="share-jiathis">
+	  
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_googleplus"></a>
+  <a class="jiathis_button_twitter"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+     ralateuid:{"tsina":"2470076427"},hideMore:false}
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+2143304" charset="utf-8"></script>      
+
+	 </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/tools/包管理工具与npm使用.html" title="MacOS 与 Windows下的包管理工具">
+  <strong>上一篇：</strong><br/>
+  <span>
+  MacOS 与 Windows下的包管理工具</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/server/mongodump.html"  title="Mongodb 备份和恢复">
+ <strong>下一篇：</strong><br/> 
+ <span>Mongodb 备份和恢复
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+<section id="comments" class="comment">
+
+<div id="SOHUCS" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt0mqnuK'; 
+var conf = 'prod_acb6164281284c13bf0f34dbe1d96c85'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请阿里云的AccessKey"><span class="toc-number">1.</span> <span class="toc-text">申请阿里云的AccessKey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登陆，进入AccessKey管理"><span class="toc-number">1.1.</span> <span class="toc-text">登陆，进入AccessKey管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全提示"><span class="toc-number">1.2.</span> <span class="toc-text">安全提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子账户创建"><span class="toc-number">1.3.</span> <span class="toc-text">子账户创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主账户创建AccessKey"><span class="toc-number">1.4.</span> <span class="toc-text">主账户创建AccessKey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装acme-sh"><span class="toc-number">2.</span> <span class="toc-text">安装acme.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置AccessKey-ID和AccessKey-Secret"><span class="toc-number">3.</span> <span class="toc-text">配置AccessKey ID和AccessKey Secret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用acme申请证书"><span class="toc-number">4.</span> <span class="toc-text">使用acme申请证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx配置证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx配置证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动续期"><span class="toc-number">6.</span> <span class="toc-text">自动续期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新acme-sh"><span class="toc-number">7.</span> <span class="toc-text">更新acme.sh</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/front/" title="front">front<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/server/" title="server">server<sup>21</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/wordpress/" title="wordpress">wordpress<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/运维/" title="运维">运维<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/centos/" title="centos">centos<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php/" title="php">php<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/apache/" title="apache">apache<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/包管理/" title="包管理">包管理<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php7/" title="php7">php7<sup>2</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+</div>
+
+
+  <div class="steam-card">
+    <p class="asidetitle">
+        Steam
+    </p>
+    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+</div>
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/2018/cerbot.html" target="_blank" title="Cerbot">Cerbot</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.londy.cc/" target="_blank" title="Londy">Londy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/" target="_blank" title="技术团队Blog">技术团队Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Talents come from diligence, <br/>
+			and knowledge is gained by accumulation.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2470076427" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/jeeaay" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		
+		<a href="/about" target="_blank" title="Jeay">Jeay</a>
+		
+		备案号：<a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">豫ICP备16039722号</a>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261897922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1261897922' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
