@@ -12,14 +12,14 @@
 
     
     <meta name="description" content="Linux环境下搭建基于squid的高匿代理，可以运行于Ubuntu和CentOS等发行版上。支持用户验证。性能稳定。">
-<meta name="keywords" content="centos,运维,linux,科学上网,ubuntu,proxy,高匿代理">
+<meta name="keywords" content="centos,linux,ubuntu,运维,科学上网,proxy,高匿代理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS &#x2F; Ubuntu Linux环境下搭建基于squid的高匿代理">
 <meta property="og:url" content="https://www.jeay.net/server/squid3.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
 <meta property="og:description" content="Linux环境下搭建基于squid的高匿代理，可以运行于Ubuntu和CentOS等发行版上。支持用户验证。性能稳定。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2021-04-15T08:56:44.913Z">
+<meta property="og:updated_time" content="2021-04-16T01:56:49.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS &#x2F; Ubuntu Linux环境下搭建基于squid的高匿代理">
 <meta name="twitter:description" content="Linux环境下搭建基于squid的高匿代理，可以运行于Ubuntu和CentOS等发行版上。支持用户验证。性能稳定。">
@@ -114,14 +114,14 @@
 <p>然后会让你输入两次密码，密码需要大于8位</p>
 <h3 id="不使用htpasswd创建"><a href="#不使用htpasswd创建" class="headerlink" title="不使用htpasswd创建"></a>不使用<code>htpasswd</code>创建</h3><p>没有Apache的也可以使用在线工具创建，搜索“在线htpasswd”，将生成结果保存到 <code>/etc/squid/passwd</code></p>
 <h3 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 311  /etc/squid/passwd</span><br></pre></td></tr></table></figure>
-<h3 id="测试用户"><a href="#测试用户" class="headerlink" title="测试用户"></a>测试用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/squid/basic_ncsa_auth /etc/squid/htpasswd</span><br></pre></td></tr></table></figure>
+<h3 id="测试用户"><a href="#测试用户" class="headerlink" title="测试用户"></a>测试用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/squid/basic_ncsa_auth /etc/squid/passwd</span><br></pre></td></tr></table></figure>
 <p>然后输入<code>[用户名]</code> <code>空格</code> <code>[密码]</code>，会返回是否测试通过</p>
 <blockquote>
 <p><code>ctrl</code> + <code>c</code>退出</p>
 </blockquote>
 <h2 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart squid</span><br></pre></td></tr></table></figure>
 <p>如果启用了<code>UFW</code>管理防火墙，需要添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ufw allow &apos;Squid&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ufw allow &apos;Squid&apos;</span><br><span class="line"># 如果修改了默认端口号：</span><br><span class="line">ufw allow [前面设置的http_port端口号]</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -135,7 +135,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/centos/">centos</a><a href="/tags/运维/">运维</a><a href="/tags/linux/">linux</a><a href="/tags/科学上网/">科学上网</a><a href="/tags/ubuntu/">ubuntu</a><a href="/tags/proxy/">proxy</a><a href="/tags/高匿代理/">高匿代理</a>
+  <span></span> <a href="/tags/centos/">centos</a><a href="/tags/linux/">linux</a><a href="/tags/ubuntu/">ubuntu</a><a href="/tags/运维/">运维</a><a href="/tags/科学上网/">科学上网</a><a href="/tags/proxy/">proxy</a><a href="/tags/高匿代理/">高匿代理</a>
   </div>
 
 </div>
@@ -293,15 +293,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -333,15 +333,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
