@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>Linux Centos 使用bash shell 自动检测运行情况 重启apache、mysql服务器 | Jeay&#39;s blog</title>
@@ -11,18 +11,21 @@
     
 
     
-    <meta name="description" content="服务器上的网站比较多，mysql、apache经常不堪重负罢工 所以就抽了一上午学习了一些bash的语法，参考了一些类似问题解决的博客，做了一个小程序，遇到负载过高、mysql &amp;amp; apache关停的时候会自动重新启动mysql &amp;amp; apache 12345678910111213141516171819202122232425262728293031323334353637383">
-<meta name="keywords" content="apache,mysql,运维,bash">
+    <meta name="description" content="服务器上的网站比较多，mysql、apache经常不堪重负罢工 所以就抽了一上午学习了一些bash的语法，参考了一些类似问题解决的博客，做了一个小程序，遇到负载过高、mysql &amp; apache关停的时候会自动重新启动mysql &amp; apache 12345678910111213141516171819202122232425262728293031323334353637383">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux Centos 使用bash shell 自动检测运行情况 重启apache、mysql服务器">
 <meta property="og:url" content="https://www.jeay.net/server/113.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:description" content="服务器上的网站比较多，mysql、apache经常不堪重负罢工 所以就抽了一上午学习了一些bash的语法，参考了一些类似问题解决的博客，做了一个小程序，遇到负载过高、mysql &amp;amp; apache关停的时候会自动重新启动mysql &amp;amp; apache 12345678910111213141516171819202122232425262728293031323334353637383">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-05-24T02:29:00.850Z">
+<meta property="og:description" content="服务器上的网站比较多，mysql、apache经常不堪重负罢工 所以就抽了一上午学习了一些bash的语法，参考了一些类似问题解决的博客，做了一个小程序，遇到负载过高、mysql &amp; apache关停的时候会自动重新启动mysql &amp; apache 12345678910111213141516171819202122232425262728293031323334353637383">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-10-09T09:02:00.000Z">
+<meta property="article:modified_time" content="2018-05-24T02:29:00.850Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="运维">
+<meta property="article:tag" content="bash">
+<meta property="article:tag" content="apache">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux Centos 使用bash shell 自动检测运行情况 重启apache、mysql服务器">
-<meta name="twitter:description" content="服务器上的网站比较多，mysql、apache经常不堪重负罢工 所以就抽了一上午学习了一些bash的语法，参考了一些类似问题解决的博客，做了一个小程序，遇到负载过高、mysql &amp;amp; apache关停的时候会自动重新启动mysql &amp;amp; apache 12345678910111213141516171819202122232425262728293031323334353637383">
 
     
     
@@ -32,9 +35,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -91,10 +96,12 @@
 		
 		<p>服务器上的网站比较多，<code>mysql</code>、<code>apache</code>经常不堪重负罢工</p>
 <p>所以就抽了一上午学习了一些<code>bash</code>的语法，参考了一些类似问题解决的博客，做了一个小程序，遇到负载过高、<code>mysql</code> &amp; <code>apache</code>关停的时候会自动重新启动<code>mysql</code> &amp; <code>apache</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#1: 80-port test</span></span><br><span class="line"><span class="comment">#You can Write one of your server ip here</span></span><br><span class="line">ipaddarr=`ifconfig|grep <span class="string">"inet addr:"</span>|grep -v <span class="string">"127.0.0.1"</span>|head -n 1|cut -d: -f2|awk <span class="string">'&#123;print $1&#125;'</span>`</span><br><span class="line"><span class="comment">#80 port test</span></span><br><span class="line">PortCheck=`netstat -ant | grep <span class="variable">$&#123;ipaddarr&#125;</span>:80|grep <span class="string">"TIME_WAIT"</span> &amp;&gt;/dev/null`</span><br><span class="line">Port=<span class="string">"$?"</span></span><br><span class="line">httpdCheck=`ps aux|grep httpd|grep -v grep &amp;&gt;/dev/null`</span><br><span class="line">PID=<span class="string">"$?"</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$Port</span>"</span> -ne <span class="string">"0"</span> -o <span class="string">"<span class="variable">$PID</span>"</span> -ne 0 ];<span class="keyword">then</span> </span><br><span class="line"> http=<span class="string">"err"</span></span><br><span class="line"><span class="keyword">fi</span> </span><br><span class="line"><span class="comment">#2: load average test</span></span><br><span class="line">TOP_SYS_LOAD_NUM=10</span><br><span class="line">SYS_LOAD_NUM=`uptime | awk <span class="string">'&#123;print $(NF-1)&#125;'</span> |cut -d, -f1`</span><br><span class="line">isLoad=`awk -v num1=<span class="variable">$TOP_SYS_LOAD_NUM</span> -v num2=<span class="variable">$SYS_LOAD_NUM</span> <span class="string">'BEGIN&#123;print(num1&gt;nu</span></span><br><span class="line"><span class="string">m2)?"1":"0"&#125;'</span>`</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$isLoad</span>"</span> -eq 0 ]; <span class="keyword">then</span></span><br><span class="line"> load=<span class="string">"over"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment">#3: mysql tset</span></span><br><span class="line">CMDCHECK=`lsof -i:3306 &amp;&gt;/dev/null` </span><br><span class="line">Port=<span class="string">"$?"</span></span><br><span class="line">PIDCHECK=`ps aux|grep mysql|grep -v grep&amp;&gt;/dev/null` </span><br><span class="line">PID=<span class="string">"$?"</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$Port</span>"</span> -ne <span class="string">"0"</span> -o <span class="string">"<span class="variable">$PID</span>"</span> -ne 0 ];<span class="keyword">then</span> </span><br><span class="line"> mysql=<span class="string">"err"</span></span><br><span class="line"><span class="keyword">fi</span> </span><br><span class="line"><span class="comment">#### restart mysql &amp; httpd </span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$http</span> == <span class="string">"err"</span> ]]; <span class="keyword">then</span></span><br><span class="line"> pkill httpd</span><br><span class="line"> sleep 5</span><br><span class="line"> service httpd start </span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"#Http err@"</span> $(date +<span class="string">"%y-%m-%d %H:%M:%S"</span>) <span class="string">"restart httpd"</span> </span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$load</span> == <span class="string">"over"</span> ]]; <span class="keyword">then</span></span><br><span class="line"> pkill httpd</span><br><span class="line"> sleep 5</span><br><span class="line"> service httpd start </span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"#Over load@"</span> $(date +<span class="string">"%y-%m-%d %H:%M:%S"</span>) <span class="string">"restart httpd"</span> </span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$mysql</span> == <span class="string">"err"</span> ]]; <span class="keyword">then</span></span><br><span class="line"> pkill mysqld</span><br><span class="line"> sleep 5</span><br><span class="line"> service mysqld start </span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"#Mysql err@"</span> $(date +<span class="string">"%y-%m-%d %H:%M:%S"</span>) <span class="string">"restart mysql"</span> </span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#1: 80-port test</span></span><br><span class="line"><span class="comment">#You can Write one of your server ip here</span></span><br><span class="line">ipaddarr=`ifconfig|grep <span class="string">&quot;inet addr:&quot;</span>|grep -v <span class="string">&quot;127.0.0.1&quot;</span>|<span class="built_in">head</span> -n 1|<span class="built_in">cut</span> -d: -f2|awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>`</span><br><span class="line"><span class="comment">#80 port test</span></span><br><span class="line">PortCheck=`netstat -ant | grep <span class="variable">$&#123;ipaddarr&#125;</span>:80|grep <span class="string">&quot;TIME_WAIT&quot;</span> &amp;&gt;/dev/null`</span><br><span class="line">Port=<span class="string">&quot;$?&quot;</span></span><br><span class="line">httpdCheck=`ps aux|grep httpd|grep -v grep &amp;&gt;/dev/null`</span><br><span class="line">PID=<span class="string">&quot;$?&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$Port</span>&quot;</span> -ne <span class="string">&quot;0&quot;</span> -o <span class="string">&quot;<span class="variable">$PID</span>&quot;</span> -ne 0 ];<span class="keyword">then</span> </span><br><span class="line"> http=<span class="string">&quot;err&quot;</span></span><br><span class="line"><span class="keyword">fi</span> </span><br><span class="line"><span class="comment">#2: load average test</span></span><br><span class="line">TOP_SYS_LOAD_NUM=10</span><br><span class="line">SYS_LOAD_NUM=`<span class="built_in">uptime</span> | awk <span class="string">&#x27;&#123;print $(NF-1)&#125;&#x27;</span> |<span class="built_in">cut</span> -d, -f1`</span><br><span class="line">isLoad=`awk -v num1=<span class="variable">$TOP_SYS_LOAD_NUM</span> -v num2=<span class="variable">$SYS_LOAD_NUM</span> <span class="string">&#x27;BEGIN&#123;print(num1&gt;nu</span></span><br><span class="line"><span class="string">m2)?&quot;1&quot;:&quot;0&quot;&#125;&#x27;</span>`</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$isLoad</span>&quot;</span> -eq 0 ]; <span class="keyword">then</span></span><br><span class="line"> load=<span class="string">&quot;over&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment">#3: mysql tset</span></span><br><span class="line">CMDCHECK=`lsof -i:3306 &amp;&gt;/dev/null` </span><br><span class="line">Port=<span class="string">&quot;$?&quot;</span></span><br><span class="line">PIDCHECK=`ps aux|grep mysql|grep -v grep&amp;&gt;/dev/null` </span><br><span class="line">PID=<span class="string">&quot;$?&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$Port</span>&quot;</span> -ne <span class="string">&quot;0&quot;</span> -o <span class="string">&quot;<span class="variable">$PID</span>&quot;</span> -ne 0 ];<span class="keyword">then</span> </span><br><span class="line"> mysql=<span class="string">&quot;err&quot;</span></span><br><span class="line"><span class="keyword">fi</span> </span><br><span class="line"><span class="comment">#### restart mysql &amp; httpd </span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$http</span> == <span class="string">&quot;err&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line"> pkill httpd</span><br><span class="line"> <span class="built_in">sleep</span> 5</span><br><span class="line"> service httpd start </span><br><span class="line"> <span class="built_in">echo</span> <span class="string">&quot;#Http err@&quot;</span> $(<span class="built_in">date</span> +<span class="string">&quot;%y-%m-%d %H:%M:%S&quot;</span>) <span class="string">&quot;restart httpd&quot;</span> </span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$load</span> == <span class="string">&quot;over&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line"> pkill httpd</span><br><span class="line"> <span class="built_in">sleep</span> 5</span><br><span class="line"> service httpd start </span><br><span class="line"> <span class="built_in">echo</span> <span class="string">&quot;#Over load@&quot;</span> $(<span class="built_in">date</span> +<span class="string">&quot;%y-%m-%d %H:%M:%S&quot;</span>) <span class="string">&quot;restart httpd&quot;</span> </span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$mysql</span> == <span class="string">&quot;err&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line"> pkill mysqld</span><br><span class="line"> <span class="built_in">sleep</span> 5</span><br><span class="line"> service mysqld start </span><br><span class="line"> <span class="built_in">echo</span> <span class="string">&quot;#Mysql err@&quot;</span> $(<span class="built_in">date</span> +<span class="string">&quot;%y-%m-%d %H:%M:%S&quot;</span>) <span class="string">&quot;restart mysql&quot;</span> </span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
 <p>由于网页编码以及换行符不同，切勿直接复制使用，您可以 <a href="/download/check_http_mysql.sh">点击下载</a></p>
 <p>或者</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.jeay.net/download/check_http_mysql.sh</span><br></pre></td></tr></table></figure>
+
 <p>使用方法：</p>
 <ol>
 <li><p>设置 <code>TOP_SYS_LOAD_NUM=10</code> 最大负载<code>10</code> 超过<code>10</code>将重启</p>
@@ -105,6 +112,7 @@
 </li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/2 * * * * root /root/check_http_mysql.sh &gt;&gt;/root/check.log</span><br></pre></td></tr></table></figure>
+
 <p>↑每<code>2</code>分钟运行一次 频率可以自行设置</p>
 <p><code>crontab -l</code> 可以查看计划任务</p>
 <p><code>check.log</code>为日志文件，每次执行重启操作将会记录一次</p>
@@ -122,7 +130,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/apache/">apache</a><a href="/tags/mysql/">mysql</a><a href="/tags/运维/">运维</a><a href="/tags/bash/">bash</a>
+  <span></span> <a href="/tags/运维/">运维</a><a href="/tags/bash/">bash</a><a href="/tags/apache/">apache</a><a href="/tags/mysql/">mysql</a>
   </div>
 
 </div>
@@ -240,7 +248,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -281,15 +289,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -305,15 +313,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -321,15 +325,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -346,7 +354,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -434,7 +442,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

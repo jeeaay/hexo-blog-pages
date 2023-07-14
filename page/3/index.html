@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>Jeay&#39;s blog</title>
@@ -15,9 +15,9 @@
 <meta property="og:title" content="Jeay&#39;s blog">
 <meta property="og:url" content="https://www.jeay.net/page/3/index.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Jeay">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jeay&#39;s blog">
 
     
     
@@ -27,9 +27,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -66,6 +68,33 @@
     </header>
     <div id="container">
       <div id="main">
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/front/markdown基本语法.html" title="markdown基本语法" itemprop="url">
+  
+    <h1 itemprop="name">markdown基本语法</h1>
+    
+     
+           <p itemprop="description" >换行两个空格+回车，表示换行（一个标签）
+斜体和粗体使用 * 和 ** 表示斜体和粗体。
+示例：
+1这是 *斜体*，这是 **粗体**。
+
+分级标题你在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。
+示例：
+1234#</p>
+        
+    
+    <time datetime="2017-10-16T03:07:34.000Z" itemprop="datePublished">2017-10-16</time>
+  </a>
+</section>
+
+
+
+
+
 
   
 <section class="post" itemscope itemprop="blogitem">
@@ -127,9 +156,10 @@ yml</p>
     
      
            <p itemprop="description" >nvm安装方法本方法不适合windows系统，请参考下载安装方法
-安装nvm1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+安装nvm1curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
 或者使用wget
-1wget -q</p>
+1wget -qO- </p>
         
     
     <time datetime="2017-09-26T05:15:11.000Z" itemprop="datePublished">2017-09-26</time>
@@ -230,12 +260,14 @@ A</p>
     <h1 itemprop="name">解决Linux下中文文件乱码，无法下载</h1>
     
      
-           <p itemprop="description" >安装convmvRedhat/CentOS
+           <p itemprop="description" >安装convmvRedhat&amp;#x2F;CentOS
 1yum -y install convmv
-Debian/ubuntu
+
+Debian&amp;#x2F;ubuntu
 1sudo apt install convmv
+
 转换文件名编码进入需要转码的文件目录下
-1convmv -f gbk -t utf-8 --notest *.d</p>
+1convmv -f gbk -t utf-8 </p>
         
     
     <time datetime="2017-05-04T09:54:13.000Z" itemprop="datePublished">2017-05-04</time>
@@ -256,10 +288,12 @@ Debian/ubuntu
     
      
            <p itemprop="description" >切换root用户1sudo su
+
 也可以用非root用户操作：以下的每一个命令前加 sudo
 更新软件源1apt update -y
+
 如果你想升级下服务器上的软件，在执行完apt update -y后可以再执行下apt upgrade -y
-安装 MySQL1apt instal</p>
+安装 MySQL1apt inst</p>
         
     
     <time datetime="2017-05-02T09:31:59.000Z" itemprop="datePublished">2017-05-02</time>
@@ -279,10 +313,11 @@ Debian/ubuntu
     <h1 itemprop="name">CentOS shadowsocks如何设置开机自启</h1>
     
      
-           <p itemprop="description" >添加应用到service创建/etc/init.d/shadowsocks
+           <p itemprop="description" >添加应用到service创建&amp;#x2F;etc&amp;#x2F;init.d&amp;#x2F;shadowsocks
 1vim /etc/init.d/shadowsocks
+
 编辑下面内容：注意先修改ssserver和config.json为你的绝对路径，我的路径是这样的：
-12/opt/node-v6.9.5/lib/</p>
+12/opt/</p>
         
     
     <time datetime="2017-02-22T09:27:16.000Z" itemprop="datePublished">2017-02-22</time>
@@ -294,33 +329,9 @@ Debian/ubuntu
 
 
 
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/server/237.html" title="Linux 怎么实现免输入密码,使用密钥登录" itemprop="url">
-  
-    <h1 itemprop="name">Linux 怎么实现免输入密码,使用密钥登录</h1>
-    
-     
-           <p itemprop="description" >生成rsa密钥如果你已经有密钥了（比如在用github时生成过），这步可以跳过，在~/.ssh/里找到自己的公钥即可
-如果你已经有密钥了，请不要重复生成，会覆盖之前的密钥对
-1ssh-keygen -t rsa
-也可以用别的非对称加密算法，这里不赘述了
-会问你几个问题，直接一路回</p>
-        
-    
-    <time datetime="2017-02-21T09:17:19.000Z" itemprop="datePublished">2017-02-21</time>
-  </a>
-</section>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix unexpand">
-    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/2/">&lt;span&gt;&lt;&#x2F;span&gt;Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next&lt;span&gt;&lt;&#x2F;span&gt;</a>
   </nav>
 
 </div>
@@ -360,7 +371,7 @@ Debian/ubuntu
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -401,15 +412,15 @@ Debian/ubuntu
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -425,15 +436,11 @@ Debian/ubuntu
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -441,15 +448,19 @@ Debian/ubuntu
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -466,7 +477,7 @@ Debian/ubuntu
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -554,7 +565,7 @@ Debian/ubuntu
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

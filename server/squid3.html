@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>CentOS / Ubuntu Linux环境下搭建基于squid的高匿代理 | Jeay&#39;s blog</title>
@@ -12,17 +12,23 @@
 
     
     <meta name="description" content="Linux环境下搭建基于squid的高匿代理，可以运行于Ubuntu和CentOS等发行版上。支持用户验证。性能稳定。">
-<meta name="keywords" content="centos,linux,运维,科学上网,ubuntu,proxy,高匿代理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS &#x2F; Ubuntu Linux环境下搭建基于squid的高匿代理">
 <meta property="og:url" content="https://www.jeay.net/server/squid3.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
 <meta property="og:description" content="Linux环境下搭建基于squid的高匿代理，可以运行于Ubuntu和CentOS等发行版上。支持用户验证。性能稳定。">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2021-12-16T03:12:52.753Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-15T06:21:26.000Z">
+<meta property="article:modified_time" content="2021-12-16T03:12:52.753Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="centos">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="运维">
+<meta property="article:tag" content="科学上网">
+<meta property="article:tag" content="proxy">
+<meta property="article:tag" content="高匿代理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS &#x2F; Ubuntu Linux环境下搭建基于squid的高匿代理">
-<meta name="twitter:description" content="Linux环境下搭建基于squid的高匿代理，可以运行于Ubuntu和CentOS等发行版上。支持用户验证。性能稳定。">
 
     
     
@@ -32,9 +38,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -92,7 +100,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建用户"><span class="toc-number">4.</span> <span class="toc-text">创建用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用htpasswd创建"><span class="toc-number">4.1.</span> <span class="toc-text">使用htpasswd创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不使用htpasswd创建"><span class="toc-number">4.2.</span> <span class="toc-text">不使用htpasswd创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改文件权限"><span class="toc-number">4.3.</span> <span class="toc-text">修改文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试用户"><span class="toc-number">4.4.</span> <span class="toc-text">测试用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启服务器"><span class="toc-number">5.</span> <span class="toc-text">重启服务器</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-number">4.</span> <span class="toc-text">创建用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8htpasswd%E5%88%9B%E5%BB%BA"><span class="toc-number">4.1.</span> <span class="toc-text">使用htpasswd创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E4%BD%BF%E7%94%A8htpasswd%E5%88%9B%E5%BB%BA"><span class="toc-number">4.2.</span> <span class="toc-text">不使用htpasswd创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">4.3.</span> <span class="toc-text">修改文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7"><span class="toc-number">4.4.</span> <span class="toc-text">测试用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">重启服务器</span></a></li></ol>
 		
 		</div>
 		
@@ -100,34 +108,45 @@
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>注意： 以下操作均需要管理员权限，请切换root用户或使用sudo</p>
 <p>CentOS</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install squid</span><br></pre></td></tr></table></figure>
+
 <p>Ubuntu</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install squid</span><br></pre></td></tr></table></figure>
+
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>修改配置文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/squid/squid.conf</span><br></pre></td></tr></table></figure>
+
 <p>分别找到以下几条 前面添加<code>#</code>注释掉</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http_access deny !Safe_ports</span><br><span class="line">http_access deny CONNECT !SSL_ports</span><br><span class="line">http_access allow localhost</span><br><span class="line">http_access deny all</span><br></pre></td></tr></table></figure>
+
 <p>修改端口号（默认3128不安全）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_port 3128</span><br></pre></td></tr></table></figure>
+
 <p>在末尾添加以下几行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户验证设置</span></span><br><span class="line">auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd</span><br><span class="line">auth_param basic realm proxy</span><br><span class="line">acl authenticated proxy_auth REQUIRED</span><br><span class="line">http_access allow authenticated</span><br><span class="line"><span class="comment"># 设置为高匿模式</span></span><br><span class="line">request_header_access X-Forwarded-For deny all</span><br><span class="line">request_header_access From deny all</span><br><span class="line">request_header_access Via deny all</span><br></pre></td></tr></table></figure>
 <h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><h3 id="使用htpasswd创建"><a href="#使用htpasswd创建" class="headerlink" title="使用htpasswd创建"></a>使用<code>htpasswd</code>创建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -c -d /etc/squid/passwd [用户名]</span><br></pre></td></tr></table></figure>
+
 <p>然后会让你输入两次密码，密码需要大于8位</p>
 <h3 id="不使用htpasswd创建"><a href="#不使用htpasswd创建" class="headerlink" title="不使用htpasswd创建"></a>不使用<code>htpasswd</code>创建</h3><p>没有Apache的也可以使用在线工具创建，搜索“在线htpasswd”，将生成结果保存到 <code>/etc/squid/passwd</code></p>
-<h3 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 644  /etc/squid/passwd</span><br></pre></td></tr></table></figure>
+<h3 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 644  /etc/squid/passwd</span><br></pre></td></tr></table></figure>
+
 <h3 id="测试用户"><a href="#测试用户" class="headerlink" title="测试用户"></a>测试用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/squid/basic_ncsa_auth /etc/squid/passwd</span><br></pre></td></tr></table></figure>
+
 <p>然后输入<code>[用户名]</code> <code>空格</code> <code>[密码]</code>，会返回是否测试通过</p>
 <blockquote>
 <p><code>ctrl</code> + <code>c</code>退出</p>
 </blockquote>
 <p>注意，最近发现部分CentOS系统的路径如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib64/</span><br></pre></td></tr></table></figure>
+
 <p>相应的测试要换成</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib64/squid/basic_ncsa_auth /etc/squid/passwd</span><br></pre></td></tr></table></figure>
-<p>配置文件里的用户验证设置也要相应的修改为<code>/usr/lib64/</code>：</p>
+
+<p>配置文件里的用户验证设置也要相应的修改为<code> /usr/lib64/</code>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户验证设置</span></span><br><span class="line">auth_param basic program /usr/lib64/squid/basic_ncsa_auth /etc/squid/passwd</span><br></pre></td></tr></table></figure>
 <h2 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart squid</span><br></pre></td></tr></table></figure>
+
 <p>如果启用了<code>UFW</code>管理防火墙，需要添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ufw allow &apos;Squid&apos;</span><br><span class="line"># 如果修改了默认端口号：</span><br><span class="line">ufw allow [前面设置的http_port端口号]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ufw allow &#x27;Squid&#x27;</span><br><span class="line"># 如果修改了默认端口号：</span><br><span class="line">ufw allow [前面设置的http_port端口号]</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -141,7 +160,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/centos/">centos</a><a href="/tags/linux/">linux</a><a href="/tags/运维/">运维</a><a href="/tags/科学上网/">科学上网</a><a href="/tags/ubuntu/">ubuntu</a><a href="/tags/proxy/">proxy</a><a href="/tags/高匿代理/">高匿代理</a>
+  <span></span> <a href="/tags/centos/">centos</a><a href="/tags/linux/">linux</a><a href="/tags/ubuntu/">ubuntu</a><a href="/tags/运维/">运维</a><a href="/tags/科学上网/">科学上网</a><a href="/tags/proxy/">proxy</a><a href="/tags/高匿代理/">高匿代理</a>
   </div>
 
 </div>
@@ -186,11 +205,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/front/tianditu中文免费地图.html" title="Web网页中使用免费地图 天地图 替代百度、高德地图，支持iframe">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Web网页中使用免费地图 天地图 替代百度、高德地图，支持iframe</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/tools/hexo-type-error.html"  title="解决typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object的问题">
+<a href="/tools/hexo-type-error.html"  title="解决typeError [ERR_INVALID_ARG_TYPE]: The &#34;mode&#34; argument must be integer. Received an instance of Object的问题">
  <strong>下一篇：</strong><br/> 
- <span>解决typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object的问题
+ <span>解决typeError [ERR_INVALID_ARG_TYPE]: The &#34;mode&#34; argument must be integer. Received an instance of Object的问题
 </span>
 </a>
 </div>
@@ -220,7 +247,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建用户"><span class="toc-number">4.</span> <span class="toc-text">创建用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用htpasswd创建"><span class="toc-number">4.1.</span> <span class="toc-text">使用htpasswd创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不使用htpasswd创建"><span class="toc-number">4.2.</span> <span class="toc-text">不使用htpasswd创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改文件权限"><span class="toc-number">4.3.</span> <span class="toc-text">修改文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试用户"><span class="toc-number">4.4.</span> <span class="toc-text">测试用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启服务器"><span class="toc-number">5.</span> <span class="toc-text">重启服务器</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-number">4.</span> <span class="toc-text">创建用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8htpasswd%E5%88%9B%E5%BB%BA"><span class="toc-number">4.1.</span> <span class="toc-text">使用htpasswd创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E4%BD%BF%E7%94%A8htpasswd%E5%88%9B%E5%BB%BA"><span class="toc-number">4.2.</span> <span class="toc-text">不使用htpasswd创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">4.3.</span> <span class="toc-text">修改文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7"><span class="toc-number">4.4.</span> <span class="toc-text">测试用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">重启服务器</span></a></li></ol>
  
   </div>
 
@@ -258,7 +285,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -299,15 +326,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -323,15 +350,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -339,15 +362,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -364,7 +391,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -452,7 +479,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>Jeay&#39;s blog</title>
@@ -15,9 +15,9 @@
 <meta property="og:title" content="Jeay&#39;s blog">
 <meta property="og:url" content="https://www.jeay.net/page/5/index.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Jeay">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jeay&#39;s blog">
 
     
     
@@ -27,9 +27,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -70,6 +72,36 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
+    <a href="/server/34.html" title="CentOS修改mysql数据存储位置" itemprop="url">
+  
+    <h1 itemprop="name">CentOS修改mysql数据存储位置</h1>
+    
+     
+           <p itemprop="description" >腾讯云VPS买的数据盘挂载在/data下面，yum安装的mysql默认数据存储在系统盘上，所以需要搬家了。
+首先 关闭mysqld
+1service mysql stop
+
+编辑mysql配置文件
+1vim /usr/my.cnf
+
+找到如下行
+1datadir=
+
+修改成新的m</p>
+        
+    
+    <time datetime="2015-01-29T08:34:09.000Z" itemprop="datePublished">2015-01-29</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
     <a href="/server/32.html" title="CentOS安装配置VSFTP" itemprop="url">
   
     <h1 itemprop="name">CentOS安装配置VSFTP</h1>
@@ -77,13 +109,17 @@
      
            <p itemprop="description" >安装首先yum安装
 1yum -y install vsftpd
+
 启动vsftp
 1service vsftpd start
+
 设置开机自启
 1chkconfig vsftpd on
+
 配置1vim /etc/vsftpd/vsftpd.conf
+
 禁止匿名访问：改成NO
-1anony</p>
+1a</p>
         
     
     <time datetime="2015-01-29T08:30:32.000Z" itemprop="datePublished">2015-01-29</time>
@@ -105,8 +141,9 @@
      
            <p itemprop="description" >下载163的repo文件
 12cd /etc/yum.repos.d/wget http://mirrors.163.com/.help/CentOS6-Base-163.repo
+
 备份CentOS自带的源，用mv修改一下文件名就行，我没备份直接删了…
-1mv CentOS-Ba</p>
+1mv CentOS-B</p>
         
     
     <time datetime="2015-01-29T08:27:23.000Z" itemprop="datePublished">2015-01-29</time>
@@ -128,10 +165,12 @@
      
            <p itemprop="description" >卸载自带httpd和mysql（可能会有，也可能没用，不过以防万一还是要运行一下）
 12yum erase httpdyum remove mysql*
+
 更新yum 源
 123yum clean allyum makecacheyum update
+
 安装需要的环境
-12yum i</p>
+12yum</p>
         
     
     <time datetime="2015-01-28T07:42:28.000Z" itemprop="datePublished">2015-01-28</time>
@@ -189,7 +228,7 @@
 
 
   <nav id="page-nav" class="clearfix unexpand">
-    <a class="extend prev" rel="prev" href="/page/4/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/">&lt;span&gt;&lt;&#x2F;span&gt;Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
   </nav>
 
 </div>
@@ -229,7 +268,7 @@
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -270,15 +309,15 @@
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -294,15 +333,11 @@
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -310,15 +345,19 @@
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -335,7 +374,7 @@
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -423,7 +462,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>Jeay&#39;s blog</title>
@@ -15,9 +15,9 @@
 <meta property="og:title" content="Jeay&#39;s blog">
 <meta property="og:url" content="https://www.jeay.net/page/4/index.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Jeay">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jeay&#39;s blog">
 
     
     
@@ -27,9 +27,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -70,6 +72,31 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
+    <a href="/server/237.html" title="Linux 怎么实现免输入密码,使用密钥登录" itemprop="url">
+  
+    <h1 itemprop="name">Linux 怎么实现免输入密码,使用密钥登录</h1>
+    
+     
+           <p itemprop="description" >生成rsa密钥如果你已经有密钥了（比如在用github时生成过），这步可以跳过，在~/.ssh/里找到自己的公钥即可
+如果你已经有密钥了，请不要重复生成，会覆盖之前的密钥对
+1ssh-keygen -t rsa
+
+也可以用别的非对称加密算法，这里不赘述了
+会问你几个问题，直接一路</p>
+        
+    
+    <time datetime="2017-02-21T09:17:19.000Z" itemprop="datePublished">2017-02-21</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
     <a href="/server/143.html" title="Linux CentOS上phpMyAdmin怎么安装" itemprop="url">
   
     <h1 itemprop="name">Linux CentOS上phpMyAdmin怎么安装</h1>
@@ -78,8 +105,8 @@
            <p itemprop="description" >其实安装phpMyAdmin和上线一个网站差不多，下面详细介绍一下操作步骤
 创建目录先开空间，为了方便管理 我在/home/下创建一个专门的phpMyAdmin目录（可自行选择目录）：
 1mkdir /home/phpmyadmin/
-绑定域名/端口修改apache配置文件：
-1</p>
+
+绑定域名&amp;#x2F;端口修改apache配</p>
         
     
     <time datetime="2015-12-03T09:09:10.000Z" itemprop="datePublished">2015-12-03</time>
@@ -148,9 +175,10 @@ suhosin
      
            <p itemprop="description" >首先卸载旧版本
 1yum remove php  php-*
+
 这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看）
 1rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
-安</p>
+</p>
         
     
     <time datetime="2015-07-13T07:24:53.000Z" itemprop="datePublished">2015-07-13</time>
@@ -173,9 +201,11 @@ suhosin
            <p itemprop="description" >一个GB2312编码的网站，设置正确，上线后发现中文都乱码了，原来是APACHE服务器设置有点问题：
 修改下APACHE配置即可解决：
 1vim /etc/httpd/conf/httpd.conf
+
 加上一句话：
 1AddDefaultCharset GB2312
-保存并重启服务</p>
+
+保存并重启</p>
         
     
     <time datetime="2015-03-18T08:51:14.000Z" itemprop="datePublished">2015-03-18</time>
@@ -241,7 +271,7 @@ suhosin
            <p itemprop="description" >示例
 
 
-JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#39;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy</p>
+JS123456789function generate_password(length = 16) &amp;#123;    let chars = &amp;#x27;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrst</p>
         
     
     <time datetime="2015-01-30T04:20:50.000Z" itemprop="datePublished">2015-01-30</time>
@@ -264,10 +294,12 @@ JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#3
            <p itemprop="description" >添加网站新建网站目录
 使用mkdir 目录名创建目录，例如
 1mkdir /data/wwwroot/abc/aaa.com
+
 修改权限
 1chmod -R 777 /data/wwwroot/abc/aaa.com
+
 绑定域名
-1vim /etc/httpd/conf/httpd.</p>
+1vim /etc/httpd/conf/http</p>
         
     
     <time datetime="2015-01-29T08:36:23.000Z" itemprop="datePublished">2015-01-29</time>
@@ -279,36 +311,9 @@ JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#3
 
 
 
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/server/34.html" title="CentOS修改mysql数据存储位置" itemprop="url">
-  
-    <h1 itemprop="name">CentOS修改mysql数据存储位置</h1>
-    
-     
-           <p itemprop="description" >腾讯云VPS买的数据盘挂载在/data下面，yum安装的mysql默认数据存储在系统盘上，所以需要搬家了。
-首先 关闭mysqld
-1service mysql stop
-编辑mysql配置文件
-1vim /usr/my.cnf
-找到如下行
-1datadir=
-修改成新的mysq</p>
-        
-    
-    <time datetime="2015-01-29T08:34:09.000Z" itemprop="datePublished">2015-01-29</time>
-  </a>
-</section>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix unexpand">
-    <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/3/">&lt;span&gt;&lt;&#x2F;span&gt;Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next&lt;span&gt;&lt;&#x2F;span&gt;</a>
   </nav>
 
 </div>
@@ -348,7 +353,7 @@ JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#3
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -389,15 +394,15 @@ JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#3
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -413,15 +418,11 @@ JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#3
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -429,15 +430,19 @@ JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#3
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -454,7 +459,7 @@ JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#3
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -542,7 +547,7 @@ JS123456789function generate_password(length = 16) &amp;#123;    let chars = &#3
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

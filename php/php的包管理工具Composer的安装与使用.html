@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>php的包管理工具Composer的安装与使用 | Jeay&#39;s blog</title>
@@ -12,17 +12,19 @@
 
     
     <meta name="description" content="php的包管理工具Composer的安装方法，国内镜像源切换，常用操作">
-<meta name="keywords" content="php,包管理,composer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php的包管理工具Composer的安装与使用">
-<meta property="og:url" content="https://www.jeay.net/php/php的包管理工具Composer的安装与使用.html">
+<meta property="og:url" content="https://www.jeay.net/php/php%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Composer%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
 <meta property="og:description" content="php的包管理工具Composer的安装方法，国内镜像源切换，常用操作">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-07-23T00:42:00.526Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-22T07:28:08.000Z">
+<meta property="article:modified_time" content="2020-07-23T00:42:00.526Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="包管理">
+<meta property="article:tag" content="composer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php的包管理工具Composer的安装与使用">
-<meta name="twitter:description" content="php的包管理工具Composer的安装方法，国内镜像源切换，常用操作">
 
     
     
@@ -32,9 +34,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -92,30 +96,36 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Composer"><span class="toc-number">1.</span> <span class="toc-text">安装Composer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换源为阿里云"><span class="toc-number">2.</span> <span class="toc-text">切换源为阿里云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用操作"><span class="toc-number">3.</span> <span class="toc-text">常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何引入composer安装的依赖"><span class="toc-number">4.</span> <span class="toc-text">如何引入composer安装的依赖</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Composer"><span class="toc-number">1.</span> <span class="toc-text">安装Composer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E4%BA%91"><span class="toc-number">2.</span> <span class="toc-text">切换源为阿里云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%95%E5%85%A5composer%E5%AE%89%E8%A3%85%E7%9A%84%E4%BE%9D%E8%B5%96"><span class="toc-number">4.</span> <span class="toc-text">如何引入composer安装的依赖</span></a></li></ol>
 		
 		</div>
 		
 		<h2 id="安装Composer"><a href="#安装Composer" class="headerlink" title="安装Composer"></a>安装<code>Composer</code></h2><blockquote>
 <p>运行这些命令前，请先确保已经安装php-cli并加入环境变量： 终端输入 <code>php -v</code> 看看是否能返回版本信息</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">php -r <span class="string">"copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"</span></span><br><span class="line">php composer-setup.php</span><br><span class="line">php -r <span class="string">"unlink('composer-setup.php');"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">php -r <span class="string">&quot;copy(&#x27;https://install.phpcomposer.com/installer&#x27;, &#x27;composer-setup.php&#x27;);&quot;</span></span><br><span class="line">php composer-setup.php</span><br><span class="line">php -r <span class="string">&quot;unlink(&#x27;composer-setup.php&#x27;);&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p>windows</p>
 <ol>
 <li>找到并进入 PHP 的安装目录（和你在命令行中执行的 php 指令应该是同一套 PHP）。</li>
 <li>将 composer.phar 复制到 PHP 的安装目录下面，也就是和 php.exe 在同一级目录。</li>
 <li>在 PHP 安装目录下新建一个 composer.bat 文件，并将下列代码保存到此文件中。</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@php <span class="string">"%~dp0composer.phar"</span> %*</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@php <span class="string">&quot;%~dp0composer.phar&quot;</span> %*</span><br></pre></td></tr></table></figure>
+
 <p>Linux 、 Mac</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv composer.phar /usr/<span class="built_in">local</span>/bin/composer</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mv</span> composer.phar /usr/local/bin/composer</span><br></pre></td></tr></table></figure>
+
 <h2 id="切换源为阿里云"><a href="#切换源为阿里云" class="headerlink" title="切换源为阿里云"></a>切换源为阿里云</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/</span><br></pre></td></tr></table></figure>
+
 <h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><p>类似<code>npm</code>会在项目根目录下建立<code>composer.json</code>，保存有项目信息、作者信息、依赖关系等。依赖包会安装到当前项目下的<code>vendor</code>目录中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化项目，在当前项目下创建composer.json</span></span><br><span class="line">composer init</span><br><span class="line"><span class="comment"># 根据当前项目下的composer.json安装依赖</span></span><br><span class="line">composer install</span><br><span class="line"><span class="comment"># 安装指定应用</span></span><br><span class="line">composer require firebase/php-jwt</span><br></pre></td></tr></table></figure>
-<h2 id="如何引入composer安装的依赖"><a href="#如何引入composer安装的依赖" class="headerlink" title="如何引入composer安装的依赖"></a>如何引入composer安装的依赖</h2><p><code>composer</code>使用<code>PSR-40</code>和<code>PSR-4</code>规范，在<a href="https://packagist.org/" target="_blank" rel="noopener">packagist</a>官网一般会有使用方法介绍</p>
+
+<h2 id="如何引入composer安装的依赖"><a href="#如何引入composer安装的依赖" class="headerlink" title="如何引入composer安装的依赖"></a>如何引入composer安装的依赖</h2><p><code>composer</code>使用<code>PSR-40</code>和<code>PSR-4</code>规范，在<a target="_blank" rel="noopener" href="https://packagist.org/">packagist</a>官网一般会有使用方法介绍</p>
 <p>例如刚刚安装的<code>firebase/php-jwt</code></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="keyword">__DIR__</span>.<span class="string">'/vendor/autoload.php'</span>;</span><br><span class="line"><span class="keyword">use</span> \<span class="title">Firebase</span>\<span class="title">JWT</span>\<span class="title">JWT</span>;</span><br><span class="line">var_dump(JWT::encode([<span class="string">'uid'</span>=&gt;<span class="number">1</span>], <span class="string">'abc1234'</span>, <span class="string">'HS256'</span>));</span><br></pre></td></tr></table></figure>
-<p><a href="https://docs.phpcomposer.com/" target="_blank" rel="noopener">Composer中文文档</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="keyword">__DIR__</span>.<span class="string">&#x27;/vendor/autoload.php&#x27;</span>;</span><br><span class="line"><span class="keyword">use</span> \<span class="title">Firebase</span>\<span class="title">JWT</span>\<span class="title">JWT</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(JWT::<span class="title function_ invoke__">encode</span>([<span class="string">&#x27;uid&#x27;</span>=&gt;<span class="number">1</span>], <span class="string">&#x27;abc1234&#x27;</span>, <span class="string">&#x27;HS256&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://docs.phpcomposer.com/">Composer中文文档</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -216,7 +226,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Composer"><span class="toc-number">1.</span> <span class="toc-text">安装Composer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换源为阿里云"><span class="toc-number">2.</span> <span class="toc-text">切换源为阿里云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用操作"><span class="toc-number">3.</span> <span class="toc-text">常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何引入composer安装的依赖"><span class="toc-number">4.</span> <span class="toc-text">如何引入composer安装的依赖</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Composer"><span class="toc-number">1.</span> <span class="toc-text">安装Composer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E4%BA%91"><span class="toc-number">2.</span> <span class="toc-text">切换源为阿里云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%95%E5%85%A5composer%E5%AE%89%E8%A3%85%E7%9A%84%E4%BE%9D%E8%B5%96"><span class="toc-number">4.</span> <span class="toc-text">如何引入composer安装的依赖</span></a></li></ol>
  
   </div>
 
@@ -254,7 +264,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -295,15 +305,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -319,15 +329,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -335,15 +341,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -360,7 +370,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -448,7 +458,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

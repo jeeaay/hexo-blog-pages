@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>安装zsh和oh-my-zsh zsh常用插件介绍 | Jeay&#39;s blog</title>
@@ -11,18 +11,20 @@
     
 
     
-    <meta name="description" content="安装zsh123456# 安装zshapt install -y zsh# 切换默认SHELLchsh -s /bin/zsh# 使用zshzsh 如果没有git，需要安装1apt install -y git 安装oh-my-zsh1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - |">
-<meta name="keywords" content="linux,ubuntu,zsh">
+    <meta name="description" content="安装zsh123456# 安装zshapt install -y zsh# 切换默认SHELLchsh -s &#x2F;bin&#x2F;zsh# 使用zshzsh  如果没有git，需要安装 1apt install -y git  安装oh-my-zsh1wget https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;raw&#x2F;master&#x2F;tools&#x2F;install.sh -O -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装zsh和oh-my-zsh zsh常用插件介绍">
 <meta property="og:url" content="https://www.jeay.net/tools/zsh.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:description" content="安装zsh123456# 安装zshapt install -y zsh# 切换默认SHELLchsh -s /bin/zsh# 使用zshzsh 如果没有git，需要安装1apt install -y git 安装oh-my-zsh1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - |">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-02-27T06:15:56.951Z">
+<meta property="og:description" content="安装zsh123456# 安装zshapt install -y zsh# 切换默认SHELLchsh -s &#x2F;bin&#x2F;zsh# 使用zshzsh  如果没有git，需要安装 1apt install -y git  安装oh-my-zsh1wget https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;raw&#x2F;master&#x2F;tools&#x2F;install.sh -O -">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-02T02:25:00.000Z">
+<meta property="article:modified_time" content="2020-02-27T06:15:56.951Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="zsh">
+<meta property="article:tag" content="ubuntu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装zsh和oh-my-zsh zsh常用插件介绍">
-<meta name="twitter:description" content="安装zsh123456# 安装zshapt install -y zsh# 切换默认SHELLchsh -s /bin/zsh# 使用zshzsh 如果没有git，需要安装1apt install -y git 安装oh-my-zsh1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - |">
 
     
     
@@ -32,9 +34,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -92,19 +96,28 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装zsh"><span class="toc-number">1.</span> <span class="toc-text">安装zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装oh-my-zsh"><span class="toc-number">2.</span> <span class="toc-text">安装oh-my-zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装zsh插件"><span class="toc-number">3.</span> <span class="toc-text">安装zsh插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置插件"><span class="toc-number">4.</span> <span class="toc-text">配置插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题"><span class="toc-number">5.</span> <span class="toc-text">主题</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85zsh"><span class="toc-number">1.</span> <span class="toc-text">安装zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85oh-my-zsh"><span class="toc-number">2.</span> <span class="toc-text">安装oh-my-zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85zsh%E6%8F%92%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">安装zsh插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">配置插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">主题</span></a></li></ol>
 		
 		</div>
 		
 		<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装zsh</span></span><br><span class="line">apt install -y zsh</span><br><span class="line"><span class="comment"># 切换默认SHELL</span></span><br><span class="line">chsh -s /bin/zsh</span><br><span class="line"><span class="comment"># 使用zsh</span></span><br><span class="line">zsh</span><br></pre></td></tr></table></figure>
-<p>如果没有<code>git</code>，需要安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -y git</span><br></pre></td></tr></table></figure></p>
+
+<p>如果没有<code>git</code>，需要安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -y git</span><br></pre></td></tr></table></figure>
+
 <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+
 <h2 id="安装zsh插件"><a href="#安装zsh插件" class="headerlink" title="安装zsh插件"></a>安装zsh插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 高亮</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br><span class="line"><span class="comment"># 自动补全</span></span><br><span class="line">git <span class="built_in">clone</span> git://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+
 <h2 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开zshrc</span></span><br><span class="line">vim ~/.zshrc</span><br><span class="line"><span class="comment"># 61行左右</span></span><br><span class="line">plugins=(z git zsh-autosuggestions zsh-syntax-highlighting)</span><br></pre></td></tr></table></figure>
+
 <p><code>z</code>用于快速跳转目录</p>
 <p><code>git</code>用于<code>git</code>命令补全</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>参考<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="noopener">oh-my-zsh主题列表</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改主题 在第10行, 引号里填上你想要换的主题，保存并重新打开终端就能看见了，也可以使用 random 随机切换</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br></pre></td></tr></table></figure>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>参考<a target="_blank" rel="noopener" href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">oh-my-zsh主题列表</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改主题 在第10行, 引号里填上你想要换的主题，保存并重新打开终端就能看见了，也可以使用 random 随机切换</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;ys&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -118,7 +131,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/linux/">linux</a><a href="/tags/ubuntu/">ubuntu</a><a href="/tags/zsh/">zsh</a>
+  <span></span> <a href="/tags/linux/">linux</a><a href="/tags/zsh/">zsh</a><a href="/tags/ubuntu/">ubuntu</a>
   </div>
 
 </div>
@@ -205,7 +218,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装zsh"><span class="toc-number">1.</span> <span class="toc-text">安装zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装oh-my-zsh"><span class="toc-number">2.</span> <span class="toc-text">安装oh-my-zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装zsh插件"><span class="toc-number">3.</span> <span class="toc-text">安装zsh插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置插件"><span class="toc-number">4.</span> <span class="toc-text">配置插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题"><span class="toc-number">5.</span> <span class="toc-text">主题</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85zsh"><span class="toc-number">1.</span> <span class="toc-text">安装zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85oh-my-zsh"><span class="toc-number">2.</span> <span class="toc-text">安装oh-my-zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85zsh%E6%8F%92%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">安装zsh插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">配置插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">主题</span></a></li></ol>
  
   </div>
 
@@ -243,7 +256,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -284,15 +297,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -308,15 +321,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -324,15 +333,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -349,7 +362,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -437,7 +450,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

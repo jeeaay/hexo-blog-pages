@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>Ubuntu / Debian 安装 配置 LNMP环境 Nginx PHP7 MySQL MongoDB | Jeay&#39;s blog</title>
@@ -11,18 +11,22 @@
     
 
     
-    <meta name="description" content="切换root用户1sudo su 也可以用非root用户操作：以下的每一个命令前加 sudo 更新软件源1apt update -y 如果你想升级下服务器上的软件，在执行完apt update -y后可以再执行下apt upgrade -y 安装 MySQL1apt install -y mysql-server 安装过程中会提示  New password for the MySQL “root">
-<meta name="keywords" content="运维,lnmp,php7,nginx,ubuntu">
+    <meta name="description" content="切换root用户1sudo su  也可以用非root用户操作：以下的每一个命令前加 sudo 更新软件源1apt update -y  如果你想升级下服务器上的软件，在执行完apt update -y后可以再执行下apt upgrade -y 安装 MySQL1apt install -y mysql-server  安装过程中会提示  New password for the MySQL “r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu &#x2F; Debian 安装 配置 LNMP环境 Nginx PHP7 MySQL MongoDB">
 <meta property="og:url" content="https://www.jeay.net/server/269.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:description" content="切换root用户1sudo su 也可以用非root用户操作：以下的每一个命令前加 sudo 更新软件源1apt update -y 如果你想升级下服务器上的软件，在执行完apt update -y后可以再执行下apt upgrade -y 安装 MySQL1apt install -y mysql-server 安装过程中会提示  New password for the MySQL “root">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-02-27T06:15:56.893Z">
+<meta property="og:description" content="切换root用户1sudo su  也可以用非root用户操作：以下的每一个命令前加 sudo 更新软件源1apt update -y  如果你想升级下服务器上的软件，在执行完apt update -y后可以再执行下apt upgrade -y 安装 MySQL1apt install -y mysql-server  安装过程中会提示  New password for the MySQL “r">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-05-02T09:31:59.000Z">
+<meta property="article:modified_time" content="2020-02-27T06:15:56.893Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="运维">
+<meta property="article:tag" content="lnmp">
+<meta property="article:tag" content="php7">
+<meta property="article:tag" content="nginx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu &#x2F; Debian 安装 配置 LNMP环境 Nginx PHP7 MySQL MongoDB">
-<meta name="twitter:description" content="切换root用户1sudo su 也可以用非root用户操作：以下的每一个命令前加 sudo 更新软件源1apt update -y 如果你想升级下服务器上的软件，在执行完apt update -y后可以再执行下apt upgrade -y 安装 MySQL1apt install -y mysql-server 安装过程中会提示  New password for the MySQL “root">
 
     
     
@@ -32,9 +36,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -92,15 +98,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#切换root用户"><span class="toc-number">1.</span> <span class="toc-text">切换root用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新软件源"><span class="toc-number">2.</span> <span class="toc-text">更新软件源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-MySQL"><span class="toc-number">3.</span> <span class="toc-text">安装 MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Nginx和PHP"><span class="toc-number">4.</span> <span class="toc-text">安装 Nginx和PHP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装MongoDB及php-mongodb扩展"><span class="toc-number">5.</span> <span class="toc-text">安装MongoDB及php-mongodb扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置MySQL数据储存路径"><span class="toc-number">6.</span> <span class="toc-text">配置MySQL数据储存路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Nginx和PHP"><span class="toc-number">7.</span> <span class="toc-text">配置Nginx和PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为php做一个专门的配置文件"><span class="toc-number">7.1.</span> <span class="toc-text">为php做一个专门的配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为TP5做一个专门配置"><span class="toc-number">7.2.</span> <span class="toc-text">为TP5做一个专门配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为网站文件创建目录并建立软链接"><span class="toc-number">7.3.</span> <span class="toc-text">为网站文件创建目录并建立软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为网站文件创建目录"><span class="toc-number">7.4.</span> <span class="toc-text">为网站文件创建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加虚拟主机"><span class="toc-number">7.5.</span> <span class="toc-text">添加虚拟主机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phpMyAdmin"><span class="toc-number">8.</span> <span class="toc-text">phpMyAdmin</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2root%E7%94%A8%E6%88%B7"><span class="toc-number">1.</span> <span class="toc-text">切换root用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-number">2.</span> <span class="toc-text">更新软件源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-MySQL"><span class="toc-number">3.</span> <span class="toc-text">安装 MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Nginx%E5%92%8CPHP"><span class="toc-number">4.</span> <span class="toc-text">安装 Nginx和PHP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85MongoDB%E5%8F%8Aphp-mongodb%E6%89%A9%E5%B1%95"><span class="toc-number">5.</span> <span class="toc-text">安装MongoDB及php-mongodb扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEMySQL%E6%95%B0%E6%8D%AE%E5%82%A8%E5%AD%98%E8%B7%AF%E5%BE%84"><span class="toc-number">6.</span> <span class="toc-text">配置MySQL数据储存路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AENginx%E5%92%8CPHP"><span class="toc-number">7.</span> <span class="toc-text">配置Nginx和PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BAphp%E5%81%9A%E4%B8%80%E4%B8%AA%E4%B8%93%E9%97%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">7.1.</span> <span class="toc-text">为php做一个专门的配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BATP5%E5%81%9A%E4%B8%80%E4%B8%AA%E4%B8%93%E9%97%A8%E9%85%8D%E7%BD%AE"><span class="toc-number">7.2.</span> <span class="toc-text">为TP5做一个专门配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E7%BD%91%E7%AB%99%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E5%B9%B6%E5%BB%BA%E7%AB%8B%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="toc-number">7.3.</span> <span class="toc-text">为网站文件创建目录并建立软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E7%BD%91%E7%AB%99%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-number">7.4.</span> <span class="toc-text">为网站文件创建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="toc-number">7.5.</span> <span class="toc-text">添加虚拟主机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phpMyAdmin"><span class="toc-number">8.</span> <span class="toc-text">phpMyAdmin</span></a></li></ol>
 		
 		</div>
 		
 		<h2 id="切换root用户"><a href="#切换root用户" class="headerlink" title="切换root用户"></a>切换root用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+
 <p>也可以用非root用户操作：以下的每一个命令前加 <code>sudo</code></p>
 <h2 id="更新软件源"><a href="#更新软件源" class="headerlink" title="更新软件源"></a>更新软件源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update -y</span><br></pre></td></tr></table></figure>
+
 <p>如果你想升级下服务器上的软件，在执行完<code>apt update -y</code>后可以再执行下<code>apt upgrade -y</code></p>
 <h2 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -y mysql-server</span><br></pre></td></tr></table></figure>
+
 <p>安装过程中会提示</p>
 <blockquote>
 <p>New password for the MySQL “root” user:</p>
@@ -113,80 +122,112 @@
 </ul>
 <p><em>如果没有提示输入密码</em>，root密码将会被设置为空、且不能修改，运行<code>cat /etc/mysql/debian.cnf</code>可以看到系统分配的用户名和密码，可以使用它来登陆mysql；添加一个新的管理员账户<code>admin</code> 就可以使用了，这一步可以在phpmyadmin装好后在phpmyadmin里添加</p>
 <h2 id="安装-Nginx和PHP"><a href="#安装-Nginx和PHP" class="headerlink" title="安装 Nginx和PHP"></a>安装 Nginx和PHP</h2><blockquote>
-<p>PHP5.6、7.0、7.1即将停止更新，<a href="http://php.net/supported-versions.php" target="_blank" rel="noopener">详情查看这里</a></p>
+<p>PHP5.6、7.0、7.1即将停止更新，<a target="_blank" rel="noopener" href="http://php.net/supported-versions.php">详情查看这里</a></p>
 </blockquote>
 <p><em>最近新购的ubuntu18都已经默认为php7.2，直接安装7.0会报错</em></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装nginx</span></span><br><span class="line">apt install -y nginx</span><br><span class="line"><span class="comment"># 安装php7.2</span></span><br><span class="line">apt install -y php7.2 php7.2-fpm</span><br><span class="line"><span class="comment"># 安装一些常用php扩展</span></span><br><span class="line">apt install php7.2-mysql php7.2-sqlite3 php7.2-curl php7.2-gd php7.2-mbstring php7.2-json</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>mcrypt 在7.0以上版本已经被移除了，所以如果安装php7.2-mcrypt会提示找不到</p>
 </blockquote>
 <p><strong>上一步报错提示找不到7.2的解决方法：</strong></p>
 <p>还没有php7.2的源，所以安装php7.2会提示找不到，先进行源的添加：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件源添加工具：</span></span><br><span class="line">apt -y install software-properties-common apt-transport-https lsb-release ca-certificates</span><br><span class="line"><span class="comment"># 添加 Ondřej Surý 的 PHP PPA 源，需要按一次回车：</span></span><br><span class="line">add-apt-repository ppa:ondrej/php  </span><br><span class="line"><span class="comment"># 更新软件源缓存：</span></span><br><span class="line">apt update</span><br></pre></td></tr></table></figure>
+
 <p><em>注意： 需要哪些PHP扩展主要看自己的业务需求，如果比如你还会用到<code>memcache</code>、<code>redis</code>可以这样安装:</em></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装memcache redis扩展</span></span><br><span class="line">apt install php-memcached php-redis</span><br></pre></td></tr></table></figure>
+
 <p><strong>到这一步，<code>LNMP</code>环境安装完成了，下面介绍的<code>MongoDB</code>和<code>MySQL</code>修改路径 根据实际需要选择</strong></p>
 <h2 id="安装MongoDB及php-mongodb扩展"><a href="#安装MongoDB及php-mongodb扩展" class="headerlink" title="安装MongoDB及php-mongodb扩展"></a>安装MongoDB及php-mongodb扩展</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 mongodb</span></span><br><span class="line">apt install mongodb</span><br><span class="line"><span class="comment"># 安装PHP扩展php-mongodb</span></span><br><span class="line">apt install php-mongodb</span><br></pre></td></tr></table></figure>
+
 <h2 id="配置MySQL数据储存路径"><a href="#配置MySQL数据储存路径" class="headerlink" title="配置MySQL数据储存路径"></a>配置MySQL数据储存路径</h2><p><strong>如果有两块以上的硬盘，可以设置一下MySQL数据的储存路径，如果只有系统盘，这一步配置可以跳过了</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service mysql stop</span><br><span class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure>
+
 <p>找到<code>datadir = /var/lib/mysql</code></p>
 <p>修改成其他硬盘挂载的位置，如</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datadir = /data/db/mysql</span><br></pre></td></tr></table></figure>
+
 <p><code>:wq</code> 保存&amp;退出<br>复制<code>mysql</code>以前的数据到新目录下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果db目录还不存在，你需要自己创建好</span></span><br><span class="line">mkdir /data/db</span><br><span class="line">chmod 777 /data/db</span><br><span class="line"><span class="comment"># 复制mysql以前的数据到新目录</span></span><br><span class="line">cp -r -p /var/lib/mysql  /data/db/</span><br><span class="line"><span class="comment"># 修改文件:</span></span><br><span class="line">vim /etc/apparmor.d/usr.sbin.mysqld</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果db目录还不存在，你需要自己创建好</span></span><br><span class="line"><span class="built_in">mkdir</span> /data/db</span><br><span class="line"><span class="built_in">chmod</span> 777 /data/db</span><br><span class="line"><span class="comment"># 复制mysql以前的数据到新目录</span></span><br><span class="line"><span class="built_in">cp</span> -r -p /var/lib/mysql  /data/db/</span><br><span class="line"><span class="comment"># 修改文件:</span></span><br><span class="line">vim /etc/apparmor.d/usr.sbin.mysqld</span><br></pre></td></tr></table></figure>
+
 <p>找到<code># Allow data dir access</code>这行</p>
 <p>下面添加两行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/data/db/mysql/ r,</span><br><span class="line">/data/db/mysql/** rwk,</span><br></pre></td></tr></table></figure>
+
 <p>保存退出后，重新加载<code>apparmor</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service  apparmor  reload</span><br></pre></td></tr></table></figure>
+
 <p>启动<code>mysql</code>服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql start</span><br></pre></td></tr></table></figure>
+
 <p>参考文章：<a href="/server/34.html">CentOS修改mysql数据存储位置</a></p>
 <h2 id="配置Nginx和PHP"><a href="#配置Nginx和PHP" class="headerlink" title="配置Nginx和PHP"></a>配置Nginx和PHP</h2><p>打开<code>nginx</code>配置文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
 <p>修改默认首页</p>
 <p>在<code># Virtual Host Configs</code>下面，添加内容如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index index.htm index.html Index.html index.php;</span><br></pre></td></tr></table></figure>
+
 <p>开启gzip</p>
 <p>在<code>gzip on;</code>这行下面，替换内容如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gzip on;</span><br><span class="line">gzip_disable <span class="string">"msie6"</span>;</span><br><span class="line">gzip_vary on;</span><br><span class="line">gzip_min_length 1k;</span><br><span class="line">gzip_comp_level 2;</span><br><span class="line">gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript font/ttf font/otf image/svg+xml;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gzip on;</span><br><span class="line">gzip_disable <span class="string">&quot;msie6&quot;</span>;</span><br><span class="line">gzip_vary on;</span><br><span class="line">gzip_min_length 1k;</span><br><span class="line">gzip_comp_level 2;</span><br><span class="line">gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript font/ttf font/otf image/svg+xml;</span><br></pre></td></tr></table></figure>
+
 <h3 id="为php做一个专门的配置文件"><a href="#为php做一个专门的配置文件" class="headerlink" title="为php做一个专门的配置文件"></a>为php做一个专门的配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/php.conf</span><br></pre></td></tr></table></figure>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">    <span class="attribute">include</span> snippets/fastcgi-php.conf;</span><br><span class="line">    <span class="attribute">include</span> fastcgi_params;</span><br><span class="line">    <span class="attribute">fastcgi_pass</span> unix:/run/php/php7.2-fpm.sock;</span><br><span class="line">    <span class="attribute">fastcgi_param</span>  SCRIPT_FILENAME  <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">    <span class="attribute">include</span> snippets/fastcgi-php.conf;</span><br><span class="line">    <span class="attribute">include</span> fastcgi_params;</span><br><span class="line">    <span class="attribute">fastcgi_pass</span> unix:/run/php/php7.2-fpm.sock;</span><br><span class="line">    <span class="attribute">fastcgi_param</span>  SCRIPT_FILENAME  <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>以下内容非必要！</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#禁止.htaccess</span></span><br><span class="line"><span class="attribute">location</span> <span class="regexp">~ /\.ht</span> &#123;</span><br><span class="line">     <span class="attribute">deny</span>  all;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#禁止wordpress目录</span></span><br><span class="line"><span class="attribute">if</span> ( <span class="variable">$request_uri</span> <span class="regexp">~*  "^/wp-.*$")</span>&#123;</span><br><span class="line">    <span class="attribute">return</span> <span class="number">403</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#禁止.htaccess</span></span><br><span class="line"><span class="section">location</span> <span class="regexp">~ /\.ht</span> &#123;</span><br><span class="line">     <span class="attribute">deny</span>  all;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#禁止wordpress目录</span></span><br><span class="line"><span class="attribute">if</span> ( <span class="variable">$request_uri</span> <span class="regexp">~*  &quot;^/wp-.*$&quot;)</span>&#123;</span><br><span class="line">    <span class="attribute">return</span> <span class="number">403</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="为TP5做一个专门配置"><a href="#为TP5做一个专门配置" class="headerlink" title="为TP5做一个专门配置"></a>为TP5做一个专门配置</h3><p>最近ThinkPHP5用的比较多</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/tp5.conf</span><br></pre></td></tr></table></figure>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Only for ThinkPHP5</span></span><br><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">    <span class="attribute">index</span>    index.html index.php;</span><br><span class="line">    <span class="attribute">if</span> ( -f <span class="variable">$request_filename</span>) &#123;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">if</span> ( !-e <span class="variable">$request_filename</span>) &#123;</span><br><span class="line">        <span class="attribute">rewrite</span><span class="regexp"> ^(.*)$</span> /index.php?s=/<span class="variable">$1</span> <span class="literal">last</span>;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">    <span class="attribute">include</span> snippets/fastcgi-php.conf;</span><br><span class="line">    <span class="attribute">include</span> fastcgi_params;</span><br><span class="line">    <span class="attribute">fastcgi_pass</span> unix:/run/php/php7.0-fpm.sock;</span><br><span class="line">    <span class="attribute">fastcgi_param</span>  SCRIPT_FILENAME  <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="为网站文件创建目录并建立软链接"><a href="#为网站文件创建目录并建立软链接" class="headerlink" title="为网站文件创建目录并建立软链接"></a>为网站文件创建目录并建立软链接</h3><p>(有数据盘,挂载在/data为例)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /data/www</span><br><span class="line"><span class="comment"># 为了操作方便，在/下建立网站目录的软链接</span></span><br><span class="line">ln -s /data/www /wwwroot</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Only for ThinkPHP5</span></span><br><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">index</span>    index.html index.php;</span><br><span class="line">    <span class="attribute">if</span> ( -f <span class="variable">$request_filename</span>) &#123;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">if</span> ( !-e <span class="variable">$request_filename</span>) &#123;</span><br><span class="line">        <span class="attribute">rewrite</span><span class="regexp"> ^(.*)$</span> /index.php?s=/<span class="variable">$1</span> <span class="literal">last</span>;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">    <span class="attribute">include</span> snippets/fastcgi-php.conf;</span><br><span class="line">    <span class="attribute">include</span> fastcgi_params;</span><br><span class="line">    <span class="attribute">fastcgi_pass</span> unix:/run/php/php7.0-fpm.sock;</span><br><span class="line">    <span class="attribute">fastcgi_param</span>  SCRIPT_FILENAME  <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="为网站文件创建目录并建立软链接"><a href="#为网站文件创建目录并建立软链接" class="headerlink" title="为网站文件创建目录并建立软链接"></a>为网站文件创建目录并建立软链接</h3><p>(有数据盘,挂载在&#x2F;data为例)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /data/www</span><br><span class="line"><span class="comment"># 为了操作方便，在/下建立网站目录的软链接</span></span><br><span class="line"><span class="built_in">ln</span> -s /data/www /wwwroot</span><br></pre></td></tr></table></figure>
+
 <h3 id="为网站文件创建目录"><a href="#为网站文件创建目录" class="headerlink" title="为网站文件创建目录"></a>为网站文件创建目录</h3><p>(没有数据盘)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /wwwroot</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /wwwroot</span><br></pre></td></tr></table></figure>
+
 <h3 id="添加虚拟主机"><a href="#添加虚拟主机" class="headerlink" title="添加虚拟主机"></a>添加虚拟主机</h3><p>添加虚拟主机 就是在<code>/etc/nginx/sites-available/</code>中创建网站配置文件 并软链接到<code>/etc/nginx/sites-enabled/</code></p>
 <p>这里以<code>test</code>为例子:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/sites-available/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/sites-available/test</span><br></pre></td></tr></table></figure>
+
 <p>添加以下内容</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>              <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>         www.test.com test.com;</span><br><span class="line">    <span class="attribute">root</span>                /wwwroot/test;</span><br><span class="line">    <span class="attribute">include</span>      php.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/nginx/sites-available/<span class="built_in">test</span> /etc/nginx/sites-enabled/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /etc/nginx/sites-available/test /etc/nginx/sites-enabled/</span><br></pre></td></tr></table></figure>
+
 <p><code>ln</code> 用来创建链接 <code>-s</code>参数表示软连接 并没有创建实际的文件内容 仅仅是一个映射的关系<br><code>-s</code> 后面的参数分别是 <code>源路径</code> <code>目标路径</code><br>如果<code>目标路径</code>是一个目录，<code>源路径</code>是一个文件，会自动在目标路径下创建<code>源路径</code>相同的文件</p>
 <p>测试，输出一下phpinfo试试吧</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建网站根目录，这里和上面`/etc/nginx/sites-available/test`里的`root`路径对应</span></span><br><span class="line">mkdir /wwwroot/<span class="built_in">test</span>/</span><br><span class="line"><span class="comment"># 创建网站首页</span></span><br><span class="line">vim /wwwroot/<span class="built_in">test</span>/index.php</span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    phpinfo();</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建网站根目录，这里和上面`/etc/nginx/sites-available/test`里的`root`路径对应</span></span><br><span class="line"><span class="built_in">mkdir</span> /wwwroot/test/</span><br><span class="line"><span class="comment"># 创建网站首页</span></span><br><span class="line">vim /wwwroot/test/index.php</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="title function_ invoke__">phpinfo</span>();</span><br></pre></td></tr></table></figure>
+
 <p>如果你自己有域名的话可以用真实的域名测试。因为刚刚设置的是<code>test.com</code>这个测试域名，所以只能改本机的<code>host</code>文件了:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务器的公网IP  www.test.com test.com</span><br></pre></td></tr></table></figure>
-<h2 id="phpMyAdmin"><a href="#phpMyAdmin" class="headerlink" title="phpMyAdmin"></a>phpMyAdmin</h2><p>先切换到/tmp目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务器的公网IP  www.test.com test.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="phpMyAdmin"><a href="#phpMyAdmin" class="headerlink" title="phpMyAdmin"></a>phpMyAdmin</h2><p>先切换到&#x2F;tmp目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br></pre></td></tr></table></figure>
-<p>打开<a href="https://www.phpmyadmin.net/" target="_blank" rel="noopener">phpMyAdmin</a>官网，找到下载（Download），右键复制链接地址</p>
+
+<p>打开<a target="_blank" rel="noopener" href="https://www.phpmyadmin.net/">phpMyAdmin</a>官网，找到下载（Download），右键复制链接地址</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载</span></span><br><span class="line">wget 【右键粘贴刚刚复制的内容】</span><br><span class="line"><span class="comment"># 例如刚刚复制的是：https://files.phpmyadmin.net/phpMyAdmin/4.8.3/phpMyAdmin-4.8.3-all-languages.zip</span></span><br><span class="line"><span class="comment"># 后面也以这个文件（phpMyAdmin-4.8.3-all-languages.zip）为例 注意自己的文件名</span></span><br></pre></td></tr></table></figure>
+
 <p>解压，如果你还没有安装<code>unzip</code>，需要先安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装unzip</span></span><br><span class="line">apt install unzip</span><br><span class="line"><span class="comment"># 解压刚刚下载的压缩包，注意文件名</span></span><br><span class="line">unzip phpMyAdmin-4.8.3-all-languages.zip</span><br><span class="line"><span class="comment"># 创建phpMyAdmin目录</span></span><br><span class="line">mkdir /wwwroot/pub</span><br><span class="line">mkdir /wwwroot/pub/phpmyadmin</span><br><span class="line"><span class="comment"># 移动下载的phpmyadmin到网站目录，注意文件名</span></span><br><span class="line">cp -r /tmp/phpMyAdmin-4.8.3-all-languages/* /wwwroot/pub/phpmyadmin</span><br><span class="line"><span class="comment"># 更改用户和权限</span></span><br><span class="line">chown -R www-data:www-data /wwwroot/pub/phpmyadmin</span><br><span class="line">chmod -R 755 /wwwroot/pub/phpmyadmin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装unzip</span></span><br><span class="line">apt install unzip</span><br><span class="line"><span class="comment"># 解压刚刚下载的压缩包，注意文件名</span></span><br><span class="line">unzip phpMyAdmin-4.8.3-all-languages.zip</span><br><span class="line"><span class="comment"># 创建phpMyAdmin目录</span></span><br><span class="line"><span class="built_in">mkdir</span> /wwwroot/pub</span><br><span class="line"><span class="built_in">mkdir</span> /wwwroot/pub/phpmyadmin</span><br><span class="line"><span class="comment"># 移动下载的phpmyadmin到网站目录，注意文件名</span></span><br><span class="line"><span class="built_in">cp</span> -r /tmp/phpMyAdmin-4.8.3-all-languages/* /wwwroot/pub/phpmyadmin</span><br><span class="line"><span class="comment"># 更改用户和权限</span></span><br><span class="line"><span class="built_in">chown</span> -R www-data:www-data /wwwroot/pub/phpmyadmin</span><br><span class="line"><span class="built_in">chmod</span> -R 755 /wwwroot/pub/phpmyadmin</span><br></pre></td></tr></table></figure>
+
 <p>修改虚拟主机配置，添加<code>phpmyadmin</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/sites-available/phpmyadmin</span><br></pre></td></tr></table></figure>
+
 <p>添加以下内容</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>              <span class="number">8088</span>;</span><br><span class="line">    <span class="attribute">root</span>                /wwwroot/pub/phpmyadmin;</span><br><span class="line">    <span class="attribute">include</span>      php.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>添加软链接</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/phpmyadmin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/phpmyadmin</span><br></pre></td></tr></table></figure>
+
 <p>重新载入<code>nginx</code>配置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx reload</span><br></pre></td></tr></table></figure>
+
 <p>访问 服务器ip:8088试一试吧<br>参考文章<a href="/server/143.html">Linux上phpMyAdmin怎么安装</a></p>
   
 	</div>
@@ -201,7 +242,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/运维/">运维</a><a href="/tags/lnmp/">lnmp</a><a href="/tags/php7/">php7</a><a href="/tags/nginx/">nginx</a><a href="/tags/ubuntu/">ubuntu</a>
+  <span></span> <a href="/tags/ubuntu/">ubuntu</a><a href="/tags/运维/">运维</a><a href="/tags/lnmp/">lnmp</a><a href="/tags/php7/">php7</a><a href="/tags/nginx/">nginx</a>
   </div>
 
 </div>
@@ -288,7 +329,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#切换root用户"><span class="toc-number">1.</span> <span class="toc-text">切换root用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新软件源"><span class="toc-number">2.</span> <span class="toc-text">更新软件源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-MySQL"><span class="toc-number">3.</span> <span class="toc-text">安装 MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Nginx和PHP"><span class="toc-number">4.</span> <span class="toc-text">安装 Nginx和PHP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装MongoDB及php-mongodb扩展"><span class="toc-number">5.</span> <span class="toc-text">安装MongoDB及php-mongodb扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置MySQL数据储存路径"><span class="toc-number">6.</span> <span class="toc-text">配置MySQL数据储存路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Nginx和PHP"><span class="toc-number">7.</span> <span class="toc-text">配置Nginx和PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为php做一个专门的配置文件"><span class="toc-number">7.1.</span> <span class="toc-text">为php做一个专门的配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为TP5做一个专门配置"><span class="toc-number">7.2.</span> <span class="toc-text">为TP5做一个专门配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为网站文件创建目录并建立软链接"><span class="toc-number">7.3.</span> <span class="toc-text">为网站文件创建目录并建立软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为网站文件创建目录"><span class="toc-number">7.4.</span> <span class="toc-text">为网站文件创建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加虚拟主机"><span class="toc-number">7.5.</span> <span class="toc-text">添加虚拟主机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phpMyAdmin"><span class="toc-number">8.</span> <span class="toc-text">phpMyAdmin</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2root%E7%94%A8%E6%88%B7"><span class="toc-number">1.</span> <span class="toc-text">切换root用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-number">2.</span> <span class="toc-text">更新软件源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-MySQL"><span class="toc-number">3.</span> <span class="toc-text">安装 MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Nginx%E5%92%8CPHP"><span class="toc-number">4.</span> <span class="toc-text">安装 Nginx和PHP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85MongoDB%E5%8F%8Aphp-mongodb%E6%89%A9%E5%B1%95"><span class="toc-number">5.</span> <span class="toc-text">安装MongoDB及php-mongodb扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEMySQL%E6%95%B0%E6%8D%AE%E5%82%A8%E5%AD%98%E8%B7%AF%E5%BE%84"><span class="toc-number">6.</span> <span class="toc-text">配置MySQL数据储存路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AENginx%E5%92%8CPHP"><span class="toc-number">7.</span> <span class="toc-text">配置Nginx和PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BAphp%E5%81%9A%E4%B8%80%E4%B8%AA%E4%B8%93%E9%97%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">7.1.</span> <span class="toc-text">为php做一个专门的配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BATP5%E5%81%9A%E4%B8%80%E4%B8%AA%E4%B8%93%E9%97%A8%E9%85%8D%E7%BD%AE"><span class="toc-number">7.2.</span> <span class="toc-text">为TP5做一个专门配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E7%BD%91%E7%AB%99%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E5%B9%B6%E5%BB%BA%E7%AB%8B%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="toc-number">7.3.</span> <span class="toc-text">为网站文件创建目录并建立软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E7%BD%91%E7%AB%99%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-number">7.4.</span> <span class="toc-text">为网站文件创建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="toc-number">7.5.</span> <span class="toc-text">添加虚拟主机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phpMyAdmin"><span class="toc-number">8.</span> <span class="toc-text">phpMyAdmin</span></a></li></ol>
  
   </div>
 
@@ -326,7 +367,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -367,15 +408,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -391,15 +432,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -407,15 +444,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -432,7 +473,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -520,7 +561,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

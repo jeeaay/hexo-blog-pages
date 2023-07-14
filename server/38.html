@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压 | Jeay&#39;s blog</title>
@@ -11,18 +11,21 @@
     
 
     
-    <meta name="description" content="添加网站新建网站目录 使用mkdir 目录名创建目录，例如 1mkdir /data/wwwroot/abc/aaa.com 修改权限 1chmod -R 777 /data/wwwroot/abc/aaa.com 绑定域名 1vim /etc/httpd/conf/httpd.conf 添加如下 12345&amp;lt;VirtualHost *:80&amp;gt;    DocumentRoot /dat">
-<meta name="keywords" content="centos,lamp,apache,vsftp">
+    <meta name="description" content="添加网站新建网站目录 使用mkdir 目录名创建目录，例如 1mkdir &#x2F;data&#x2F;wwwroot&#x2F;abc&#x2F;aaa.com  修改权限 1chmod -R 777 &#x2F;data&#x2F;wwwroot&#x2F;abc&#x2F;aaa.com  绑定域名 1vim &#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf  添加如下 12345&lt;VirtualHost *:80&gt;    DocumentRoot &#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压">
 <meta property="og:url" content="https://www.jeay.net/server/38.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:description" content="添加网站新建网站目录 使用mkdir 目录名创建目录，例如 1mkdir /data/wwwroot/abc/aaa.com 修改权限 1chmod -R 777 /data/wwwroot/abc/aaa.com 绑定域名 1vim /etc/httpd/conf/httpd.conf 添加如下 12345&amp;lt;VirtualHost *:80&amp;gt;    DocumentRoot /dat">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-05-24T02:29:00.864Z">
+<meta property="og:description" content="添加网站新建网站目录 使用mkdir 目录名创建目录，例如 1mkdir &#x2F;data&#x2F;wwwroot&#x2F;abc&#x2F;aaa.com  修改权限 1chmod -R 777 &#x2F;data&#x2F;wwwroot&#x2F;abc&#x2F;aaa.com  绑定域名 1vim &#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf  添加如下 12345&lt;VirtualHost *:80&gt;    DocumentRoot &#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-01-29T08:36:23.000Z">
+<meta property="article:modified_time" content="2018-05-24T02:29:00.864Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="centos">
+<meta property="article:tag" content="apache">
+<meta property="article:tag" content="lamp">
+<meta property="article:tag" content="vsftp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CenOS服务器LAMP环境日常管理，vsftp创建FTP用户，apache添加网站，压缩解压">
-<meta name="twitter:description" content="添加网站新建网站目录 使用mkdir 目录名创建目录，例如 1mkdir /data/wwwroot/abc/aaa.com 修改权限 1chmod -R 777 /data/wwwroot/abc/aaa.com 绑定域名 1vim /etc/httpd/conf/httpd.conf 添加如下 12345&amp;lt;VirtualHost *:80&amp;gt;    DocumentRoot /dat">
 
     
     
@@ -32,9 +35,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -92,44 +97,58 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加网站"><span class="toc-number">1.</span> <span class="toc-text">添加网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FTP"><span class="toc-number">2.</span> <span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql"><span class="toc-number">3.</span> <span class="toc-text">mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他常用操作"><span class="toc-number">4.</span> <span class="toc-text">其他常用操作</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99"><span class="toc-number">1.</span> <span class="toc-text">添加网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FTP"><span class="toc-number">2.</span> <span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql"><span class="toc-number">3.</span> <span class="toc-text">mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">其他常用操作</span></a></li></ol>
 		
 		</div>
 		
 		<h2 id="添加网站"><a href="#添加网站" class="headerlink" title="添加网站"></a>添加网站</h2><p>新建网站目录</p>
 <p>使用mkdir 目录名创建目录，例如</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /data/wwwroot/abc/aaa.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /data/wwwroot/abc/aaa.com</span><br></pre></td></tr></table></figure>
+
 <p>修改权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 777 /data/wwwroot/abc/aaa.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -R 777 /data/wwwroot/abc/aaa.com</span><br></pre></td></tr></table></figure>
+
 <p>绑定域名</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/httpd/conf/httpd.conf</span><br></pre></td></tr></table></figure>
+
 <p>添加如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot /data/wwwroot/abc/aaa.com</span><br><span class="line">    ServerName aaa.com</span><br><span class="line">    ServerAlias www.aaa.com</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
 <p>（如果只想用一个域名 可以去掉<code>ServerAlias</code>行）</p>
 <p>修改完成后需要重启apache才能生效</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service httpd restart</span><br></pre></td></tr></table></figure>
+
 <h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h2><p>新建FTP用户</p>
-<p><code>useradd</code> 用户名 -d 用户目录 -g ftp -s /sbin/nologin 例如</p>
+<p><code>useradd</code> 用户名 -d 用户目录 -g ftp -s &#x2F;sbin&#x2F;nologin 例如</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd test_test -d /data/ -g ftp -s /sbin/nologin</span><br></pre></td></tr></table></figure>
+
 <p>删除用户<code>userdel</code> 用户名如</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userdel test_test</span><br></pre></td></tr></table></figure>
+
 <p>为用户添加密码</p>
 <p><code>passwd</code> 用户名，例如</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd test_test</span><br></pre></td></tr></table></figure>
+
 <p>然后直接输入两次就可以了（ 输入了不会有显示 直接按<code>Enter</code>即可）</p>
 <p>生成复杂16位密码，可以用这个PHP<a href="/php/58.html">生成随机字符串</a></p>
 <p>编辑<code>/etc/vsftpd/</code>下的<code>chroot_list</code>，添上刚添加的用户名</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/vsftpd/chroot_list</span><br></pre></td></tr></table></figure>
+
 <p>重启<code>vsftpd</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service vsftpd restart</span><br></pre></td></tr></table></figure>
+
 <h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><p>登陆<code>mysql</code>，-u后面是用户名， -p后面是密码 u和p后面均无空格，如</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p123</span><br></pre></td></tr></table></figure>
+
 <p>重启<code>mysql</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
+
 <h2 id="其他常用操作"><a href="#其他常用操作" class="headerlink" title="其他常用操作"></a>其他常用操作</h2><p>ZIP压缩<br>例1 打包当前目录下的所有文件到1.zip</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -r 1.zip ./*</span><br></pre></td></tr></table></figure>
+
 <p>例2 打包aaa.com里的文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -r 1.zip /data/wwwroot/aaa.com</span><br></pre></td></tr></table></figure>
+
 <p>ZIP解压<br>unzip +文件名，如解压到当前目录：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip 1.zip</span><br></pre></td></tr></table></figure>
   
@@ -145,7 +164,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/centos/">centos</a><a href="/tags/lamp/">lamp</a><a href="/tags/apache/">apache</a><a href="/tags/vsftp/">vsftp</a>
+  <span></span> <a href="/tags/centos/">centos</a><a href="/tags/apache/">apache</a><a href="/tags/lamp/">lamp</a><a href="/tags/vsftp/">vsftp</a>
   </div>
 
 </div>
@@ -232,7 +251,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加网站"><span class="toc-number">1.</span> <span class="toc-text">添加网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FTP"><span class="toc-number">2.</span> <span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql"><span class="toc-number">3.</span> <span class="toc-text">mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他常用操作"><span class="toc-number">4.</span> <span class="toc-text">其他常用操作</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99"><span class="toc-number">1.</span> <span class="toc-text">添加网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FTP"><span class="toc-number">2.</span> <span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql"><span class="toc-number">3.</span> <span class="toc-text">mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">其他常用操作</span></a></li></ol>
  
   </div>
 
@@ -270,7 +289,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -311,15 +330,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -335,15 +354,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -351,15 +366,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -376,7 +395,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -464,7 +483,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

@@ -1,28 +1,30 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
-    <title>解决typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object的问题 | Jeay&#39;s blog</title>
+    <title>解决typeError [ERR_INVALID_ARG_TYPE]: The &#34;mode&#34; argument must be integer. Received an instance of Object的问题 | Jeay&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jeay">
     
 
     
-    <meta name="description" content="错误情况生成正常，部署时hexo d出现以下错误提示： 1typeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; argument must be integer. Received an instance of Object 错误原因hexo暂时不能在新版的nodejs环境下运行 解决方法降级nodejs即可，卸载现有nodejs，安装nod">
-<meta name="keywords" content="blog,hexo,debug">
+    <meta name="description" content="错误情况生成正常，部署时hexo d出现以下错误提示： 1typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object  错误原因hexo暂时不能在新版的nodejs环境下运行 解决方法降级nodejs即可，卸载现有nodejs，安装no">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object的问题">
 <meta property="og:url" content="https://www.jeay.net/tools/hexo-type-error.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:description" content="错误情况生成正常，部署时hexo d出现以下错误提示： 1typeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; argument must be integer. Received an instance of Object 错误原因hexo暂时不能在新版的nodejs环境下运行 解决方法降级nodejs即可，卸载现有nodejs，安装nod">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2021-12-16T03:12:52.754Z">
+<meta property="og:description" content="错误情况生成正常，部署时hexo d出现以下错误提示： 1typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object  错误原因hexo暂时不能在新版的nodejs环境下运行 解决方法降级nodejs即可，卸载现有nodejs，安装no">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-14T02:22:15.000Z">
+<meta property="article:modified_time" content="2021-12-16T03:12:52.754Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="debug">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object的问题">
-<meta name="twitter:description" content="错误情况生成正常，部署时hexo d出现以下错误提示： 1typeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; argument must be integer. Received an instance of Object 错误原因hexo暂时不能在新版的nodejs环境下运行 解决方法降级nodejs即可，卸载现有nodejs，安装nod">
 
     
     
@@ -32,9 +34,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -76,7 +80,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/tools/hexo-type-error.html" title="解决typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object的问题" itemprop="url">解决typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object的问题</a>
+      <a href="/tools/hexo-type-error.html" title="解决typeError [ERR_INVALID_ARG_TYPE]: The &#34;mode&#34; argument must be integer. Received an instance of Object的问题" itemprop="url">解决typeError [ERR_INVALID_ARG_TYPE]: The &#34;mode&#34; argument must be integer. Received an instance of Object的问题</a>
   </h1>
   <p class="article-author">By
        
@@ -92,16 +96,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#错误情况"><span class="toc-number">1.</span> <span class="toc-text">错误情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误原因"><span class="toc-number">2.</span> <span class="toc-text">错误原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">3.</span> <span class="toc-text">解决方法</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%83%85%E5%86%B5"><span class="toc-number">1.</span> <span class="toc-text">错误情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0"><span class="toc-number">2.</span> <span class="toc-text">错误原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">解决方法</span></a></li></ol>
 		
 		</div>
 		
 		<h2 id="错误情况"><a href="#错误情况" class="headerlink" title="错误情况"></a>错误情况</h2><p>生成正常，部署时<code>hexo d</code>出现以下错误提示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object</span><br></pre></td></tr></table></figure>
+
 <h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p><code>hexo</code>暂时不能在新版的<code>nodejs</code>环境下运行</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>降级<code>nodejs</code>即可，卸载现有<code>nodejs</code>，安装<a href="https://nodejs.org/download/release/v12.22.1/" target="_blank" rel="noopener">nodejs 12</a>。</p>
-<p>如果有<a href="https://www.jeay.net/js/install-nodejs.html#nvm安装方法">nvm</a>的话，可以直接用nvm切换版本为12：</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>降级<code>nodejs</code>即可，卸载现有<code>nodejs</code>，安装<a target="_blank" rel="noopener" href="https://nodejs.org/download/release/v12.22.1/">nodejs 12</a>。</p>
+<p>如果有<a href="https://www.jeay.net/js/install-nodejs.html#nvm%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95">nvm</a>的话，可以直接用nvm切换版本为12：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install 12</span><br><span class="line">nvm use 12</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>另外，hexo更新后或许就能支持新版nodejs了</p>
 </blockquote>
@@ -205,7 +211,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#错误情况"><span class="toc-number">1.</span> <span class="toc-text">错误情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误原因"><span class="toc-number">2.</span> <span class="toc-text">错误原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">3.</span> <span class="toc-text">解决方法</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%83%85%E5%86%B5"><span class="toc-number">1.</span> <span class="toc-text">错误情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0"><span class="toc-number">2.</span> <span class="toc-text">错误原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">解决方法</span></a></li></ol>
  
   </div>
 
@@ -243,7 +249,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -284,15 +290,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -308,15 +314,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -324,15 +326,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -349,7 +355,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -437,7 +443,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

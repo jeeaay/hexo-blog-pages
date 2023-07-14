@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>Centos yum 安装php5.5 | Jeay&#39;s blog</title>
@@ -11,19 +11,20 @@
     
 
     
-    <meta name="description" content="首先卸载旧版本 1yum remove php  php-* 这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看） 1rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm 安装php5.5 1yum install php55w  php55w-bcmath php55w-cli php55">
-<meta name="keywords" content="php,centos">
+    <meta name="description" content="首先卸载旧版本 1yum remove php  php-*  这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看） 1rpm -Uvh http:&#x2F;&#x2F;mirror.webtatic.com&#x2F;yum&#x2F;el6&#x2F;latest.rpm  安装php5.5 1yum install php55w  php55w-bcmath php55w-cli php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos yum 安装php5.5">
 <meta property="og:url" content="https://www.jeay.net/php/100.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:description" content="首先卸载旧版本 1yum remove php  php-* 这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看） 1rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm 安装php5.5 1yum install php55w  php55w-bcmath php55w-cli php55">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:description" content="首先卸载旧版本 1yum remove php  php-*  这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看） 1rpm -Uvh http:&#x2F;&#x2F;mirror.webtatic.com&#x2F;yum&#x2F;el6&#x2F;latest.rpm  安装php5.5 1yum install php55w  php55w-bcmath php55w-cli php">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.jeay.net/img/100-php.jpg">
-<meta property="og:updated_time" content="2020-07-22T09:05:23.051Z">
+<meta property="article:published_time" content="2015-07-13T07:24:53.000Z">
+<meta property="article:modified_time" content="2020-07-22T09:05:23.051Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="centos">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos yum 安装php5.5">
-<meta name="twitter:description" content="首先卸载旧版本 1yum remove php  php-* 这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看） 1rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm 安装php5.5 1yum install php55w  php55w-bcmath php55w-cli php55">
 <meta name="twitter:image" content="https://www.jeay.net/img/100-php.jpg">
 
     
@@ -34,9 +35,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -94,10 +97,13 @@
 		<p><img src="/img/100-php.jpg" alt="php"></p>
 <p>首先卸载旧版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove php  php-*</span><br></pre></td></tr></table></figure>
+
 <p>这里使用webtatic.com的源（里面也提供有5.6和7.0的版本，感兴趣的话可以去他们官网看看）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm</span><br></pre></td></tr></table></figure>
+
 <p>安装php5.5</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install php55w  php55w-bcmath php55w-cli php55w-common  php55w-devel php55w-fpm    php55w-gd php55w-imap  php55w-ldap php55w-mbstring php55w-mcrypt php55w-mysql   php55w-odbc   php55w-pdo   php55w-pear  php55w-pecl-igbinary  php55w-xml php55w-xmlrpc php55w-opcache php55w-intl php55w-pecl-memcache</span><br></pre></td></tr></table></figure>
+
 <p>或者直接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install php55w  php55w-*</span><br></pre></td></tr></table></figure>
   
@@ -113,7 +119,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/php/">php</a><a href="/tags/centos/">centos</a>
+  <span></span> <a href="/tags/centos/">centos</a><a href="/tags/php/">php</a>
   </div>
 
 </div>
@@ -231,7 +237,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -272,15 +278,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -296,15 +302,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -312,15 +314,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -337,7 +343,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -425,7 +431,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		

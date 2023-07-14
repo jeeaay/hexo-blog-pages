@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>Windows/Linux下安装nodejs | Jeay&#39;s blog</title>
@@ -11,18 +11,20 @@
     
 
     
-    <meta name="description" content="nvm安装方法本方法不适合windows系统，请参考下载安装方法 安装nvm1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash 或者使用wget 1wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/">
-<meta name="keywords" content="javascript,node,nvm">
+    <meta name="description" content="nvm安装方法本方法不适合windows系统，请参考下载安装方法 安装nvm1curl -o- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.39.1&#x2F;install.sh | bash  或者使用wget 1wget -qO- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.39.1&#x2F;install">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows&#x2F;Linux下安装nodejs">
 <meta property="og:url" content="https://www.jeay.net/js/install-nodejs.html">
 <meta property="og:site_name" content="Jeay&#39;s blog">
-<meta property="og:description" content="nvm安装方法本方法不适合windows系统，请参考下载安装方法 安装nvm1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash 或者使用wget 1wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-02-27T06:15:56.872Z">
+<meta property="og:description" content="nvm安装方法本方法不适合windows系统，请参考下载安装方法 安装nvm1curl -o- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.39.1&#x2F;install.sh | bash  或者使用wget 1wget -qO- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.39.1&#x2F;install">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-09-26T05:15:11.000Z">
+<meta property="article:modified_time" content="2021-12-27T01:28:41.395Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="nvm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows&#x2F;Linux下安装nodejs">
-<meta name="twitter:description" content="nvm安装方法本方法不适合windows系统，请参考下载安装方法 安装nvm1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash 或者使用wget 1wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/">
 
     
     
@@ -32,9 +34,11 @@
     <link rel="apple-touch-icon" href="/img/app.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
   <body>
     <header>
       
@@ -92,52 +96,65 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nvm安装方法"><span class="toc-number">1.</span> <span class="toc-text">nvm安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nvm"><span class="toc-number">1.1.</span> <span class="toc-text">安装nvm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用nvm安装node"><span class="toc-number">1.2.</span> <span class="toc-text">使用nvm安装node</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装方法"><span class="toc-number">2.</span> <span class="toc-text">下载安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows安装"><span class="toc-number">2.1.</span> <span class="toc-text">Windows安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux安装"><span class="toc-number">2.2.</span> <span class="toc-text">Linux安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nrm"><span class="toc-number">3.</span> <span class="toc-text">安装nrm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装cnpm"><span class="toc-number">4.</span> <span class="toc-text">安装cnpm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用n管理node版本"><span class="toc-number">5.</span> <span class="toc-text">使用n管理node版本</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nvm%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">nvm安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85nvm"><span class="toc-number">1.1.</span> <span class="toc-text">安装nvm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8nvm%E5%AE%89%E8%A3%85node"><span class="toc-number">1.2.</span> <span class="toc-text">使用nvm安装node</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">下载安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">Windows安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">Linux安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85nrm"><span class="toc-number">3.</span> <span class="toc-text">安装nrm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85cnpm"><span class="toc-number">4.</span> <span class="toc-text">安装cnpm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8n%E7%AE%A1%E7%90%86node%E7%89%88%E6%9C%AC"><span class="toc-number">5.</span> <span class="toc-text">使用n管理node版本</span></a></li></ol>
 		
 		</div>
 		
 		<h2 id="nvm安装方法"><a href="#nvm安装方法" class="headerlink" title="nvm安装方法"></a>nvm安装方法</h2><p><em>本方法不适合windows系统，请参考下载安装方法</em></p>
-<h3 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装nvm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</span><br></pre></td></tr></table></figure>
+<h3 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装nvm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash</span><br></pre></td></tr></table></figure>
+
 <p>或者使用<code>wget</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<p>可以在<a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>项目地址找到更多帮助信息</p>
 <blockquote>
 <p>若果你是用的<code>shell</code>不是<code>bash</code>，可以把命令的<code>|</code>后的<code>bash</code>换成你的默认<code>shell</code>如 <code>zsh</code>  </p>
 </blockquote>
 <blockquote>
 <p>如果没换的话，需要手动添加下面三行到你的shell配置里，例如<code>~/.zshrc</code>  </p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></span><br><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="comment"># This loads nvm</span></span><br><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/bash_completion"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/bash_completion"</span>  <span class="comment"># This loads nvm bash_completion</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">&quot;<span class="variable">$HOME</span>/.nvm&quot;</span></span><br><span class="line">[ -s <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span> ] &amp;&amp; \. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span>  <span class="comment"># This loads nvm</span></span><br><span class="line">[ -s <span class="string">&quot;<span class="variable">$NVM_DIR</span>/bash_completion&quot;</span> ] &amp;&amp; \. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/bash_completion&quot;</span>  <span class="comment"># This loads nvm bash_completion</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>nvm安装完成后，需要<strong>重新</strong>打开终端</p>
 </blockquote>
 <p>在终端输入<code>nvm --version</code>显示当前版本，说明安装成功 </p>
+<p>Windows下可以尝试<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows">nvm-windows</a></p>
 <h3 id="使用nvm安装node"><a href="#使用nvm安装node" class="headerlink" title="使用nvm安装node"></a>使用nvm安装node</h3><p>查看可用版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm ls-remote</span><br></pre></td></tr></table></figure>
+
 <p>安装、使用指定版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nvm install 11</span><br><span class="line"><span class="comment"># 也可以使用 nvm install 11.x.x 使用指定版本</span></span><br><span class="line">nvm use 11</span><br><span class="line"><span class="comment"># 也可以使用 nvm use 11.x.x 使用指定版本</span></span><br></pre></td></tr></table></figure>
+
 <p>设置默认版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="built_in">alias</span> default 11</span><br><span class="line"><span class="comment"># 也可以使用 nvm alias default 11.x.x 使用指定版本</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="下载安装方法"><a href="#下载安装方法" class="headerlink" title="下载安装方法"></a>下载安装方法</h2><p><em>已经安装过nvm就不用再看这里了</em></p>
 <p>找到合适的版本</p>
-<p>下载地址：<a href="https://nodejs.org/en/download/current/" target="_blank" rel="noopener">Node.js</a>  </p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/current/">Node.js</a>  </p>
 <h3 id="Windows安装"><a href="#Windows安装" class="headerlink" title="Windows安装"></a>Windows安装</h3><p>Windows一直下一步就可以了 默认选择添加到<code>PATH</code>，需要管理员权限，不然就得自己手动添加了  </p>
 <p>安装完毕后在终端输入<code>node -v</code>显示当前版本，说明安装成功  </p>
 <h3 id="Linux安装"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux安装</h3><p>Linux可直接下载编译好的文件，<code>Linux Binaries (x86/x64)</code>，添加到path就可以用了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压下载的文件，注意文件名是你下载的文件，别写错了</span></span><br><span class="line">tar xvf node-v11.0.0-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动，我习惯放/opt/里，这个可以自由发挥，别忘了等会找不到就行了</span></span><br><span class="line">mv node-v11.0.0-linux-x64.tar.xz /opt/node</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改环境变量</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL 一行的上面添加如下内容（注意是刚刚移动node后的路径）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#set for nodejs</span></span><br><span class="line"><span class="built_in">export</span> N_PREFIX=/opt/node</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$N_PREFIX</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line">:wq保存并退出</span><br><span class="line"></span><br><span class="line">使配置生效</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压下载的文件，注意文件名是你下载的文件，别写错了</span></span><br><span class="line">tar xvf node-v11.0.0-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动，我习惯放/opt/里，这个可以自由发挥，别忘了等会找不到就行了</span></span><br><span class="line"><span class="built_in">mv</span> node-v11.0.0-linux-x64.tar.xz /opt/node</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改环境变量</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL 一行的上面添加如下内容（注意是刚刚移动node后的路径）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#set for nodejs</span></span><br><span class="line"><span class="built_in">export</span> N_PREFIX=/opt/node</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$N_PREFIX</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line">:wq保存并退出</span><br><span class="line"></span><br><span class="line">使配置生效</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
 <h2 id="安装nrm"><a href="#安装nrm" class="headerlink" title="安装nrm"></a>安装nrm</h2><p>nrm能够查看和切换当前使用的registry，nodejs官方源经常被墙，装一个<code>nrm</code>非常有必要</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g nrm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
 <p>使用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示帮助</span></span><br><span class="line">nrm <span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有的registries</span></span><br><span class="line">nrm ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换taobao镜像</span></span><br><span class="line">nrm use taobao</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示帮助</span></span><br><span class="line">nrm <span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有的registries</span></span><br><span class="line">nrm <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换taobao镜像</span></span><br><span class="line">nrm use taobao</span><br></pre></td></tr></table></figure>
+
 <h2 id="安装cnpm"><a href="#安装cnpm" class="headerlink" title="安装cnpm"></a>安装cnpm</h2><p><code>cnpm</code> 是淘宝制作的、用于代替默认的<code>npm</code>的工具，绝大多数npm都可以用cnpm执行，某些<code>npm</code>安装不成功的，用<code>cnpm</code>试试或许就可以装上了，尤其是某些资源被墙的时候，非常有用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="使用n管理node版本"><a href="#使用n管理node版本" class="headerlink" title="使用n管理node版本"></a>使用n管理node版本</h2><p><em>使用nvm安装就不需要用n来管理了</em></p>
 <p>升级到最新版本：  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g n</span><br><span class="line">n latest</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Linux下非root用户,以上命令前都需要加<code>sudo</code></p>
 </blockquote>
-<p>关于<code>n</code>管理器的其他用法查看<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n --<span class="built_in">help</span></span><br></pre></td></tr></table></figure></p>
-  
+<p>关于<code>n</code>管理器的其他用法查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -237,7 +254,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nvm安装方法"><span class="toc-number">1.</span> <span class="toc-text">nvm安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nvm"><span class="toc-number">1.1.</span> <span class="toc-text">安装nvm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用nvm安装node"><span class="toc-number">1.2.</span> <span class="toc-text">使用nvm安装node</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装方法"><span class="toc-number">2.</span> <span class="toc-text">下载安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows安装"><span class="toc-number">2.1.</span> <span class="toc-text">Windows安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux安装"><span class="toc-number">2.2.</span> <span class="toc-text">Linux安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nrm"><span class="toc-number">3.</span> <span class="toc-text">安装nrm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装cnpm"><span class="toc-number">4.</span> <span class="toc-text">安装cnpm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用n管理node版本"><span class="toc-number">5.</span> <span class="toc-text">使用n管理node版本</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nvm%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">nvm安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85nvm"><span class="toc-number">1.1.</span> <span class="toc-text">安装nvm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8nvm%E5%AE%89%E8%A3%85node"><span class="toc-number">1.2.</span> <span class="toc-text">使用nvm安装node</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">下载安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">Windows安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">Linux安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85nrm"><span class="toc-number">3.</span> <span class="toc-text">安装nrm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85cnpm"><span class="toc-number">4.</span> <span class="toc-text">安装cnpm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8n%E7%AE%A1%E7%90%86node%E7%89%88%E6%9C%AC"><span class="toc-number">5.</span> <span class="toc-text">使用n管理node版本</span></a></li></ol>
  
   </div>
 
@@ -275,7 +292,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -316,15 +333,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
 			
 		
 			
@@ -340,15 +357,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
 			
 		
 			
@@ -356,15 +369,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/yum/" title="yum">yum<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -381,7 +398,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <p class="asidetitle">
         Steam
     </p>
-    <a href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
 </div>
 
   <div class="linkslist">
@@ -469,7 +486,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2023 
 		
 		<a href="/about" target="_blank" title="Jeay">Jeay</a>
 		
