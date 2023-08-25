@@ -217,15 +217,6 @@ var conf = 'prod_acb6164281284c13bf0f34dbe1d96c85';
 var width = window.innerWidth || document.documentElement.clientWidth; 
 if (width < 960) { 
 window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
-// $(function() {
-//   // 去广告
-//   const t = setInterval(function(){
-//     if ($("#SOHU_MAIN").siblings().length > 0) {
-//       clearInterval(t)
-//       $("#SOHU_MAIN").siblings().hide()
-//     }
-//   }, 300)
-// })
 </script>
 
 </section>
@@ -529,7 +520,7 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
-$(document).ready(function(){ 
+$(document).ready(function(){
   var ai = $('.article-content>iframe'),
       ae = $('.article-content>embed'),
       t  = $('#toc'),
@@ -551,6 +542,14 @@ $(document).ready(function(){
   $(window).scroll(function(){
     ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
+  // 去广告
+  const adt = setInterval(function(){
+    if ($("#SOHU_MAIN").siblings().length > 0) {
+      clearInterval(adt)
+      $("#SOHU_MAIN").siblings().hide()
+    }
+  }, 300)
+
 });
 </script>
 
@@ -590,11 +589,17 @@ $(document).ready(function(){
 
 
 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9f0450994d0ba3990a0c8170e93582b9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
-<div style="display:none">
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261897922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1261897922' type='text/javascript'%3E%3C/script%3E"));</script>
-</div>
 
 <!-- Analytics End -->
 
