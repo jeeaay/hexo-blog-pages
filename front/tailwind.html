@@ -1,0 +1,745 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>TailwindCSS 入门指南：从安装到实战的实用主义CSS方案 | Jeay&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jeay">
+    
+
+    
+    <meta name="description" content="TailwindCSS 入门指南：从安装到实战的实用主义CSS方案什么是TailwindCSS？TailwindCSS 是一个基于”实用优先”理念的CSS框架，与Bootstrap、Bulma等传统框架不同，它不提供现成的UI组件（如按钮、卡片），而是提供了一套完整的原子化工具类（如flex、text-center、bg-blue-500），让你可以直接在HTML中组合这些类来构建界面。 这种方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TailwindCSS 入门指南：从安装到实战的实用主义CSS方案">
+<meta property="og:url" content="https://www.jeay.net/front/tailwind.html">
+<meta property="og:site_name" content="Jeay&#39;s blog">
+<meta property="og:description" content="TailwindCSS 入门指南：从安装到实战的实用主义CSS方案什么是TailwindCSS？TailwindCSS 是一个基于”实用优先”理念的CSS框架，与Bootstrap、Bulma等传统框架不同，它不提供现成的UI组件（如按钮、卡片），而是提供了一套完整的原子化工具类（如flex、text-center、bg-blue-500），让你可以直接在HTML中组合这些类来构建界面。 这种方式">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-26T07:59:33.000Z">
+<meta property="article:modified_time" content="2025-07-26T09:57:11.483Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="tailwindcss">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="工具类">
+<meta name="twitter:card" content="summary">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/app.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Jeay&#39;s blog">Jeay&#39;s blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives/">Archives</a></li>
+					
+						<li><a href="/categories/tools/">Tools</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:www.jeay.net">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/front/tailwind.html" title="TailwindCSS 入门指南：从安装到实战的实用主义CSS方案" itemprop="url">TailwindCSS 入门指南：从安装到实战的实用主义CSS方案</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jeay" target="_blank" itemprop="author">Jeay</a>
+		
+  <p class="article-time">
+    <time datetime="2025-07-26T07:59:33.000Z" itemprop="datePublished"> Published 2025-07-26</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TailwindCSS-%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%AE%9E%E6%88%98%E7%9A%84%E5%AE%9E%E7%94%A8%E4%B8%BB%E4%B9%89CSS%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">TailwindCSS 入门指南：从安装到实战的实用主义CSS方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFTailwindCSS%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是TailwindCSS？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9TailwindCSS%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">为什么选择TailwindCSS？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B%EF%BC%9A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">快速开始：安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.3.2.</span> <span class="toc-text">安装步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">核心概念与基础用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E7%B1%BB%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="toc-number">1.4.1.</span> <span class="toc-text">工具类语法规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%88%86%E7%B1%BB"><span class="toc-number">1.4.2.</span> <span class="toc-text">常用工具类分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.3.</span> <span class="toc-text">响应式设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%B4%E5%B0%8F%E7%9A%84%E6%96%AD%E7%82%B9"><span class="toc-number">1.4.4.</span> <span class="toc-text">自定义更小的断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F%E4%B8%8E%E7%BB%84%E4%BB%B6"><span class="toc-number">1.4.5.</span> <span class="toc-text">自定义样式与组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E5%AE%9A%E5%88%B6"><span class="toc-number">1.4.6.</span> <span class="toc-text">主题定制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E7%A4%BA%E4%BE%8B%EF%BC%9A%E6%9E%84%E5%BB%BA%E5%93%8D%E5%BA%94%E5%BC%8F%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-number">1.5.</span> <span class="toc-text">实战示例：构建响应式导航栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BC%98%E5%8C%96"><span class="toc-number">1.6.</span> <span class="toc-text">生产环境优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.7.</span> <span class="toc-text">常见问题与解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A0%B7%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%EF%BC%9F"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. 样式不生效？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E4%B8%8D%E7%94%9F%E6%95%88%EF%BC%9F"><span class="toc-number">1.7.2.</span> <span class="toc-text">2. 自定义主题不生效？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%A2%E5%A4%B1%E6%A0%B7%E5%BC%8F%EF%BC%9F"><span class="toc-number">1.7.3.</span> <span class="toc-text">3. 生产环境丢失样式？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90"><span class="toc-number">1.8.</span> <span class="toc-text">学习资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="TailwindCSS-入门指南：从安装到实战的实用主义CSS方案"><a href="#TailwindCSS-入门指南：从安装到实战的实用主义CSS方案" class="headerlink" title="TailwindCSS 入门指南：从安装到实战的实用主义CSS方案"></a>TailwindCSS 入门指南：从安装到实战的实用主义CSS方案</h1><h2 id="什么是TailwindCSS？"><a href="#什么是TailwindCSS？" class="headerlink" title="什么是TailwindCSS？"></a>什么是TailwindCSS？</h2><p>TailwindCSS 是一个基于”实用优先”理念的CSS框架，与Bootstrap、Bulma等传统框架不同，它不提供现成的UI组件（如按钮、卡片），而是提供了一套完整的原子化工具类（如<code>flex</code>、<code>text-center</code>、<code>bg-blue-500</code>），让你可以直接在HTML中组合这些类来构建界面。</p>
+<p>这种方式的核心优势在于：无需离开HTML文件编写CSS，极大减少上下文切换；通过约束性的设计系统保证视觉一致性；最终打包时自动移除未使用的样式，保持CSS体积最小化。</p>
+<h2 id="为什么选择TailwindCSS？"><a href="#为什么选择TailwindCSS？" class="headerlink" title="为什么选择TailwindCSS？"></a>为什么选择TailwindCSS？</h2><ul>
+<li><strong>开发效率极高</strong>：工具类覆盖绝大多数CSS属性，组合使用即可完成样式设计，无需命名CSS类</li>
+<li><strong>响应式设计简单</strong>：内置<code>sm:</code>、<code>md:</code>、<code>lg:</code>等前缀，轻松实现多设备适配</li>
+<li><strong>高度可定制</strong>：通过配置文件自定义颜色、字体、间距等，打造专属设计系统</li>
+<li><strong>无冗余代码</strong>：生产环境自动剔除未使用的样式，通常比手写CSS更轻量</li>
+<li><strong>学习成本低</strong>：记住常用工具类即可上手，无需学习框架特定语法</li>
+</ul>
+<h2 id="快速开始：安装与配置"><a href="#快速开始：安装与配置" class="headerlink" title="快速开始：安装与配置"></a>快速开始：安装与配置</h2><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>需要Node.js环境（v14.0.0+），推荐使用npm或yarn作为包管理工具。</p>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><ol>
+<li><strong>初始化项目并安装依赖</strong></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pnpm安装TailwindCSS及相关工具</span></span><br><span class="line">pnpm i -D tailwindcss @tailwindcss/cli</span><br><span class="line"><span class="comment"># 或者使用npm</span></span><br><span class="line">npm i -D tailwindcss @tailwindcss/cli</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>创建CSS文件</strong><br>示例的目录结构<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">└── common.css</span><br><span class="line">public/</span><br><span class="line">├── index.html</span><br><span class="line">└── css/</span><br><span class="line">    └── common.css</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>在<code>src</code>目录下创建<code>common.css</code>（名称可自定义）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">&quot;tailwindcss&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>配置编译命令</strong></li>
+</ol>
+<p>在<code>package.json</code>中添加脚本：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;watch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tailwindcss -i ./src/*.css -o ./public/css/* --watch&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tailwindcss -m -i ./src/*.css -o ./public/css/*&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>watch</code>：开发模式，实时监听文件变化并编译</li>
+<li><code>build</code>：生产模式，生成压缩后的CSS文件</li>
+</ul>
+<ol start="4">
+<li><strong>增加一个轻量http服务方便测试（可选）</strong></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm i -D http-server npm-run-all</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>package.json</code>添加<code>start</code>脚本：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;watch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tailwindcss -i ./src/*.css -o ./public/css/* --watch&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tailwindcss -m -i ./src/*.css -o ./public/css/*&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;run-p watch server&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http-server ./public -p 8080 -c-1&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后运行<code>pnpm start</code>即可启动服务。访问本地测试地址<code>http://localhost:8080</code>即可。</p>
+<h2 id="核心概念与基础用法"><a href="#核心概念与基础用法" class="headerlink" title="核心概念与基础用法"></a>核心概念与基础用法</h2><h3 id="工具类语法规则"><a href="#工具类语法规则" class="headerlink" title="工具类语法规则"></a>工具类语法规则</h3><p>Tailwind的工具类遵循直观的命名规则：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 文本颜色为蓝色500 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-blue-500&quot;</span>&gt;</span>这是蓝色文本<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 背景色为灰色100，内边距为4（1rem），圆角为-lg --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-gray-100 p-4 rounded-lg&quot;</span>&gt;</span>带背景的容器<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 响应式设计：小屏幕以上显示flex布局 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;md:flex justify-center&quot;</span>&gt;</span>响应式布局<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 状态变体： hover时背景色变化 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 hover:bg-blue-600&quot;</span>&gt;</span>悬停效果<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用工具类分类"><a href="#常用工具类分类" class="headerlink" title="常用工具类分类"></a>常用工具类分类</h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>布局</td>
+<td><code>flex</code>、<code>grid</code>、<code>block</code>、<code>hidden</code></td>
+<td>控制元素显示方式</td>
+</tr>
+<tr>
+<td>间距</td>
+<td><code>m-4</code>（margin）、<code>p-2</code>（padding）、<code>mt-1</code>（margin-top）</td>
+<td>控制内外边距</td>
+</tr>
+<tr>
+<td>尺寸</td>
+<td><code>w-1/2</code>（宽度50%）、<code>h-64</code>（高度16rem）、<code>max-w-lg</code></td>
+<td>控制元素尺寸</td>
+</tr>
+<tr>
+<td>颜色</td>
+<td><code>text-red-500</code>、<code>bg-green-100</code>、<code>border-blue-300</code></td>
+<td>文本、背景、边框颜色</td>
+</tr>
+<tr>
+<td>文本</td>
+<td><code>text-xl</code>、<code>font-bold</code>、<code>text-center</code>、<code>italic</code></td>
+<td>文本样式</td>
+</tr>
+<tr>
+<td>边框</td>
+<td><code>border</code>、<code>rounded-full</code>、<code>border-t-2</code></td>
+<td>边框与圆角</td>
+</tr>
+<tr>
+<td>响应式</td>
+<td><code>sm:px-4</code>、<code>lg:flex</code></td>
+<td>不同屏幕尺寸的样式</td>
+</tr>
+<tr>
+<td>状态</td>
+<td><code>hover:bg-gray-200</code>、<code>focus:outline-none</code></td>
+<td>交互状态样式</td>
+</tr>
+</tbody></table>
+<h3 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h3><p>Tailwind内置5个响应式断点前缀，对应不同屏幕尺寸：</p>
+<ul>
+<li><code>sm:</code>：640px以上</li>
+<li><code>md:</code>：768px以上</li>
+<li><code>lg:</code>：1024px以上</li>
+<li><code>xl:</code>：1280px以上</li>
+<li><code>2xl:</code>：1536px以上</li>
+</ul>
+<p>使用示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-white </span></span></span><br><span class="line"><span class="string"><span class="tag">            sm:bg-gray-100    &lt;!-- 640px以上背景变灰 --&gt;</span></span></span><br><span class="line"><span class="string"><span class="tag">            md:bg-blue-50     &lt;!-- 768px以上背景变浅蓝 --&gt;</span></span></span><br><span class="line"><span class="string"><span class="tag">            p-2 md:p-4 lg:p-6 &lt;!-- 不同尺寸下内边距变化 --&gt;&quot;</span>&gt;</span></span><br><span class="line">  响应式背景</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义更小的断点"><a href="#自定义更小的断点" class="headerlink" title="自定义更小的断点"></a>自定义更小的断点</h3><p>默认断点中最小的是<code>sm:640px</code>，但在开发移动端网站时，有时需要适配更小的屏幕（如320px-360px的设备）。在Tailwind CSS v4中，可以通过@theme指令添加更小的断点：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">&quot;tailwindcss&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@theme</span> &#123;</span><br><span class="line">  <span class="attr">--breakpoint-xs</span>: <span class="number">360px</span>;   <span class="comment">/* 新增超小屏断点 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>配置后就可以使用<code>xs:</code>前缀来定义超小屏幕的样式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在360px以下显示1列，360px-640px显示2列，640px以上显示4列 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-gray-100 p-4&quot;</span>&gt;</span>项目1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-gray-100 p-4&quot;</span>&gt;</span>项目2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-gray-100 p-4&quot;</span>&gt;</span>项目3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-gray-100 p-4&quot;</span>&gt;</span>项目4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 文本大小随屏幕变化 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-[12px] xs:text-sm sm:text-base md:text-lg&quot;</span>&gt;</span></span><br><span class="line">  适配超小屏幕的文本</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义样式与组件"><a href="#自定义样式与组件" class="headerlink" title="自定义样式与组件"></a>自定义样式与组件</h3><p>当需要复用一组样式时，可以通过<code>@layer</code>和<code>@apply</code>创建自定义组件：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在input.css中添加 */</span></span><br><span class="line"><span class="keyword">@layer</span> components &#123;</span><br><span class="line">  <span class="comment">/* 自定义按钮组件 */</span></span><br><span class="line">  <span class="selector-class">.btn-primary</span> &#123;</span><br><span class="line">    <span class="keyword">@apply</span> bg-blue-<span class="number">600</span> text-white px-<span class="number">4</span> py-<span class="number">2</span> rounded-lg </span><br><span class="line">           <span class="attribute">hover</span>:bg-blue-<span class="number">700</span> transition-colors;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* 导航项组件 */</span></span><br><span class="line">  <span class="selector-class">.nav-item</span> &#123;</span><br><span class="line">    <span class="keyword">@apply</span> px-<span class="number">3</span> py-<span class="number">2</span> text-gray-<span class="number">700</span> <span class="attribute">hover</span>:text-blue-<span class="number">600</span> </span><br><span class="line">           <span class="attribute">hover</span>:bg-gray-<span class="number">100</span> rounded-md transition-colors;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* 当前激活项样式 */</span></span><br><span class="line">  <span class="selector-class">.nav-item-active</span> &#123;</span><br><span class="line">    <span class="keyword">@apply</span> text-blue-<span class="number">600</span> font-medium bg-blue-<span class="number">50</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用自定义组件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn-primary&quot;</span>&gt;</span>主要按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item nav-item-active&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span>产品<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="主题定制"><a href="#主题定制" class="headerlink" title="主题定制"></a>主题定制</h3><p>在Tailwind CSS v4中，主题配置方式发生了重大变化。不再需要<code>tailwind.config.js</code>文件，而是直接在CSS中使用<code>@theme</code>指令来扩展默认主题：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 示例文件结构中的<span class="attribute">src</span>/common<span class="selector-class">.css</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&quot;tailwindcss&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@theme</span> &#123;</span><br><span class="line">  <span class="comment">/* 自定义颜色 */</span></span><br><span class="line">  <span class="attr">--color-primary</span>: <span class="number">#1E40AF</span>;    <span class="comment">/* 深蓝色作为主色调 */</span></span><br><span class="line">  <span class="attr">--color-secondary</span>: <span class="number">#F59E0B</span>;  <span class="comment">/* 橙色作为辅助色 */</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* 自定义字体 */</span></span><br><span class="line">  <span class="attr">--font-sans</span>: Inter, system-ui, sans-serif;</span><br><span class="line">  <span class="attr">--font-serif</span>: Georgia, Cambria, serif;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* 自定义间距 */</span></span><br><span class="line">  <span class="attr">--spacing-128</span>: <span class="number">32rem</span>;  <span class="comment">/* 增加一个更大的间距值 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用自定义主题：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;font-serif text-primary text-3xl&quot;</span>&gt;</span>自定义字体和颜色<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;h-128 bg-secondary/20&quot;</span>&gt;</span>使用自定义高度<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="实战示例：构建响应式导航栏"><a href="#实战示例：构建响应式导航栏" class="headerlink" title="实战示例：构建响应式导航栏"></a>实战示例：构建响应式导航栏</h2><p>下面通过一个完整示例展示如何使用Tailwind构建响应式导航栏：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">&quot;bg-white shadow-md&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex justify-between h-16&quot;</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 品牌标识 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex items-center&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;flex-shrink-0 flex items-center&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;text-primary font-bold text-xl&quot;</span>&gt;</span>MyApp<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment">&lt;!-- 桌面端导航 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;hidden md:flex items-center space-x-4&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-item nav-item-active&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span>产品<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span>文档<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span>关于<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn-primary ml-4&quot;</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment">&lt;!-- 移动端菜单按钮 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;md:hidden flex items-center&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text-gray-500 hover:text-gray-700&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">svg</span> <span class="attr">class</span>=<span class="string">&quot;h-6 w-6&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;none&quot;</span> <span class="attr">viewBox</span>=<span class="string">&quot;0 0 24 24&quot;</span> <span class="attr">stroke</span>=<span class="string">&quot;currentColor&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">path</span> <span class="attr">stroke-linecap</span>=<span class="string">&quot;round&quot;</span> <span class="attr">stroke-linejoin</span>=<span class="string">&quot;round&quot;</span> <span class="attr">stroke-width</span>=<span class="string">&quot;2&quot;</span> <span class="attr">d</span>=<span class="string">&quot;M4 6h16M4 12h16M4 18h16&quot;</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个导航栏实现了：</p>
+<ul>
+<li>桌面端显示水平导航菜单</li>
+<li>移动端隐藏菜单，显示汉堡按钮</li>
+<li>使用之前定义的<code>nav-item</code>组件保持样式一致性</li>
+<li>响应式适配不同屏幕尺寸</li>
+</ul>
+<p><em>这里的移动端下拉不能使用 因为没有js来控制</em></p>
+<h2 id="生产环境优化"><a href="#生产环境优化" class="headerlink" title="生产环境优化"></a>生产环境优化</h2><ol>
+<li><strong>使用<code>-m</code></strong>(<code>--minify</code>)参数：生产构建时压缩CSS</li>
+<li><strong>自动移除未使用样式</strong>：Tailwind v4内置优化，自动移除未使用的样式</li>
+<li><strong>零配置启动</strong>：Tailwind v4无需手动配置content路径，自动扫描相关文件</li>
+</ol>
+<h2 id="常见问题与解决方案"><a href="#常见问题与解决方案" class="headerlink" title="常见问题与解决方案"></a>常见问题与解决方案</h2><h3 id="1-样式不生效？"><a href="#1-样式不生效？" class="headerlink" title="1. 样式不生效？"></a>1. 样式不生效？</h3><ul>
+<li><strong>Tailwind CSS v4已移除content配置</strong>：v4版本实现了零配置启动，自动扫描项目中的HTML&#x2F;CSS&#x2F;JS文件</li>
+<li>确认编译命令是否正确执行，CSS文件是否生成</li>
+<li>检查HTML中是否正确引用了编译后的CSS文件</li>
+<li>支持<strong>自定义路径配置</strong></li>
+</ul>
+<p>如需配置特定路径，在CSS文件中使用<code>@source</code>指令：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">&quot;tailwindcss&quot;</span>;</span><br><span class="line"><span class="keyword">@source</span> <span class="string">&quot;./src/**/*.html&quot;</span>;</span><br><span class="line"><span class="keyword">@source</span> <span class="string">&quot;./src/**/*.js&quot;</span>;</span><br><span class="line"><span class="keyword">@source</span> <span class="string">&quot;./components/**/*.&#123;html,js&#125;&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-自定义主题不生效？"><a href="#2-自定义主题不生效？" class="headerlink" title="2. 自定义主题不生效？"></a>2. 自定义主题不生效？</h3><ul>
+<li>修改配置后需要重启开发服务器</li>
+<li>检查@theme指令中的CSS变量定义是否正确</li>
+<li>检查类名是否正确（如自定义颜色是否使用了正确的命名）</li>
+</ul>
+<h3 id="3-生产环境丢失样式？"><a href="#3-生产环境丢失样式？" class="headerlink" title="3. 生产环境丢失样式？"></a>3. 生产环境丢失样式？</h3><ul>
+<li>Tailwind v4会自动扫描相关文件，通常不会出现样式丢失问题</li>
+<li>对于动态生成的类名，确保它们在构建时是可见的</li>
+<li>避免完全动态生成的类名（如<code>text-&lt;?= $color ?&gt;</code>）</li>
+</ul>
+<h2 id="学习资源"><a href="#学习资源" class="headerlink" title="学习资源"></a>学习资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://tailwindcss.com/docs">官方文档</a>：最权威的学习资料</li>
+<li><a target="_blank" rel="noopener" href="https://play.tailwindcss.com/">Tailwind Play</a>：在线交互式学习平台</li>
+<li><a target="_blank" rel="noopener" href="https://tailwindui.com/">Tailwind UI</a>：官方UI组件库（付费）</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/aniftyco/awesome-tailwindcss">Awesome TailwindCSS</a>：精选资源集合</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>TailwindCSS通过原子化工具类的方式，重新定义了CSS开发流程。它的学习曲线平缓，一旦掌握常用工具类，开发效率会显著提升。对于中小型项目和需要快速迭代的产品，TailwindCSS是一个理想选择。</p>
+<p>与传统CSS相比，它可能需要适应”在HTML中写样式”的方式，但带来的收益远超这点适应成本。配合Alpine.js等轻量级框架，能构建出既美观又高效的现代Web应用。</p>
+<p>开始你的Tailwind之旅吧，它可能会彻底改变你编写CSS的方式！</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/front/">front</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/前端/">前端</a><a href="/tags/tailwindcss/">tailwindcss</a><a href="/tags/css/">css</a><a href="/tags/工具类/">工具类</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	<div class="share-jiathis">
+	  
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_googleplus"></a>
+  <a class="jiathis_button_twitter"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+     ralateuid:{"tsina":"2470076427"},hideMore:false}
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+2143304" charset="utf-8"></script>      
+
+	 </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/front/tianditu中文免费地图.html"  title="Web网页中使用免费地图 天地图 替代百度、高德地图，支持iframe">
+ <strong>下一篇：</strong><br/> 
+ <span>Web网页中使用免费地图 天地图 替代百度、高德地图，支持iframe
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+<section id="comments" class="comment">
+
+<div id="SOHUCS" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt0mqnuK'; 
+var conf = 'prod_acb6164281284c13bf0f34dbe1d96c85'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TailwindCSS-%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%AE%9E%E6%88%98%E7%9A%84%E5%AE%9E%E7%94%A8%E4%B8%BB%E4%B9%89CSS%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">TailwindCSS 入门指南：从安装到实战的实用主义CSS方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFTailwindCSS%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是TailwindCSS？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9TailwindCSS%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">为什么选择TailwindCSS？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B%EF%BC%9A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">快速开始：安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.3.2.</span> <span class="toc-text">安装步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">核心概念与基础用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E7%B1%BB%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="toc-number">1.4.1.</span> <span class="toc-text">工具类语法规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%88%86%E7%B1%BB"><span class="toc-number">1.4.2.</span> <span class="toc-text">常用工具类分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.3.</span> <span class="toc-text">响应式设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%B4%E5%B0%8F%E7%9A%84%E6%96%AD%E7%82%B9"><span class="toc-number">1.4.4.</span> <span class="toc-text">自定义更小的断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F%E4%B8%8E%E7%BB%84%E4%BB%B6"><span class="toc-number">1.4.5.</span> <span class="toc-text">自定义样式与组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E5%AE%9A%E5%88%B6"><span class="toc-number">1.4.6.</span> <span class="toc-text">主题定制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E7%A4%BA%E4%BE%8B%EF%BC%9A%E6%9E%84%E5%BB%BA%E5%93%8D%E5%BA%94%E5%BC%8F%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-number">1.5.</span> <span class="toc-text">实战示例：构建响应式导航栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BC%98%E5%8C%96"><span class="toc-number">1.6.</span> <span class="toc-text">生产环境优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.7.</span> <span class="toc-text">常见问题与解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A0%B7%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%EF%BC%9F"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. 样式不生效？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E4%B8%8D%E7%94%9F%E6%95%88%EF%BC%9F"><span class="toc-number">1.7.2.</span> <span class="toc-text">2. 自定义主题不生效？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%A2%E5%A4%B1%E6%A0%B7%E5%BC%8F%EF%BC%9F"><span class="toc-number">1.7.3.</span> <span class="toc-text">3. 生产环境丢失样式？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90"><span class="toc-number">1.8.</span> <span class="toc-text">学习资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/front/" title="front">front<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/server/" title="server">server<sup>22</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/wordpress/" title="wordpress">wordpress<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/centos/" title="centos">centos<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/运维/" title="运维">运维<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php/" title="php">php<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/apache/" title="apache">apache<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/包管理/" title="包管理">包管理<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+</div>
+
+
+  <div class="steam-card">
+    <p class="asidetitle">
+        Steam
+    </p>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+</div>
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/2018/cerbot.html" target="_blank" title="Cerbot">Cerbot</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.londy.cc/" target="_blank" title="Londy">Londy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/" target="_blank" title="技术团队Blog">技术团队Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Talents come from diligence, <br/>
+			and knowledge is gained by accumulation.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2470076427" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/jeeaay" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2025 
+		
+		<a href="/about" target="_blank" title="Jeay">Jeay</a>
+		
+		备案号：<a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">豫ICP备16039722号</a>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261897922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1261897922' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
