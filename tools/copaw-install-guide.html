@@ -1,0 +1,725 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>小白也能上手安装小龙虾！OpenClaw的优化版本CoPaw本地完整配置指南 - 保姆级教程 | Jeay&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jeay">
+    
+
+    
+    <meta name="description" content="小白也能上手安装的 CoPaw（优化版本 OpenClaw）本地 AI 助手完整指南！从安装到配置，小龙虾级详细教程，支持飞书远程任务、阿里云 Qwen3.5 Plus 模型配置，打造你的私人 AI 助手。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小白也能上手安装小龙虾！OpenClaw的优化版本CoPaw本地完整配置指南 - 保姆级教程">
+<meta property="og:url" content="https://www.jeay.net/tools/copaw-install-guide.html">
+<meta property="og:site_name" content="Jeay&#39;s blog">
+<meta property="og:description" content="小白也能上手安装的 CoPaw（优化版本 OpenClaw）本地 AI 助手完整指南！从安装到配置，小龙虾级详细教程，支持飞书远程任务、阿里云 Qwen3.5 Plus 模型配置，打造你的私人 AI 助手。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image1.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image2.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image3.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image4.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image5.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image6.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image7.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image8.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image9.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image10.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image11.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image12.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image13.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image14.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image15.png">
+<meta property="og:image" content="https://www.jeay.net/img/2026/image16.png">
+<meta property="article:published_time" content="2026-03-10T02:45:00.000Z">
+<meta property="article:modified_time" content="2026-03-10T03:34:12.925Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="copaw">
+<meta property="article:tag" content="安装教程">
+<meta property="article:tag" content="OpenClaw">
+<meta property="article:tag" content="AI 助手">
+<meta property="article:tag" content="小白教程">
+<meta property="article:tag" content="本地 AI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.jeay.net/img/2026/image1.png">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/app.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Jeay&#39;s blog">Jeay&#39;s blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives/">Archives</a></li>
+					
+						<li><a href="/categories/tools/">Tools</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:www.jeay.net">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/tools/copaw-install-guide.html" title="小白也能上手安装小龙虾！OpenClaw的优化版本CoPaw本地完整配置指南 - 保姆级教程" itemprop="url">小白也能上手安装小龙虾！OpenClaw的优化版本CoPaw本地完整配置指南 - 保姆级教程</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jeay" target="_blank" itemprop="author">Jeay</a>
+		
+  <p class="article-time">
+    <time datetime="2026-03-10T02:45:00.000Z" itemprop="datePublished"> Published 2026-03-10</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E8%A1%8C"><span class="toc-number">1.1.</span> <span class="toc-text">1. 打开命令提示行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">2. 运行安装命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85-UV%EF%BC%88%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">3. 安装 UV（如果需要）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%87%8D%E6%96%B0%E6%89%93%E5%BC%80-cmd-%E7%AA%97%E5%8F%A3"><span class="toc-number">2.1.</span> <span class="toc-text">4. 重新打开 cmd 窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%89%A7%E8%A1%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">5. 执行初始化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">添加环境变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%88%E5%A6%82%E6%9E%9C%E6%8F%90%E7%A4%BA%E6%89%BE%E4%B8%8D%E5%88%B0-copaw%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">6. 配置环境变量（如果提示找不到 copaw）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8-CoPaw"><span class="toc-number">4.</span> <span class="toc-text">启动 CoPaw</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%90%8C%E6%84%8F%E5%8D%8F%E8%AE%AE"><span class="toc-number">4.1.</span> <span class="toc-text">7. 同意协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%90%AF%E5%8A%A8%E5%BA%94%E7%94%A8"><span class="toc-number">4.2.</span> <span class="toc-text">8. 启动应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%88%87%E6%8D%A2%E4%B8%AD%E6%96%87"><span class="toc-number">4.3.</span> <span class="toc-text">9. 切换中文</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">配置模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E8%AE%BE%E7%BD%AE-API-%E5%AF%86%E9%92%A5"><span class="toc-number">5.1.</span> <span class="toc-text">10. 设置 API 密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%80%89%E6%8B%A9-LLM-%E9%85%8D%E7%BD%AE"><span class="toc-number">5.2.</span> <span class="toc-text">11. 选择 LLM 配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%8A%80%E8%83%BD"><span class="toc-number">6.</span> <span class="toc-text">添加技能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%AF%BC%E5%85%A5%E6%8A%80%E8%83%BD"><span class="toc-number">6.1.</span> <span class="toc-text">12. 导入技能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E9%A3%9E%E4%B9%A6%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">接入飞书（可选）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E9%85%8D%E7%BD%AE%E9%A3%9E%E4%B9%A6%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">7.1.</span> <span class="toc-text">13. 配置飞书机器人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0-CoPaw"><span class="toc-number">8.</span> <span class="toc-text">更新 CoPaw</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-FAQ"><span class="toc-number">9.</span> <span class="toc-text">常见问题 FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E6%8A%A5%E9%94%99%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">9.1.</span> <span class="toc-text">Q: 安装过程中遇到报错怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-API-%E5%AF%86%E9%92%A5%E5%9C%A8%E5%93%AA%E9%87%8C%E8%B4%AD%E4%B9%B0%EF%BC%9F"><span class="toc-number">9.2.</span> <span class="toc-text">Q: API 密钥在哪里购买？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%8F%AF%E4%BB%A5%E5%9C%A8-Mac-%E6%88%96-Linux-%E4%B8%8A%E5%AE%89%E8%A3%85%E5%90%97%EF%BC%9F"><span class="toc-number">9.3.</span> <span class="toc-text">Q: 可以在 Mac 或 Linux 上安装吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-OpenClaw-%E5%92%8C-CoPaw-%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="toc-number">9.4.</span> <span class="toc-text">Q: OpenClaw 和 CoPaw 是什么关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8-CoPaw%EF%BC%9F"><span class="toc-number">9.5.</span> <span class="toc-text">Q: 安装完成后，如何启动 CoPaw？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E6%9C%80%E4%BD%8E%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">9.6.</span> <span class="toc-text">Q: 最低的系统要求是什么？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">10.</span> <span class="toc-text">总结</span></a></li></ol>
+		
+		</div>
+		
+		<blockquote>
+<p>🦞 <strong>小龙虾保姆级详细教程</strong> - 小白也能轻松上手！本文是史上最详细的 CoPaw本地 AI 助手安装配置指南，手把手教你从零开始搭建属于自己的 AI 助手平台。</p>
+</blockquote>
+<p>CoPaw（阿里版本的 OpenClaw）是一个功能强大的本地 AI 助手平台，支持命令行、飞书等多种交互方式。即使是完全零基础的小白，按照本教程也能轻松完成安装和配置。</p>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="1-打开命令提示行"><a href="#1-打开命令提示行" class="headerlink" title="1. 打开命令提示行"></a>1. 打开命令提示行</h3><p>按 <code>Win+R</code> 输入 <code>cmd</code>，点确定，打开命令提示符窗口。</p>
+<p><img src="/img/2026/image1.png" alt="打开命令提示行"></p>
+<h3 id="2-运行安装命令"><a href="#2-运行安装命令" class="headerlink" title="2. 运行安装命令"></a>2. 运行安装命令</h3><p>在 cmd 窗口中复制粘贴以下内容并回车：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://copaw.agentscope.io/install.bat -o install.bat &amp;&amp; install.bat</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2026/image2.png" alt="开始安装"></p>
+<h3 id="3-安装-UV（如果需要）"><a href="#3-安装-UV（如果需要）" class="headerlink" title="3. 安装 UV（如果需要）"></a>3. 安装 UV（如果需要）</h3><p>如果提示需要手动安装 uv，在 cmd 窗口复制粘贴以下命令安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell -ExecutionPolicy ByPass -c <span class="string">&quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，再次运行安装命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://copaw.agentscope.io/install.bat -o install.bat &amp;&amp; install.bat</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2026/image3.png" alt="安装完成"></p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><h3 id="4-重新打开-cmd-窗口"><a href="#4-重新打开-cmd-窗口" class="headerlink" title="4. 重新打开 cmd 窗口"></a>4. 重新打开 cmd 窗口</h3><p>关闭之前的窗口，重新按 <code>Win+R</code> 输入 <code>cmd</code> 打开（这一步是为了使安装的环境变量生效）。</p>
+<h3 id="5-执行初始化"><a href="#5-执行初始化" class="headerlink" title="5. 执行初始化"></a>5. 执行初始化</h3><p>复制粘贴以下内容到窗口执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copaw init --defaults</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>进阶选项：直接使用 <code>copaw init</code> 不带 <code>--defaults</code> 参数，可以通过交互式问答来初始化</p>
+</blockquote>
+<p><img src="/img/2026/image4.png" alt="初始化"></p>
+<p>这一步如果提示找不到 copaw，需要先进行下面的第 6 步操作，然后再执行初始化。</p>
+<h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><h3 id="6-配置环境变量（如果提示找不到-copaw）"><a href="#6-配置环境变量（如果提示找不到-copaw）" class="headerlink" title="6. 配置环境变量（如果提示找不到 copaw）"></a>6. 配置环境变量（如果提示找不到 copaw）</h3><p>如果第三步结束时提示找不到 copaw，需要手动添加环境变量：</p>
+<ol>
+<li>按 <code>Win+R</code> 输入 <code>sysdm.cpl</code>，确定</li>
+</ol>
+<p><img src="/img/2026/image5.png" alt="系统属性"></p>
+<ol start="2">
+<li>点击 <strong>高级</strong> → <strong>环境变量</strong></li>
+</ol>
+<p><img src="/img/2026/image6.png" alt="环境变量入口"></p>
+<ol start="3">
+<li>在系统变量中找到并点击 <strong>Path</strong>，点 <strong>编辑</strong></li>
+</ol>
+<p><img src="/img/2026/image7.png" alt="编辑 Path"></p>
+<ol start="4">
+<li>点 <strong>新建</strong>，粘贴以下内容：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%USERPROFILE%\.copaw\bin</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2026/image8.png" alt="添加环境变量"></p>
+<ol start="5">
+<li>依次点击三个 <strong>确定</strong> 保存</li>
+</ol>
+<p>现在可以回到第 5 步继续初始化了。</p>
+<h2 id="启动-CoPaw"><a href="#启动-CoPaw" class="headerlink" title="启动 CoPaw"></a>启动 CoPaw</h2><h3 id="7-同意协议"><a href="#7-同意协议" class="headerlink" title="7. 同意协议"></a>7. 同意协议</h3><p>初始化时会显示使用协议，选择 <code>yes</code> 同意。</p>
+<p><img src="/img/2026/image9.png" alt="同意协议"></p>
+<h3 id="8-启动应用"><a href="#8-启动应用" class="headerlink" title="8. 启动应用"></a>8. 启动应用</h3><p>完成初始化且没有报错，说明已经顺利安装成功了。以后在 cmd 输入以下命令即可启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copaw app</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2026/image10.png" alt="启动成功"></p>
+<p>看到访问地址说明启动成功了，如果没改过配置的话，用浏览器打开以下地址就可以访问用户界面了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8088</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-切换中文"><a href="#9-切换中文" class="headerlink" title="9. 切换中文"></a>9. 切换中文</h3><p>用户界面右上角可以切换语言为中文。</p>
+<p><img src="/img/2026/image11.png" alt="切换中文"></p>
+<h2 id="配置模型"><a href="#配置模型" class="headerlink" title="配置模型"></a>配置模型</h2><h3 id="10-设置-API-密钥"><a href="#10-设置-API-密钥" class="headerlink" title="10. 设置 API 密钥"></a>10. 设置 API 密钥</h3><ol>
+<li>点击左侧菜单的 <strong>模型</strong></li>
+<li>选择 <strong>Aliyun Coding Plan</strong></li>
+<li>点击 <strong>设置</strong>，填写 API 密钥</li>
+</ol>
+<p><img src="/img/2026/image12.png" alt="配置模型"></p>
+<blockquote>
+<p><strong>注意</strong>：API 密钥需要购买，推荐阿里云的Coding Plan。<strong>API 密钥是重要资产，请勿外泄！</strong></p>
+</blockquote>
+<h3 id="11-选择-LLM-配置"><a href="#11-选择-LLM-配置" class="headerlink" title="11. 选择 LLM 配置"></a>11. 选择 LLM 配置</h3><p>这里以 <strong>Aliyun Coding Plan</strong> 为例，其他模型配置类似。</p>
+<p>LLM 配置选择：</p>
+<ul>
+<li><strong>Aliyun Coding Plan</strong></li>
+<li><strong>Qwen3.5 Plus</strong></li>
+</ul>
+<p><img src="/img/2026/image13.png" alt="选择模型"></p>
+<h2 id="添加技能"><a href="#添加技能" class="headerlink" title="添加技能"></a>添加技能</h2><h3 id="12-导入技能"><a href="#12-导入技能" class="headerlink" title="12. 导入技能"></a>12. 导入技能</h3><ol>
+<li>点击左侧菜单的 <strong>技能</strong></li>
+<li>选择 <strong>导入技能</strong></li>
+<li>输入以下 URL：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://skills.sh/vercel-labs/skills/find-skills</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>点击 <strong>导入技能</strong></li>
+</ol>
+<p><img src="/img/2026/image14.png" alt="导入技能"></p>
+<h2 id="接入飞书（可选）"><a href="#接入飞书（可选）" class="headerlink" title="接入飞书（可选）"></a>接入飞书（可选）</h2><p>接入飞书的目的：可以通过手机软件远程给 CoPaw 下达任务。</p>
+<h3 id="13-配置飞书机器人"><a href="#13-配置飞书机器人" class="headerlink" title="13. 配置飞书机器人"></a>13. 配置飞书机器人</h3><p>打开官方文档，完成第 1-9 步：</p>
+<p><a target="_blank" rel="noopener" href="https://copaw.agentscope.io/docs/channels#%E9%A3%9E%E4%B9%A6">https://copaw.agentscope.io/docs/channels#%E9%A3%9E%E4%B9%A6</a></p>
+<p>执行到第 2 步时，需要在自己的 CoPaw 中填写 App ID、App Secret：</p>
+<p><img src="/img/2026/image15.png" alt="飞书配置"></p>
+<p><strong>注意</strong>：</p>
+<ul>
+<li>跳过第 3 步</li>
+<li>跳过第 7 步中的操作顺序的注意事项</li>
+</ul>
+<p>将官方文档第 2 步获得的 App ID、App Secret 填写到 <strong>频道</strong> → <strong>飞书</strong> 中，并启用、保存（保存按钮在下面）：</p>
+<p><img src="/img/2026/image16.png" alt="保存配置"></p>
+<blockquote>
+<p>如果你想在多个电脑安装 CoPaw，可以通过同一个飞书创建不同机器人来区分。</p>
+</blockquote>
+<h2 id="更新-CoPaw"><a href="#更新-CoPaw" class="headerlink" title="更新 CoPaw"></a>更新 CoPaw</h2><p>关闭正在运行的 CoPaw，重复本文第 1、2 步（运行安装命令）即可更新到最新版本。</p>
+<h2 id="常见问题-FAQ"><a href="#常见问题-FAQ" class="headerlink" title="常见问题 FAQ"></a>常见问题 FAQ</h2><h3 id="Q-安装过程中遇到报错怎么办？"><a href="#Q-安装过程中遇到报错怎么办？" class="headerlink" title="Q: 安装过程中遇到报错怎么办？"></a>Q: 安装过程中遇到报错怎么办？</h3><p>A: 大部分问题都是环境变量未生效导致的，关闭 cmd 窗口重新打开即可解决，有时候重启一下就能解决。</p>
+<h3 id="Q-API-密钥在哪里购买？"><a href="#Q-API-密钥在哪里购买？" class="headerlink" title="Q: API 密钥在哪里购买？"></a>Q: API 密钥在哪里购买？</h3><p>A: 推荐阿里云的Coding Plan 首页7.9 包月制 不会产生额外费用。</p>
+<h3 id="Q-可以在-Mac-或-Linux-上安装吗？"><a href="#Q-可以在-Mac-或-Linux-上安装吗？" class="headerlink" title="Q: 可以在 Mac 或 Linux 上安装吗？"></a>Q: 可以在 Mac 或 Linux 上安装吗？</h3><p>A: 本文主要针对 Windows 系统，Mac&#x2F;Linux安装过于简单 我就没写 可以在<a target="_blank" rel="noopener" href="https://copaw.agentscope.io/docs/quickstart">官方教程</a>查看。</p>
+<p>Mac&#x2F;Linux 安装只需要一句话：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://copaw.agentscope.io/install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="Q-OpenClaw-和-CoPaw-是什么关系？"><a href="#Q-OpenClaw-和-CoPaw-是什么关系？" class="headerlink" title="Q: OpenClaw 和 CoPaw 是什么关系？"></a>Q: OpenClaw 和 CoPaw 是什么关系？</h3><p>A: CoPaw 是阿里推出的优化版本 OpenClaw 功能一致 占用资源更少。</p>
+<h3 id="Q-安装完成后，如何启动-CoPaw？"><a href="#Q-安装完成后，如何启动-CoPaw？" class="headerlink" title="Q: 安装完成后，如何启动 CoPaw？"></a>Q: 安装完成后，如何启动 CoPaw？</h3><p>A: 安装完成后，在 cmd 中输入 <code>copaw app</code> 即可启动 CoPaw。 启动后不要关闭 cmd 窗口，否则 CoPaw 会停止运行。</p>
+<h3 id="Q-最低的系统要求是什么？"><a href="#Q-最低的系统要求是什么？" class="headerlink" title="Q: 最低的系统要求是什么？"></a>Q: 最低的系统要求是什么？</h3><p>A: CoPaw 最低要求 Windows 10 或以上版本，建议使用 Windows 11。如果版本过低会卡在python环境安装那步。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>安装完成后，你就可以：</p>
+<ul>
+<li>通过 Web 界面 (<code>http://127.0.0.1:8088</code>) 与 AI 助手交互</li>
+<li>通过飞书远程下达任务</li>
+<li>导入各种技能扩展功能</li>
+<li>配置不同的 AI 模型（支持阿里云 Qwen3.5 Plus 等）</li>
+</ul>
+<p><strong>关键词</strong>：CoPaw 安装、OpenClaw 配置、本地 AI 助手、小白教程、小龙虾保姆级教程、AI 助手搭建、飞书机器人、阿里云 Qwen、Qwen3.5 Plus、copaw init、copaw app</p>
+<p>如果在安装过程中遇到问题，可以检查以下几点：</p>
+<ol>
+<li>确保网络连接正常</li>
+<li>确认已正确添加环境变量</li>
+<li>检查 API 密钥是否有效</li>
+<li>查看官方文档或联系支持</li>
+</ol>
+<p>祝使用愉快！🦞</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/tools/">tools</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/copaw/">copaw</a><a href="/tags/安装教程/">安装教程</a><a href="/tags/OpenClaw/">OpenClaw</a><a href="/tags/AI-助手/">AI 助手</a><a href="/tags/小白教程/">小白教程</a><a href="/tags/本地-AI/">本地 AI</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	<div class="share-jiathis">
+	  
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_googleplus"></a>
+  <a class="jiathis_button_twitter"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+     ralateuid:{"tsina":"2470076427"},hideMore:false}
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+2143304" charset="utf-8"></script>      
+
+	 </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/front/tailwind.html"  title="TailwindCSS 入门指南：从安装到实战的实用主义CSS方案">
+ <strong>下一篇：</strong><br/> 
+ <span>TailwindCSS 入门指南：从安装到实战的实用主义CSS方案
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+<section id="comments" class="comment">
+
+<div id="SOHUCS" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt0mqnuK'; 
+var conf = 'prod_acb6164281284c13bf0f34dbe1d96c85'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E8%A1%8C"><span class="toc-number">1.1.</span> <span class="toc-text">1. 打开命令提示行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">2. 运行安装命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85-UV%EF%BC%88%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">3. 安装 UV（如果需要）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%87%8D%E6%96%B0%E6%89%93%E5%BC%80-cmd-%E7%AA%97%E5%8F%A3"><span class="toc-number">2.1.</span> <span class="toc-text">4. 重新打开 cmd 窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%89%A7%E8%A1%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">5. 执行初始化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">添加环境变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%88%E5%A6%82%E6%9E%9C%E6%8F%90%E7%A4%BA%E6%89%BE%E4%B8%8D%E5%88%B0-copaw%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">6. 配置环境变量（如果提示找不到 copaw）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8-CoPaw"><span class="toc-number">4.</span> <span class="toc-text">启动 CoPaw</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%90%8C%E6%84%8F%E5%8D%8F%E8%AE%AE"><span class="toc-number">4.1.</span> <span class="toc-text">7. 同意协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%90%AF%E5%8A%A8%E5%BA%94%E7%94%A8"><span class="toc-number">4.2.</span> <span class="toc-text">8. 启动应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%88%87%E6%8D%A2%E4%B8%AD%E6%96%87"><span class="toc-number">4.3.</span> <span class="toc-text">9. 切换中文</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">配置模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E8%AE%BE%E7%BD%AE-API-%E5%AF%86%E9%92%A5"><span class="toc-number">5.1.</span> <span class="toc-text">10. 设置 API 密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%80%89%E6%8B%A9-LLM-%E9%85%8D%E7%BD%AE"><span class="toc-number">5.2.</span> <span class="toc-text">11. 选择 LLM 配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%8A%80%E8%83%BD"><span class="toc-number">6.</span> <span class="toc-text">添加技能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%AF%BC%E5%85%A5%E6%8A%80%E8%83%BD"><span class="toc-number">6.1.</span> <span class="toc-text">12. 导入技能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E9%A3%9E%E4%B9%A6%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">接入飞书（可选）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E9%85%8D%E7%BD%AE%E9%A3%9E%E4%B9%A6%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">7.1.</span> <span class="toc-text">13. 配置飞书机器人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0-CoPaw"><span class="toc-number">8.</span> <span class="toc-text">更新 CoPaw</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-FAQ"><span class="toc-number">9.</span> <span class="toc-text">常见问题 FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E6%8A%A5%E9%94%99%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">9.1.</span> <span class="toc-text">Q: 安装过程中遇到报错怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-API-%E5%AF%86%E9%92%A5%E5%9C%A8%E5%93%AA%E9%87%8C%E8%B4%AD%E4%B9%B0%EF%BC%9F"><span class="toc-number">9.2.</span> <span class="toc-text">Q: API 密钥在哪里购买？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%8F%AF%E4%BB%A5%E5%9C%A8-Mac-%E6%88%96-Linux-%E4%B8%8A%E5%AE%89%E8%A3%85%E5%90%97%EF%BC%9F"><span class="toc-number">9.3.</span> <span class="toc-text">Q: 可以在 Mac 或 Linux 上安装吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-OpenClaw-%E5%92%8C-CoPaw-%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="toc-number">9.4.</span> <span class="toc-text">Q: OpenClaw 和 CoPaw 是什么关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8-CoPaw%EF%BC%9F"><span class="toc-number">9.5.</span> <span class="toc-text">Q: 安装完成后，如何启动 CoPaw？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E6%9C%80%E4%BD%8E%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">9.6.</span> <span class="toc-text">Q: 最低的系统要求是什么？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">10.</span> <span class="toc-text">总结</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/front/" title="front">front<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/server/" title="server">server<sup>21</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>10</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/wordpress/" title="wordpress">wordpress<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/centos/" title="centos">centos<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/运维/" title="运维">运维<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php/" title="php">php<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/apache/" title="apache">apache<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/包管理/" title="包管理">包管理<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>2</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+</div>
+
+
+  <div class="steam-card">
+    <p class="asidetitle">
+        Steam
+    </p>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+</div>
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/2018/cerbot.html" target="_blank" title="Cerbot">Cerbot</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.londy.cc/" target="_blank" title="Londy">Londy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.lmzg.org/" target="_blank" title="技术团队Blog">技术团队Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Talents come from diligence, <br/>
+			and knowledge is gained by accumulation.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2470076427" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/jeeaay" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2026 
+		
+		<a href="/about" target="_blank" title="Jeay">Jeay</a>
+		
+		备案号：<a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">豫ICP备16039722号</a>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261897922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1261897922' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
