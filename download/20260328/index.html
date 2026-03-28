@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCorp - Enterprise Solutions for the Digital Age</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.5;
+            color: #0f172a;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .header {
+            height: 80px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 120px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-item {
+            font-size: 14px;
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-item:hover {
+            color: #0f172a;
+        }
+
+        .cta-button {
+            background-color: #0ea5e9;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 0 24px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #0284c7;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            height: 600px;
+            background-color: #0f172a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px;
+            gap: 24px;
+        }
+
+        .hero-badge {
+            background-color: #1e293b;
+            color: #94a3b8;
+            font-size: 14px;
+            padding: 12px 24px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            max-width: 800px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .btn-primary {
+            background-color: #0ea5e9;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 0 32px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0284c7;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #0f172a;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 0 32px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Features Section Styles */
+        .features {
+            background-color: #f8fafc;
+            padding: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .features-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .features-badge {
+            background-color: #0ea5e9;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .features-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0f172a;
+            max-width: 600px;
+            line-height: 1.2;
+        }
+
+        .features-description {
+            font-size: 16px;
+            color: #64748b;
+            max-width: 500px;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 32px;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #0ea5e9;
+            border-radius: 12px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0f172a;
+            padding: 80px 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 80px;
+        }
+
+        .brand-area {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 300px;
+        }
+
+        .brand-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .brand-description {
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .footer-link {
+            font-size: 14px;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding-top: 40px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .footer-bottom-link {
+            font-size: 14px;
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-link:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .header {
+                padding: 0 60px;
+            }
+
+            .hero {
+                padding: 80px 60px;
+            }
+
+            .features {
+                padding: 80px 60px;
+            }
+
+            .features-grid {
+                flex-wrap: wrap;
+            }
+
+            .footer {
+                padding: 60px;
+            }
+
+            .footer-top {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 0 30px;
+                flex-direction: column;
+                height: auto;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                gap: 20px;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 60px 30px;
+                height: auto;
+                min-height: 500px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .features {
+                padding: 60px 30px;
+                gap: 60px;
+            }
+
+            .features-title {
+                font-size: 28px;
+            }
+
+            .feature-card {
+                width: 100%;
+            }
+
+            .footer {
+                padding: 60px 30px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">TechCorp</div>
+        <nav class="nav">
+            <a href="#" class="nav-item">Products</a>
+            <a href="#" class="nav-item">Solutions</a>
+            <a href="#" class="nav-item">Pricing</a>
+            <a href="#" class="nav-item">About</a>
+            <a href="#" class="nav-item">Contact</a>
+        </nav>
+        <a href="#" class="cta-button">Get Started</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">Trusted by 10,000+ companies worldwide</div>
+        <div class="hero-content">
+            <h1 class="hero-title">Enterprise Solutions for the Digital Age</h1>
+            <p class="hero-description">Transform your business with cutting-edge technology. Scalable, secure, and intelligent solutions designed for the modern enterprise.</p>
+        </div>
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary">Start Free Trial</a>
+            <a href="#" class="btn-secondary">Watch Demo</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-header">
+            <span class="features-badge">Why Choose Us</span>
+            <h2 class="features-title">Everything you need to scale your business</h2>
+            <p class="features-description">Powerful features to help you manage and grow your enterprise with confidence</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3 class="feature-title">Cloud Infrastructure</h3>
+                <p class="feature-text">Deploy globally in minutes with our enterprise-grade cloud platform</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3 class="feature-title">Advanced Analytics</h3>
+                <p class="feature-text">Real-time insights and predictive analytics to drive smarter decisions</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3 class="feature-title">Enterprise Security</h3>
+                <p class="feature-text">Bank-grade security with SOC 2 compliance and end-to-end encryption</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="brand-area">
+                <div class="brand-name">TechCorp</div>
+                <p class="brand-description">Enterprise solutions for the digital age. Transform your business with cutting-edge technology.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-links-title">Product</div>
+                <a href="#" class="footer-link">Features</a>
+                <a href="#" class="footer-link">Pricing</a>
+                <a href="#" class="footer-link">Documentation</a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-links-title">Company</div>
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-links-title">Resources</div>
+                <a href="#" class="footer-link">Documentation</a>
+                <a href="#" class="footer-link">Guides</a>
+                <a href="#" class="footer-link">Help Center</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="copyright">© 2025 TechCorp. All rights reserved.</span>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+            <a href="#" class="footer-bottom-link">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>
