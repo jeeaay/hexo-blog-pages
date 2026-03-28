@@ -1,0 +1,22 @@
+# PNG to WebP 文件名映射
+# 生成时间：2026-03-29 00:22:46
+#
+# 格式：原文件名 -> 新文件名
+#
+
+image1.png -> 032900150001.webp
+image10.png -> 032900150002.webp
+image11.png -> 032900150003.webp
+image12.png -> 032900150004.webp
+image13.png -> 032900150005.webp
+image14.png -> 032900150006.webp
+image15.png -> 032900150007.webp
+image16.png -> 032900150008.webp
+image2.png -> 032900150009.webp
+image3.png -> 032900150010.webp
+image4.png -> 032900150011.webp
+image5.png -> 032900150012.webp
+image6.png -> 032900150013.webp
+image7.png -> 032900150014.webp
+image8.png -> 032900150015.webp
+image9.png -> 032900150016.webp
