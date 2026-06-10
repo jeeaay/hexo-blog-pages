@@ -230,31 +230,8 @@
 
 	<div class="article-share" id="share">
 	
-	<div class="share-jiathis">
-	  
-<div class="jiathis_style_24x24">
-	<a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_googleplus"></a>
-  <a class="jiathis_button_twitter"></a>
-	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-    var jiathis_config={
-    data_track_clickback:true,
-    sm:"copy,renren,cqq",
-    pic:"",
-    summary:"",
-     ralateuid:{"tsina":"2470076427"},hideMore:false}
-    
-  </script> 
-<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
-2143304" charset="utf-8"></script>      
-
-	 </div>
+	  <div data-url="https://www.jeay.net/tools/trae-pencil-ai-web-design.html" data-title="使用 Trae 和 Pencil 实现 AI 设计网页 - 从零到部署完整教程 | Jeay&#39;s blog" data-tsina="2470076427" class="share clearfix">
+	  </div>
 	
 	</div>
 
@@ -346,7 +323,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tools/" title="tools">tools<sup>12</sup></a></li>
+			<li><a href="/categories/tools/" title="tools">tools<sup>13</sup></a></li>
 		  
 		
 		  
@@ -591,7 +568,7 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
-$(document).ready(function(){ 
+$(document).ready(function(){
   var ai = $('.article-content>iframe'),
       ae = $('.article-content>embed'),
       t  = $('#toc'),
@@ -613,9 +590,66 @@ $(document).ready(function(){
   $(window).scroll(function(){
     ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
+  // 去广告
+  const adt = setInterval(function(){
+    if ($("#SOHU_MAIN").siblings().length > 0) {
+      clearInterval(adt)
+      $("#SOHU_MAIN").siblings().hide()
+    }
+  }, 300)
+
 });
 </script>
 
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -652,11 +686,17 @@ $(document).ready(function(){
 
 
 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9f0450994d0ba3990a0c8170e93582b9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
-<div style="display:none">
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261897922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1261897922' type='text/javascript'%3E%3C/script%3E"));</script>
-</div>
 
 <!-- Analytics End -->
 
