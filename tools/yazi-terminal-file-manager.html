@@ -1,0 +1,921 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Yazi 终端文件管理器：安装配置与插件指南 | Jeay&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jeay">
+    
+
+    
+    <meta name="description" content="Yazi 是基于 Rust 的极速终端文件管理器，支持图片预览、Vim 键位和 Lua 插件系统。本文涵盖 macOS 安装、13 个依赖工具配置、10 个必备插件安装以及完整快捷键使用指南。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yazi 终端文件管理器：安装配置与插件指南">
+<meta property="og:url" content="https://www.jeay.net/tools/yazi-terminal-file-manager.html">
+<meta property="og:site_name" content="Jeay&#39;s blog">
+<meta property="og:description" content="Yazi 是基于 Rust 的极速终端文件管理器，支持图片预览、Vim 键位和 Lua 插件系统。本文涵盖 macOS 安装、13 个依赖工具配置、10 个必备插件安装以及完整快捷键使用指南。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-07-21T08:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-22T03:49:01.486Z">
+<meta property="article:author" content="Jeay">
+<meta property="article:tag" content="Yazi">
+<meta property="article:tag" content="终端工具">
+<meta property="article:tag" content="文件管理器">
+<meta property="article:tag" content="Rust">
+<meta property="article:tag" content="macOS">
+<meta name="twitter:card" content="summary">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/app.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/app.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Jeay&#39;s blog">Jeay&#39;s blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives/">Archives</a></li>
+					
+						<li><a href="/categories/tools/">Tools</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:www.jeay.net">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/tools/yazi-terminal-file-manager.html" title="Yazi 终端文件管理器：安装配置与插件指南" itemprop="url">Yazi 终端文件管理器：安装配置与插件指南</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jeay" target="_blank" itemprop="author">Jeay</a>
+		
+  <p class="article-time">
+    <time datetime="2026-07-21T08:00:00.000Z" itemprop="datePublished"> Published 2026-07-21</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#macOS%EF%BC%88Homebrew%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">macOS（Homebrew）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cargo%EF%BC%88%E9%80%9A%E7%94%A8%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">Cargo（通用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fedora-RHEL%EF%BC%88dnf%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">Fedora &#x2F; RHEL（dnf）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">依赖工具安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">插件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%8F%92%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">官方插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">社区插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-number">3.3.</span> <span class="toc-text">插件管理命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#init-lua-%E2%80%94-%E6%8F%92%E4%BB%B6%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">4.1.</span> <span class="toc-text">init.lua — 插件初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yazi-toml-%E2%80%94-%E4%B8%BB%E9%85%8D%E7%BD%AE"><span class="toc-number">4.2.</span> <span class="toc-text">yazi.toml — 主配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keymap-toml-%E2%80%94-%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">4.3.</span> <span class="toc-text">keymap.toml — 快捷键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span class="toc-number">5.</span> <span class="toc-text">使用指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">5.1.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%AF%BC%E8%88%AA"><span class="toc-number">5.2.</span> <span class="toc-text">基础导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">5.3.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">5.4.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E8%A7%88%E4%B8%8E%E6%90%9C%E7%B4%A2"><span class="toc-number">5.5.</span> <span class="toc-text">预览与搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="toc-number">5.6.</span> <span class="toc-text">标签页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4%E6%89%93%E5%BC%80"><span class="toc-number">5.7.</span> <span class="toc-text">自定义命令打开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%80%E5%87%BA"><span class="toc-number">5.8.</span> <span class="toc-text">退出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shell-%E9%9B%86%E6%88%90%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">Shell 集成（可选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TOML-parse-error-at-least-one-of-url-or-mime-must-be-specified"><span class="toc-number">7.1.</span> <span class="toc-text">TOML parse error: at least one of url or mime must be specified</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ouch-%E6%8F%92%E4%BB%B6-Lua-error"><span class="toc-number">7.2.</span> <span class="toc-text">ouch 插件 Lua error</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%8D%87%E7%BA%A7"><span class="toc-number">7.3.</span> <span class="toc-text">插件升级</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<p>Yazi 是基于 Rust 的极速终端文件管理器，支持图片预览、Vim 键位和 Lua 插件系统。本文涵盖 macOS 安装、13 个依赖工具配置、10 个必备插件安装以及完整快捷键使用指南。</p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="macOS（Homebrew）"><a href="#macOS（Homebrew）" class="headerlink" title="macOS（Homebrew）"></a>macOS（Homebrew）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install yazi</span><br></pre></td></tr></table></figure>
+
+<h3 id="Cargo（通用）"><a href="#Cargo（通用）" class="headerlink" title="Cargo（通用）"></a>Cargo（通用）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo binstall yazi-fm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Fedora-RHEL（dnf）"><a href="#Fedora-RHEL（dnf）" class="headerlink" title="Fedora &#x2F; RHEL（dnf）"></a>Fedora &#x2F; RHEL（dnf）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install yazi</span><br></pre></td></tr></table></figure>
+
+<p>版本验证：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yazi --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="依赖工具安装"><a href="#依赖工具安装" class="headerlink" title="依赖工具安装"></a>依赖工具安装</h2><p>Yazi 依赖一系列 CLI 工具来实现文件预览、搜索等功能：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg p7zip poppler fd fzf zoxide resvg imagemagick glow mediainfo ouch</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ffmpeg</code></td>
+<td>视频&#x2F;音频缩略图生成</td>
+</tr>
+<tr>
+<td><code>p7zip</code> (7z)</td>
+<td>7z 压缩&#x2F;解压</td>
+</tr>
+<tr>
+<td><code>poppler</code> (pdftoppm)</td>
+<td>PDF 预览</td>
+</tr>
+<tr>
+<td><code>fd</code></td>
+<td>快速文件查找（替代 find）</td>
+</tr>
+<tr>
+<td><code>fzf</code></td>
+<td>模糊搜索</td>
+</tr>
+<tr>
+<td><code>zoxide</code></td>
+<td>智能 cd（跳转常用目录）</td>
+</tr>
+<tr>
+<td><code>resvg</code></td>
+<td>SVG 渲染</td>
+</tr>
+<tr>
+<td><code>imagemagick</code> (convert)</td>
+<td>图片处理&#x2F;转换</td>
+</tr>
+<tr>
+<td><code>glow</code></td>
+<td>Markdown 终端预览</td>
+</tr>
+<tr>
+<td><code>mediainfo</code></td>
+<td>媒体文件元数据读取</td>
+</tr>
+<tr>
+<td><code>ouch</code></td>
+<td>压缩包内容预览&#x2F;压缩&#x2F;解压</td>
+</tr>
+<tr>
+<td><code>jq</code></td>
+<td>JSON 预览（macOS 自带）</td>
+</tr>
+<tr>
+<td><code>rg</code> (ripgrep)</td>
+<td>内容搜索</td>
+</tr>
+</tbody></table>
+<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><p>使用 Yazi 内置包管理器 <code>ya pkg</code> 安装插件：</p>
+<h3 id="官方插件"><a href="#官方插件" class="headerlink" title="官方插件"></a>官方插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ya pkg add yazi-rs/plugins:git          <span class="comment"># Git 状态显示</span></span><br><span class="line">ya pkg add yazi-rs/plugins:smart-enter  <span class="comment"># 智能打开文件/进入目录</span></span><br><span class="line">ya pkg add yazi-rs/plugins:full-border  <span class="comment"># 圆角全边框美化</span></span><br><span class="line">ya pkg add yazi-rs/plugins:jump-to-char <span class="comment"># Vim 风格 f 键跳转</span></span><br><span class="line">ya pkg add yazi-rs/plugins:smart-paste  <span class="comment"># 粘贴到悬停目录</span></span><br><span class="line">ya pkg add yazi-rs/plugins:mime-ext     <span class="comment"># 快速 MIME 类型检测</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="社区插件"><a href="#社区插件" class="headerlink" title="社区插件"></a>社区插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ya pkg add Reledia/glow          <span class="comment"># Markdown 预览（依赖 glow）</span></span><br><span class="line">ya pkg add boydaihungst/mediainfo <span class="comment"># 媒体文件预览（依赖 mediainfo + ffmpeg）</span></span><br><span class="line">ya pkg add ndtoan96/ouch          <span class="comment"># 压缩包预览（依赖 ouch）</span></span><br><span class="line">ya pkg add Ape/open-with-cmd      <span class="comment"># 自定义命令打开文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="插件管理命令"><a href="#插件管理命令" class="headerlink" title="插件管理命令"></a>插件管理命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ya pkg list      <span class="comment"># 查看已安装插件</span></span><br><span class="line">ya pkg upgrade   <span class="comment"># 升级所有插件</span></span><br><span class="line">ya pkg delete &lt;plugin&gt;  <span class="comment"># 删除插件</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>配置目录：<code>~/.config/yazi/</code></p>
+<h3 id="init-lua-—-插件初始化"><a href="#init-lua-—-插件初始化" class="headerlink" title="init.lua — 插件初始化"></a>init.lua — 插件初始化</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 全屏边框（圆角）</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;full-border&quot;</span>):setup &#123;</span><br><span class="line">    <span class="built_in">type</span> = ui.Border.ROUNDED,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Git 状态显示</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;git&quot;</span>):setup &#123;</span><br><span class="line">    order = <span class="number">1500</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="yazi-toml-—-主配置"><a href="#yazi-toml-—-主配置" class="headerlink" title="yazi.toml — 主配置"></a>yazi.toml — 主配置</h3><figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[plugin]</span></span><br><span class="line"><span class="attr">prepend_previewers</span> = [</span><br><span class="line">    <span class="comment"># Markdown 预览</span></span><br><span class="line">    &#123; url = <span class="string">&quot;*.md&quot;</span>, run = <span class="string">&quot;glow&quot;</span> &#125;,</span><br><span class="line">    <span class="comment"># 媒体文件预览</span></span><br><span class="line">    &#123; mime = <span class="string">&quot;video/*&quot;</span>, run = <span class="string">&quot;mediainfo&quot;</span> &#125;,</span><br><span class="line">    &#123; mime = <span class="string">&quot;audio/*&quot;</span>, run = <span class="string">&quot;mediainfo&quot;</span> &#125;,</span><br><span class="line">    <span class="comment"># 压缩包预览</span></span><br><span class="line">    &#123; mime = <span class="string">&quot;application/zip&quot;</span>, run = <span class="string">&quot;ouch&quot;</span> &#125;,</span><br><span class="line">    &#123; mime = <span class="string">&quot;application/gzip&quot;</span>, run = <span class="string">&quot;ouch&quot;</span> &#125;,</span><br><span class="line">    &#123; mime = <span class="string">&quot;application/x-tar&quot;</span>, run = <span class="string">&quot;ouch&quot;</span> &#125;,</span><br><span class="line">    &#123; mime = <span class="string">&quot;application/x-bzip2&quot;</span>, run = <span class="string">&quot;ouch&quot;</span> &#125;,</span><br><span class="line">    &#123; mime = <span class="string">&quot;application/x-xz&quot;</span>, run = <span class="string">&quot;ouch&quot;</span> &#125;,</span><br><span class="line">    &#123; mime = <span class="string">&quot;application/x-7z-compressed&quot;</span>, run = <span class="string">&quot;ouch&quot;</span> &#125;,</span><br><span class="line">    &#123; mime = <span class="string">&quot;application/x-rar-compressed&quot;</span>, run = <span class="string">&quot;ouch&quot;</span> &#125;,</span><br><span class="line">    &#123; mime = <span class="string">&quot;application/zstd&quot;</span>, run = <span class="string">&quot;ouch&quot;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"><span class="attr">prepend_loaders</span> = [</span><br><span class="line">    &#123; name = <span class="string">&quot;*&quot;</span>, run = <span class="string">&quot;mime-ext&quot;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Git 状态 fetcher</span></span><br><span class="line"><span class="section">[[plugin.prepend_fetchers]]</span></span><br><span class="line"><span class="attr">url</span>   = <span class="string">&quot;*&quot;</span></span><br><span class="line"><span class="attr">run</span>   = <span class="string">&quot;git&quot;</span></span><br><span class="line"><span class="attr">group</span> = <span class="string">&quot;git&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[plugin.prepend_fetchers]]</span></span><br><span class="line"><span class="attr">url</span>   = <span class="string">&quot;*/&quot;</span></span><br><span class="line"><span class="attr">run</span>   = <span class="string">&quot;git&quot;</span></span><br><span class="line"><span class="attr">group</span> = <span class="string">&quot;git&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⚠️ 新版 Yazi（v26+）预览器配置用 <code>url</code>（文件路径 glob）和 <code>mime</code>（MIME 类型），旧的 <code>name</code> 已废弃。</p>
+</blockquote>
+<h3 id="keymap-toml-—-快捷键"><a href="#keymap-toml-—-快捷键" class="headerlink" title="keymap.toml — 快捷键"></a>keymap.toml — 快捷键</h3><figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[manager]</span></span><br><span class="line"><span class="attr">prepend_keymap</span> = [</span><br><span class="line">    &#123; <span class="literal">on</span> = [<span class="string">&quot;&lt;Enter&gt;&quot;</span>], run = <span class="string">&quot;plugin smart-enter&quot;</span>, desc = <span class="string">&quot;Smart enter&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="literal">on</span> = [<span class="string">&quot;p&quot;</span>], run = <span class="string">&quot;plugin smart-paste&quot;</span>, desc = <span class="string">&quot;Smart paste&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="literal">on</span> = [<span class="string">&quot;f&quot;</span>], run = <span class="string">&quot;plugin jump-to-char&quot;</span>, desc = <span class="string">&quot;Jump to char&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="literal">on</span> = [<span class="string">&quot;o&quot;</span>], run = <span class="string">&quot;plugin open-with-cmd --interactive&quot;</span>, desc = <span class="string">&quot;Open with command&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="literal">on</span> = [<span class="string">&quot;O&quot;</span>], run = <span class="string">&quot;plugin open-with-cmd --interactive --block&quot;</span>, desc = <span class="string">&quot;Open with command (block)&quot;</span> &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yazi            <span class="comment"># 在当前目录启动</span></span><br><span class="line">yazi /path      <span class="comment"># 在指定目录启动</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="基础导航"><a href="#基础导航" class="headerlink" title="基础导航"></a>基础导航</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>h</code> &#x2F; <code>←</code></td>
+<td>返回上级目录</td>
+</tr>
+<tr>
+<td><code>l</code> &#x2F; <code>→</code></td>
+<td>进入目录 &#x2F; 打开文件</td>
+</tr>
+<tr>
+<td><code>j</code> &#x2F; <code>↓</code></td>
+<td>向下移动</td>
+</tr>
+<tr>
+<td><code>k</code> &#x2F; <code>↑</code></td>
+<td>向上移动</td>
+</tr>
+<tr>
+<td><code>Enter</code></td>
+<td>智能打开（smart-enter 插件）</td>
+</tr>
+<tr>
+<td><code>f</code></td>
+<td>跳转到文件名首字符（jump-to-char 插件）</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>跳转到家目录</td>
+</tr>
+<tr>
+<td><code>g</code> + <code>c</code></td>
+<td>跳转到 ~&#x2F;.config</td>
+</tr>
+<tr>
+<td><code>g</code> + <code>d</code></td>
+<td>跳转到 ~&#x2F;Downloads</td>
+</tr>
+<tr>
+<td><code>z</code></td>
+<td>用 zoxide 跳转常用目录</td>
+</tr>
+<tr>
+<td><code>Z</code></td>
+<td>用 fzf 跳转目录</td>
+</tr>
+</tbody></table>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>y</code></td>
+<td>复制（yank）</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>剪切（cut）</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>粘贴（smart-paste：粘贴到悬停目录）</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>粘贴到当前目录（强制）</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>删除（移到回收站）</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>永久删除</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>新建文件&#x2F;目录（末尾加 <code>/</code> 表示目录）</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>重命名</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>切换隐藏文件显示</td>
+</tr>
+</tbody></table>
+<h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Space</code></td>
+<td>切换选中当前文件</td>
+</tr>
+<tr>
+<td><code>v</code></td>
+<td>反选</td>
+</tr>
+<tr>
+<td><code>V</code></td>
+<td>进入&#x2F;退出可视模式（批量选择）</td>
+</tr>
+<tr>
+<td><code>Ctrl+a</code></td>
+<td>全选</td>
+</tr>
+<tr>
+<td><code>Ctrl+r</code></td>
+<td>取消全选</td>
+</tr>
+</tbody></table>
+<h3 id="预览与搜索"><a href="#预览与搜索" class="headerlink" title="预览与搜索"></a>预览与搜索</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Tab</code></td>
+<td>查看文件详细信息（spotter）</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>过滤&#x2F;搜索当前目录文件</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>查看帮助</td>
+</tr>
+<tr>
+<td><code>Ctrl+/</code></td>
+<td>查看快捷键列表</td>
+</tr>
+</tbody></table>
+<h3 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>t</code></td>
+<td>新建标签页</td>
+</tr>
+<tr>
+<td><code>1-9</code></td>
+<td>切换到第 N 个标签页</td>
+</tr>
+<tr>
+<td><code>[</code> &#x2F; <code>]</code></td>
+<td>切换到上&#x2F;下一个标签页</td>
+</tr>
+<tr>
+<td><code>Ctrl+c</code></td>
+<td>关闭标签页</td>
+</tr>
+</tbody></table>
+<h3 id="自定义命令打开"><a href="#自定义命令打开" class="headerlink" title="自定义命令打开"></a>自定义命令打开</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>o</code></td>
+<td>选择程序打开文件（open-with-cmd 插件）</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>同上（阻塞模式）</td>
+</tr>
+</tbody></table>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>q</code></td>
+<td>退出</td>
+</tr>
+<tr>
+<td><code>Q</code></td>
+<td>退出并将当前路径输出到终端（配合 <code>y</code> 函数使用）</td>
+</tr>
+<tr>
+<td><code>Ctrl+c</code></td>
+<td>强制退出</td>
+</tr>
+</tbody></table>
+<h2 id="Shell-集成（可选）"><a href="#Shell-集成（可选）" class="headerlink" title="Shell 集成（可选）"></a>Shell 集成（可选）</h2><p>在 <code>~/.zshrc</code> 或 <code>~/.bashrc</code> 中添加 <code>y</code> 函数，退出 yazi 时自动 cd 到最后浏览的目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">y</span></span>() &#123;</span><br><span class="line">	<span class="built_in">local</span> tmp=<span class="string">&quot;<span class="subst">$(mktemp -t <span class="string">&quot;yazi-cwd.XXXXXX&quot;</span>)</span>&quot;</span> cwd</span><br><span class="line">	yazi <span class="string">&quot;<span class="variable">$@</span>&quot;</span> --cwd-file=<span class="string">&quot;<span class="variable">$tmp</span>&quot;</span></span><br><span class="line">	<span class="keyword">if</span> cwd=<span class="string">&quot;<span class="subst">$(command cat -- <span class="string">&quot;<span class="variable">$tmp</span>&quot;</span>)</span>&quot;</span> &amp;&amp; [ -n <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span> ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span> != <span class="string">&quot;<span class="variable">$PWD</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">builtin</span> <span class="built_in">cd</span> -- <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">	<span class="built_in">rm</span> -f -- <span class="string">&quot;<span class="variable">$tmp</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之后用 <code>y</code> 替代 <code>yazi</code> 启动即可。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="TOML-parse-error-at-least-one-of-url-or-mime-must-be-specified"><a href="#TOML-parse-error-at-least-one-of-url-or-mime-must-be-specified" class="headerlink" title="TOML parse error: at least one of url or mime must be specified"></a>TOML parse error: <code>at least one of url or mime must be specified</code></h3><p>新版 Yazi 预览器配置格式变更，<code>name</code> 键已废弃。用 <code>url</code> 匹配文件路径 glob，用 <code>mime</code> 匹配 MIME 类型。</p>
+<h3 id="ouch-插件-Lua-error"><a href="#ouch-插件-Lua-error" class="headerlink" title="ouch 插件 Lua error"></a>ouch 插件 Lua error</h3><p>确保安装了 <code>ouch</code> CLI 工具：<code>brew install ouch</code></p>
+<h3 id="插件升级"><a href="#插件升级" class="headerlink" title="插件升级"></a>插件升级</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ya pkg upgrade</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>关键词</strong>：Yazi, 终端文件管理器, Rust, macOS, 插件系统</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/tools/">tools</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Yazi/">Yazi</a><a href="/tags/终端工具/">终端工具</a><a href="/tags/文件管理器/">文件管理器</a><a href="/tags/Rust/">Rust</a><a href="/tags/macOS/">macOS</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://www.jeay.net/tools/yazi-terminal-file-manager.html" data-title="Yazi 终端文件管理器：安装配置与插件指南 | Jeay&#39;s blog" data-tsina="2470076427" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/tools/hermes-windows-install.html"  title="Windows上可以使用Hermes了">
+ <strong>下一篇：</strong><br/> 
+ <span>Windows上可以使用Hermes了
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+
+
+<section id="comments" class="comment">
+<div id="giscus_thread"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="jeeaay/hexo-blog-pages"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk5MTE4MjA5NQ=="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOBW9UD84C7LUw"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_protanopia"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#macOS%EF%BC%88Homebrew%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">macOS（Homebrew）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cargo%EF%BC%88%E9%80%9A%E7%94%A8%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">Cargo（通用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fedora-RHEL%EF%BC%88dnf%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">Fedora &#x2F; RHEL（dnf）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">依赖工具安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">插件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%8F%92%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">官方插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">社区插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-number">3.3.</span> <span class="toc-text">插件管理命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#init-lua-%E2%80%94-%E6%8F%92%E4%BB%B6%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">4.1.</span> <span class="toc-text">init.lua — 插件初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yazi-toml-%E2%80%94-%E4%B8%BB%E9%85%8D%E7%BD%AE"><span class="toc-number">4.2.</span> <span class="toc-text">yazi.toml — 主配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keymap-toml-%E2%80%94-%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">4.3.</span> <span class="toc-text">keymap.toml — 快捷键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span class="toc-number">5.</span> <span class="toc-text">使用指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">5.1.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%AF%BC%E8%88%AA"><span class="toc-number">5.2.</span> <span class="toc-text">基础导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">5.3.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">5.4.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E8%A7%88%E4%B8%8E%E6%90%9C%E7%B4%A2"><span class="toc-number">5.5.</span> <span class="toc-text">预览与搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="toc-number">5.6.</span> <span class="toc-text">标签页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4%E6%89%93%E5%BC%80"><span class="toc-number">5.7.</span> <span class="toc-text">自定义命令打开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%80%E5%87%BA"><span class="toc-number">5.8.</span> <span class="toc-text">退出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shell-%E9%9B%86%E6%88%90%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">Shell 集成（可选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TOML-parse-error-at-least-one-of-url-or-mime-must-be-specified"><span class="toc-number">7.1.</span> <span class="toc-text">TOML parse error: at least one of url or mime must be specified</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ouch-%E6%8F%92%E4%BB%B6-Lua-error"><span class="toc-number">7.2.</span> <span class="toc-text">ouch 插件 Lua error</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%8D%87%E7%BA%A7"><span class="toc-number">7.3.</span> <span class="toc-text">插件升级</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/front/" title="front">front<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/js/" title="js">js<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/server/" title="server">server<sup>22</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tools/" title="tools">tools<sup>14</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/wordpress/" title="wordpress">wordpress<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/centos/" title="centos">centos<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/运维/" title="运维">运维<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/php/" title="php">php<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/apache/" title="apache">apache<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/包管理/" title="包管理">包管理<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ubuntu/" title="ubuntu">ubuntu<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器安全/" title="服务器安全">服务器安全<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科学上网/" title="科学上网">科学上网<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/服务器/" title="服务器">服务器<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sass/" title="sass">sass<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vscode/" title="vscode">vscode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/composer/" title="composer">composer<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lamp/" title="lamp">lamp<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shadowsocks/" title="shadowsocks">shadowsocks<sup>2</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2470076427&verifier=a4b7e708&dpc=1"></iframe>
+</div>
+
+
+  <div class="steam-card">
+    <p class="asidetitle">
+        Steam
+    </p>
+    <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/jeeaay/"><img src="https://steamsignature.com/card/0/76561198040942609.png"></a>
+</div>
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/php/58.html" target="_blank" title="生成随机字符串">生成随机字符串</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/js/install-nodejs.html" target="_blank" title="安装nodejs">安装nodejs</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/269.html" target="_blank" title="LNMP环境搭建">LNMP环境搭建</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jeay.net/server/237.html" target="_blank" title="密钥登录配置">密钥登录配置</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Talents come from diligence, <br/>
+			and knowledge is gained by accumulation.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2470076427" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/jeeaay" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2026 
+		
+		<a href="/about" target="_blank" title="Jeay">Jeay</a>
+		
+		备案号：<a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">豫ICP备16039722号</a>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+  // 去广告
+  const adt = setInterval(function(){
+    if ($("#SOHU_MAIN").siblings().length > 0) {
+      clearInterval(adt)
+      $("#SOHU_MAIN").siblings().hide()
+    }
+  }, 300)
+
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9f0450994d0ba3990a0c8170e93582b9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
